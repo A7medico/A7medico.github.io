@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Ismail — Portfolio</title>
+  <meta name="description" content="Portfolio of Ahmad Ismail — Computer Engineer specializing in Machine Learning, IoT Security, and Full-Stack Development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-brand"><span class="dot"></span> Ahmad Ismail</a>
+  <div class="nav-links" id="nav_links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="menu-toggle" id="menu_toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <canvas id="hero_canvas"></canvas>
+  </div>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse"></span> Open to Opportunities</div>
+    <h1>Hi, I'm <span class="gradient-text">Ahmad Ismail</span></h1>
+    <h1 style="font-size:clamp(1.4rem,3vw,2.2rem);margin-top:4px">
+      <span id="typing_text" style="border-right:2px solid var(--accent-1)">Computer Engineer</span>
+    </h1>
+    <p class="hero-subtitle">Building intelligent systems at the intersection of Machine Learning, IoT Security, and modern software engineering.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="10" height="10" rx="2"/><path d="M3 7h10"/></svg>
+        View Projects
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h8v8H4z"/><path d="M8 1v3M8 12v3M1 8h3M12 8h3"/></svg>
+        Get in Touch
+      </a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://github.com/" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:ahmad@example.com" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label reveal">About Me</div>
+    <div class="about-grid">
+      <div class="about-image-wrapper reveal">
+        <div class="about-avatar">
+          <div class="about-avatar-inner">👨‍💻</div>
+        </div>
+        <div class="about-float-card top-right">
+          <span>🎓</span> Computer Engineering
+        </div>
+        <div class="about-float-card bottom-left">
+          <span>🔒</span> IoT Security
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <h3>Passionate about building intelligent, secure systems</h3>
+        <p>I'm a Computer Engineering graduate with a deep interest in Machine Learning, IoT Security, and full-stack development. My senior project, IoTGuard, combines real-time network analysis with AI-powered intrusion detection to protect IoT ecosystems.</p>
+        <p>I enjoy turning complex problems into elegant solutions — whether it's training ML models on millions of network flows, building real-time dashboards, or designing production-grade security pipelines.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="number" data-count="96.1" data-suffix="%">0%</div>
+            <div class="label">Model AUC</div>
+          </div>
+          <div class="about-stat">
+            <div class="number" data-count="2.1" data-suffix="M+">0</div>
+            <div class="label">Samples Trained</div>
+          </div>
+          <div class="about-stat">
+            <div class="number" data-count="112" data-suffix="">0</div>
+            <div class="label">Tests Passing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg-secondary)">
+  <div class="section-inner">
+    <div class="section-label reveal">Projects</div>
+    <div class="section-heading reveal">Featured Work</div>
+    <div class="section-desc reveal">A selection of projects I've built — from AI-powered security systems to full-stack applications.</div>
+
+    <div class="projects-grid">
+      <!-- FEATURED: IoTGuard -->
+      <div class="project-card featured reveal">
+        <div class="project-thumb">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.05) 1px,transparent 1px);background-size:30px 30px"></div>
+            <div style="text-align:center;position:relative;z-index:1">
+              <svg viewBox="0 0 80 80" width="80" height="80" fill="none" style="margin:0 auto 16px">
+                <path d="M40 8L12 24v32l28 16 28-16V24L40 8z" stroke="url(#pg1)" stroke-width="3" fill="rgba(59,130,246,0.08)"/>
+                <path d="M40 28v16M32 36h16" stroke="url(#pg1)" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="40" cy="40" r="22" stroke="rgba(59,130,246,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+                <defs><linearGradient id="pg1" x1="12" y1="8" x2="68" y2="72"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+              </svg>
+              <div style="font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">IoTGuard</div>
+              <div style="font-size:0.85rem;color:#64748b;margin-top:4px">AI-Powered IDS</div>
+            </div>
+          </div>
+          <span class="project-featured-badge">⭐ Featured Project</span>
+        </div>
+        <div class="project-info">
+          <h3>IoTGuard</h3>
+          <div class="project-tagline">AI-Powered Intrusion Detection System for IoT Networks</div>
+          <p>A production-grade network security system that uses LightGBM + IsolationForest ensemble to detect DDoS attacks, SYN floods, and anomalies in real-time IoT traffic. Features SHAP-based explainability, automated firewall response, and a professional monitoring dashboard.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="val">96.1%</span><span class="lbl">AUC</span></div>
+            <div class="project-metric"><span class="val">2.1M+</span><span class="lbl">Samples</span></div>
+            <div class="project-metric"><span class="val">112</span><span class="lbl">Tests</span></div>
+            <div class="project-metric"><span class="val">13</span><span class="lbl">Features</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">LightGBM</span>
+            <span class="project-tag">SHAP</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Suricata</span>
+            <span class="project-tag">Chart.js</span>
+            <span class="project-tag">WebSocket</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/" class="project-link primary" target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              Source Code
+            </a>
+            <a href="../iotguard-website/index.html" class="project-link secondary">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1l6 6-6 6"/></svg>
+              Project Site
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder for more projects -->
+    <div class="projects-small-grid">
+      <div class="project-card reveal">
+        <div class="project-thumb" style="height:180px">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:3rem">🌐</div>
+        </div>
+        <div class="project-info">
+          <h3>Coming Soon</h3>
+          <div class="project-tagline">Next Project</div>
+          <p>More projects coming soon. Stay tuned for web apps, ML experiments, and open-source contributions.</p>
+          <div class="project-tags">
+            <span class="project-tag">TBD</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb" style="height:180px">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#162e1e);display:flex;align-items:center;justify-content:center;font-size:3rem">🤖</div>
+        </div>
+        <div class="project-info">
+          <h3>Coming Soon</h3>
+          <div class="project-tagline">Future Project</div>
+          <p>Have an idea? Reach out and let's collaborate on something amazing together.</p>
+          <div class="project-tags">
+            <span class="project-tag">TBD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">Skills</div>
+    <div class="section-heading reveal">Technologies & Expertise</div>
+    <div class="section-desc reveal">The tools and technologies I use to bring ideas to life.</div>
+
+    <div class="skills-container">
+      <div class="skill-category reveal">
+        <div class="skill-category-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6">🐍</div>
+        <h3>Languages</h3>
+        <div class="skill-list">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">JavaScript</span>
+          <span class="skill-item">HTML/CSS</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">C/C++</span>
+          <span class="skill-item">Bash</span>
+        </div>
+      </div>
+      <div class="skill-category reveal reveal-delay-1">
+        <div class="skill-category-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6">🧠</div>
+        <h3>Machine Learning</h3>
+        <div class="skill-list">
+          <span class="skill-item">LightGBM</span>
+          <span class="skill-item">scikit-learn</span>
+          <span class="skill-item">SHAP</span>
+          <span class="skill-item">Pandas</span>
+          <span class="skill-item">NumPy</span>
+          <span class="skill-item">IsolationForest</span>
+        </div>
+      </div>
+      <div class="skill-category reveal reveal-delay-2">
+        <div class="skill-category-icon" style="background:rgba(6,182,212,0.1);color:#06b6d4">🔒</div>
+        <h3>Security & Networking</h3>
+        <div class="skill-list">
+          <span class="skill-item">Suricata IDS</span>
+          <span class="skill-item">Network Analysis</span>
+          <span class="skill-item">Threat Intel</span>
+          <span class="skill-item">nftables</span>
+          <span class="skill-item">Wireshark</span>
+          <span class="skill-item">JWT Auth</span>
+        </div>
+      </div>
+      <div class="skill-category reveal reveal-delay-3">
+        <div class="skill-category-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b">🛠️</div>
+        <h3>Tools & Frameworks</h3>
+        <div class="skill-list">
+          <span class="skill-item">Flask</span>
+          <span class="skill-item">Docker</span>
+          <span class="skill-item">Git</span>
+          <span class="skill-item">Pytest</span>
+          <span class="skill-item">Chart.js</span>
+          <span class="skill-item">Prometheus</span>
+          <span class="skill-item">WebSocket</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg-secondary)">
+  <div class="section-inner">
+    <div class="section-label reveal">Contact</div>
+    <div class="section-heading reveal">Let's Work Together</div>
+    <div class="section-desc reveal">Have a project in mind or just want to chat? Feel free to reach out.</div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Get in Touch</h3>
+        <p>I'm currently open to new opportunities, freelance projects, and collaborations. Whether you have a question or just want to say hello, I'll do my best to get back to you!</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6">📧</div>
+            <div class="contact-method-text">
+              <div class="label">Email</div>
+              <div class="value">ahmad@example.com</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon" style="background:rgba(139,92,246,0.1);color:#8b5cf6">💼</div>
+            <div class="contact-method-text">
+              <div class="label">LinkedIn</div>
+              <div class="value">linkedin.com/in/ahmad</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon" style="background:rgba(6,182,212,0.1);color:#06b6d4">🐙</div>
+            <div class="contact-method-text">
+              <div class="label">GitHub</div>
+              <div class="value">github.com/ahmad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal reveal-delay-1" onsubmit="event.preventDefault(); alert('Message sent! (Connect a form service like Formspree to make this work)')">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p>© 2026 Ahmad Ismail. Built with ❤️</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
