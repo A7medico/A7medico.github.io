@@ -1,3 +1,11 @@
+// ===== LOADING SCREEN =====
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    setTimeout(() => loader.classList.add('hidden'), 400);
+  }
+});
+
 // ===== SCROLL REVEAL =====
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -31,6 +39,18 @@ navLinks.querySelectorAll('a').forEach(a => {
     navLinks.classList.remove('open');
     menuToggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
   });
+});
+
+// ===== DARK/LIGHT MODE TOGGLE =====
+const themeToggle = document.getElementById('theme_toggle');
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+}
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
 });
 
 // ===== TYPING EFFECT =====
@@ -133,3 +153,47 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// ===== CONTACT FORM FEEDBACK =====
+const contactForm = document.getElementById('contact_form');
+const formFeedback = document.getElementById('form_feedback');
+const submitBtn = document.getElementById('submit_btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.btn-submit-text').textContent = 'Sending...';
+    submitBtn.querySelector('.btn-submit-icon').textContent = '⏳';
+    
+    // Hide any previous feedback
+    formFeedback.className = 'form-feedback';
+    formFeedback.textContent = '';
+    
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      
+      if (response.ok) {
+        formFeedback.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
+        formFeedback.className = 'form-feedback success show';
+        contactForm.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      formFeedback.textContent = '❌ Something went wrong. Please try emailing me directly.';
+      formFeedback.className = 'form-feedback error show';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.querySelector('.btn-submit-text').textContent = 'Send Message';
+      submitBtn.querySelector('.btn-submit-icon').textContent = '→';
+    }
+  });
+}
