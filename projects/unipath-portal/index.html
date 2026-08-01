@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniPath Australia - Premier Australian University Admissions & Technical Portal</title>
+  <title>UniPath Australia — Official Australian University Admissions & Technical Portal</title>
   <meta name="description" content="Discover Australian Group of Eight (Go8) & top universities, calculate ATAR & IELTS eligibility, track CRICOS requirements, Subclass 500 visa guidelines, and scholarships." />
 
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -26,52 +26,52 @@
 <body>
 
   <div class="app-container">
-    <!-- Navbar -->
+    <!-- Header Navbar -->
     <header class="navbar">
       <a href="#" class="brand">
         <div class="brand-icon">
-          <i data-lucide="graduation-cap" style="width: 26px; height: 26px;"></i>
+          <i data-lucide="graduation-cap" style="width: 22px; height: 22px;"></i>
         </div>
         <div class="brand-text">
           Uni<span>Path</span>
-          <span class="aus-flag-badge">🇦🇺 Study Australia</span>
+          <span class="aus-flag-badge">🇦🇺 Australia</span>
         </div>
       </a>
 
       <!-- Navigation Tabs -->
       <nav class="nav-tabs">
         <button class="nav-tab active" data-tab="explorer">
-          <i data-lucide="compass" style="width: 16px; height: 16px;"></i> Universities
+          <i data-lucide="compass" style="width: 15px; height: 15px;"></i> Universities
         </button>
         <button class="nav-tab" data-tab="matcher">
-          <i data-lucide="calculator" style="width: 16px; height: 16px;"></i> ATAR Matcher
+          <i data-lucide="calculator" style="width: 15px; height: 15px;"></i> ATAR Matcher
         </button>
         <button class="nav-tab" data-tab="technicalities">
-          <i data-lucide="binary" style="width: 16px; height: 16px;"></i> Technicalities & Visa
+          <i data-lucide="binary" style="width: 15px; height: 15px;"></i> Visa & Technical Tools
         </button>
         <button class="nav-tab" data-tab="tracker">
-          <i data-lucide="kanban" style="width: 16px; height: 16px;"></i> Tracker
+          <i data-lucide="kanban" style="width: 15px; height: 15px;"></i> Application Tracker
         </button>
         <button class="nav-tab" data-tab="scholarships">
-          <i data-lucide="award" style="width: 16px; height: 16px;"></i> Scholarships
+          <i data-lucide="award" style="width: 15px; height: 15px;"></i> Scholarships
         </button>
         <button class="nav-tab" data-tab="essays">
-          <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> GS Statement Hub
+          <i data-lucide="file-text" style="width: 15px; height: 15px;"></i> GS Statement Hub
         </button>
         <button class="nav-tab" data-tab="dashboard">
-          <i data-lucide="layout-dashboard" style="width: 16px; height: 16px;"></i> Dashboard
+          <i data-lucide="layout-dashboard" style="width: 15px; height: 15px;"></i> Dashboard
         </button>
       </nav>
 
       <!-- Quick Actions -->
       <div class="user-quick-actions">
         <button class="btn btn-secondary btn-sm" onclick="App.switchTab('technicalities')">
-          <i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Technical Tools
+          <i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Visa Tools
         </button>
       </div>
     </header>
 
-    <!-- Main Views Container -->
+    <!-- Main Content Container -->
     <main class="main-content">
 
       <!-- ================= VIEW 1: AUSTRALIAN UNIVERSITY EXPLORER ================= -->
@@ -79,16 +79,16 @@
         <div class="hero-card">
           <div class="hero-content">
             <div class="hero-badge">
-              <i data-lucide="award" style="width: 15px; height: 15px;"></i> Group of Eight (Go8) & Premier Universities
+              <i data-lucide="award" style="width: 14px; height: 14px;"></i> Group of Eight (Go8) & Premier Universities
             </div>
-            <h1 class="hero-title">Study at Australia’s <span>World-Leading Universities</span></h1>
-            <p class="hero-desc">Explore Group of Eight (Go8) research powerhouses, compare CRICOS requirements, convert ATAR cutoffs, and plan your Subclass 500 Student Visa application seamlessly.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <h1 class="hero-title">Study at Australia’s <span>Top Universities</span></h1>
+            <p class="hero-desc">Compare entry requirements, CRICOS codes, ATAR cutoffs, and Subclass 500 student visa benchmarks across Australia's leading research institutions.</p>
+            <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
               <button class="btn btn-primary" onclick="App.switchTab('matcher')">
-                <i data-lucide="target" style="width: 18px; height: 18px;"></i> Calculate My ATAR Match
+                <i data-lucide="target" style="width: 16px; height: 16px;"></i> Calculate ATAR Cutoff
               </button>
               <button class="btn btn-secondary" onclick="App.switchTab('technicalities')">
-                <i data-lucide="binary" style="width: 18px; height: 18px;"></i> Visa & Technical Tools
+                <i data-lucide="binary" style="width: 16px; height: 16px;"></i> Visa & Financial Calculators
               </button>
             </div>
           </div>
@@ -96,19 +96,19 @@
           <div class="hero-stats">
             <div class="hero-stat-card">
               <div class="stat-value">Group of 8</div>
-              <div class="stat-label">Go8 Research Institutes</div>
+              <div class="stat-label">Go8 Member Universities</div>
             </div>
             <div class="hero-stat-card">
               <div class="stat-value">Top 20</div>
-              <div class="stat-label">Global QS Rankings</div>
+              <div class="stat-label">Global Rankings (UniMelb, USYD, UNSW)</div>
             </div>
             <div class="hero-stat-card">
               <div class="stat-value">CRICOS</div>
-              <div class="stat-label">Registered Codes</div>
+              <div class="stat-label">Verified Provider Codes</div>
             </div>
             <div class="hero-stat-card">
               <div class="stat-value">Subclass 500</div>
-              <div class="stat-label">Visa Ready Engine</div>
+              <div class="stat-label">Visa Compliance Guidelines</div>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@
         <!-- Filter Bar -->
         <div class="filter-bar">
           <div class="input-group">
-            <label class="input-label" for="explorer-search">Search Uni, State, or Program</label>
+            <label class="input-label" for="explorer-search">Search University or Program</label>
             <input type="text" id="explorer-search" class="form-control" placeholder="e.g. UniMelb, USYD, Computer Science..." />
           </div>
 
@@ -134,7 +134,7 @@
           <div class="input-group">
             <label class="input-label" for="filter-tuition">Max Annual Fee (AUD)</label>
             <select id="filter-tuition" class="form-control">
-              <option value="all">Any Tuition</option>
+              <option value="all">Any Tuition Fee</option>
               <option value="40000">Under AUD $40,000 / yr</option>
               <option value="45000">Under AUD $45,000 / yr</option>
               <option value="50000">Under AUD $50,000 / yr</option>
@@ -142,17 +142,17 @@
           </div>
 
           <div class="input-group" style="justify-content: center;">
-            <label class="input-label" style="margin-bottom: 0.35rem;">Go8 Preference</label>
-            <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); cursor: pointer;">
-              <input type="checkbox" id="filter-go8" style="accent-color: var(--accent-cyan); width: 16px; height: 16px; cursor: pointer;" />
-              Group of Eight (Go8) Only
+            <label class="input-label" style="margin-bottom: 0.25rem;">Go8 Filter</label>
+            <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-azure); cursor: pointer;">
+              <input type="checkbox" id="filter-go8" style="accent-color: var(--accent-blue); width: 15px; height: 15px; cursor: pointer;" />
+              Go8 Universities Only
             </label>
           </div>
 
           <div class="input-group">
             <label class="input-label" for="filter-sort">Sort By</label>
             <select id="filter-sort" class="form-control">
-              <option value="rank">Global Rank</option>
+              <option value="rank">World Rank</option>
               <option value="atar">Min ATAR Cutoff</option>
               <option value="tuition-low">Tuition: Low to High</option>
               <option value="tuition-high">Tuition: High to Low</option>
@@ -160,8 +160,8 @@
           </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-          <div id="uni-results-count" style="font-weight: 800; color: var(--text-secondary); font-size: 0.95rem; font-family: var(--font-heading);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div id="uni-results-count" style="font-weight: 700; color: var(--text-secondary); font-size: 0.9rem;">
             Loading Australian Universities...
           </div>
         </div>
@@ -172,50 +172,50 @@
       <!-- ================= VIEW 2: ATAR MATCH CALCULATOR ================= -->
       <section id="view-matcher" class="tab-view">
         <div class="section-header">
-          <h2 class="section-title"><i data-lucide="calculator" style="color: var(--accent-cyan);"></i> Australian ATAR & Entry Calculator</h2>
-          <p class="section-subtitle">Input your secondary scores (ATAR, IB, SAT) and English language results to check your admission eligibility across Australia.</p>
+          <h2 class="section-title"><i data-lucide="calculator" style="color: var(--accent-blue);"></i> Australian ATAR & Entry Calculator</h2>
+          <p class="section-subtitle">Input your secondary academic scores (ATAR, IB, SAT) and English results to evaluate your eligibility across Australia.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem;">
+        <div style="display: grid; grid-template-columns: 320px 1fr; gap: 1.75rem;">
           <div class="glass-card">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem; font-family: var(--font-heading);">Academic Profile</h3>
+            <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 1.15rem;">Academic Profile</h3>
             <form id="matcher-form">
-              <div class="input-group" style="margin-bottom: 1rem;">
+              <div class="input-group" style="margin-bottom: 0.85rem;">
                 <label class="input-label" for="match-atar">ATAR Equivalent (0 - 99.95)</label>
                 <input type="number" step="0.5" min="50" max="99.95" id="match-atar" class="form-control" value="85.0" required />
               </div>
 
-              <div class="input-group" style="margin-bottom: 1rem;">
+              <div class="input-group" style="margin-bottom: 0.85rem;">
                 <label class="input-label" for="match-gpa">GPA (4.0 Scale)</label>
                 <input type="number" step="0.01" min="0" max="4.0" id="match-gpa" class="form-control" value="3.6" required />
               </div>
 
-              <div class="input-group" style="margin-bottom: 1rem;">
-                <label class="input-label" for="match-ielts">IELTS Academic Overall Band</label>
+              <div class="input-group" style="margin-bottom: 0.85rem;">
+                <label class="input-label" for="match-ielts">IELTS Academic Overall</label>
                 <input type="number" step="0.5" min="5.0" max="9.0" id="match-ielts" class="form-control" value="6.5" required />
               </div>
 
-              <div class="input-group" style="margin-bottom: 1rem;">
+              <div class="input-group" style="margin-bottom: 0.85rem;">
                 <label class="input-label" for="match-pte">PTE Academic Score</label>
                 <input type="number" min="30" max="90" id="match-pte" class="form-control" value="64" required />
               </div>
 
-              <div class="input-group" style="margin-bottom: 1.5rem;">
+              <div class="input-group" style="margin-bottom: 1.25rem;">
                 <label class="input-label" for="match-budget-aud">Annual Tuition Budget (AUD $)</label>
                 <input type="number" min="20000" step="2000" id="match-budget-aud" class="form-control" value="50000" required />
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i> Calculate Australian Eligibility
+                <i data-lucide="refresh-cw" style="width: 15px; height: 15px;"></i> Calculate Compatibility
               </button>
             </form>
           </div>
 
           <div id="matcher-results">
-            <div class="glass-card" style="text-align: center; padding: 4rem 2rem;">
-              <i data-lucide="target" style="width: 48px; height: 48px; color: var(--accent-cyan); margin-bottom: 1rem;"></i>
-              <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-heading);">Ready to Calculate Australian Compatibility</h3>
-              <p style="color: var(--text-secondary); max-width: 440px; margin: 0 auto;">Enter your ATAR, GPA, and language test parameters on the left and click 'Calculate Australian Eligibility'.</p>
+            <div class="glass-card" style="text-align: center; padding: 3.5rem 2rem;">
+              <i data-lucide="target" style="width: 44px; height: 44px; color: var(--accent-blue); margin-bottom: 0.85rem;"></i>
+              <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0.4rem;">Calculate Australian Admission Tier</h3>
+              <p style="color: var(--text-secondary); max-width: 420px; margin: 0 auto; font-size: 0.9rem;">Enter your academic parameters on the left and click 'Calculate Compatibility'.</p>
             </div>
           </div>
         </div>
@@ -224,70 +224,70 @@
       <!-- ================= VIEW 3: TECHNICALITIES & VISA ENGINES ================= -->
       <section id="view-technicalities" class="tab-view">
         <div class="section-header">
-          <h2 class="section-title"><i data-lucide="binary" style="color: var(--accent-purple);"></i> Technicalities, Conversion & Visa Calculators</h2>
-          <p class="section-subtitle">Real-time engines for IB/GPA to ATAR conversion, Subclass 500 DHA financial proof, and Subclass 485 post-study work rights.</p>
+          <h2 class="section-title"><i data-lucide="binary" style="color: var(--accent-indigo);"></i> Visa, Financial & Grade Conversion Tools</h2>
+          <p class="section-subtitle">Real-time tools for IB/GPA to ATAR conversion, Subclass 500 DHA financial proof, and Subclass 485 post-study work rights.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.75rem;">
           
-          <!-- Engine 1: International Grade to ATAR Converter -->
+          <!-- Tool 1: International Grade to ATAR Converter -->
           <div class="glass-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-cyan);">
-              <i data-lucide="arrow-right-left" style="width: 20px; height: 20px;"></i>
-              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">ATAR Grade Converter</h3>
+            <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.85rem; color: var(--accent-azure);">
+              <i data-lucide="arrow-right-left" style="width: 18px; height: 18px;"></i>
+              <h3 style="font-size: 1.05rem; font-weight: 800;">ATAR Grade Converter</h3>
             </div>
 
-            <div class="input-group" style="margin-bottom: 1rem;">
+            <div class="input-group" style="margin-bottom: 0.85rem;">
               <label class="input-label" for="calc-ib">IB Diploma Score (out of 45)</label>
               <input type="number" min="24" max="45" id="calc-ib" class="form-control" value="38" />
-              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Estimated ATAR: <strong id="out-ib-atar" style="color: var(--accent-cyan); font-size: 1rem;">95.80</strong>
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                Estimated ATAR: <strong id="out-ib-atar" style="color: var(--accent-azure); font-size: 0.95rem;">95.80</strong>
               </div>
             </div>
 
-            <div class="input-group" style="margin-bottom: 1rem;">
+            <div class="input-group" style="margin-bottom: 0.85rem;">
               <label class="input-label" for="calc-gpa">US High School GPA (out of 4.0)</label>
               <input type="number" step="0.05" min="2.5" max="4.0" id="calc-gpa" class="form-control" value="3.80" />
-              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Estimated ATAR: <strong id="out-gpa-atar" style="color: var(--accent-cyan); font-size: 1rem;">95.00</strong>
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                Estimated ATAR: <strong id="out-gpa-atar" style="color: var(--accent-azure); font-size: 0.95rem;">95.00</strong>
               </div>
             </div>
 
             <div class="input-group">
               <label class="input-label" for="calc-cbse">CBSE / Indian Board (%)</label>
               <input type="number" min="60" max="100" id="calc-cbse" class="form-control" value="92" />
-              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Estimated ATAR: <strong id="out-cbse-atar" style="color: var(--accent-cyan); font-size: 1rem;">93.00</strong>
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                Estimated ATAR: <strong id="out-cbse-atar" style="color: var(--accent-azure); font-size: 0.95rem;">93.00</strong>
               </div>
             </div>
           </div>
 
-          <!-- Engine 2: Subclass 500 Financial Capacity Calculator -->
+          <!-- Tool 2: Subclass 500 Financial Capacity Calculator -->
           <div class="glass-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-gold);">
-              <i data-lucide="coins" style="width: 20px; height: 20px;"></i>
-              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">DHA Financial Proof (Subclass 500)</h3>
+            <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.85rem; color: var(--accent-amber);">
+              <i data-lucide="coins" style="width: 18px; height: 18px;"></i>
+              <h3 style="font-size: 1.05rem; font-weight: 800;">DHA Financial Proof (Subclass 500)</h3>
             </div>
 
-            <div class="input-group" style="margin-bottom: 0.75rem;">
+            <div class="input-group" style="margin-bottom: 0.65rem;">
               <label class="input-label" for="fin-tuition">1st Year Tuition Fee (AUD $)</label>
               <input type="number" step="1000" id="fin-tuition" class="form-control" value="46000" />
             </div>
 
-            <div style="display: flex; gap: 1rem; margin-bottom: 0.75rem;">
-              <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
-                <input type="checkbox" id="fin-spouse" style="accent-color: var(--accent-gold);" />
+            <div style="display: flex; gap: 1rem; margin-bottom: 0.65rem;">
+              <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer;">
+                <input type="checkbox" id="fin-spouse" style="accent-color: var(--accent-amber);" />
                 Include Spouse (+AUD $10,394)
               </label>
             </div>
 
-            <div class="input-group" style="margin-bottom: 0.75rem;">
+            <div class="input-group" style="margin-bottom: 0.65rem;">
               <label class="input-label" for="fin-children">Number of Child Dependents</label>
               <input type="number" min="0" max="4" id="fin-children" class="form-control" value="0" />
             </div>
 
-            <div class="input-group" style="margin-bottom: 1rem;">
-              <label class="input-label" for="fin-oshc-type">OSHC Health Insurance Type</label>
+            <div class="input-group" style="margin-bottom: 0.85rem;">
+              <label class="input-label" for="fin-oshc-type">OSHC Health Cover Type</label>
               <select id="fin-oshc-type" class="form-control">
                 <option value="single">Single Policy (~AUD $650/yr)</option>
                 <option value="couple">Couple Policy (~AUD $2,800/yr)</option>
@@ -295,22 +295,22 @@
               </select>
             </div>
 
-            <div style="background: rgba(255, 183, 3, 0.08); border: 1px solid rgba(255, 183, 3, 0.3); padding: 0.85rem; border-radius: var(--radius-sm);">
-              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Bank Balance Required for Visa</div>
-              <div id="out-fin-total-aud" style="font-size: 1.4rem; font-weight: 900; color: var(--accent-gold); font-family: var(--font-heading);">AUD $78,360</div>
-              <div id="out-fin-total-usd" style="font-size: 0.85rem; color: var(--text-secondary);">~ USD $50,934</div>
+            <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); padding: 0.75rem; border-radius: var(--radius-xs);">
+              <div style="font-size: 0.725rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Required Bank Balance</div>
+              <div id="out-fin-total-aud" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-amber);">AUD $78,360</div>
+              <div id="out-fin-total-usd" style="font-size: 0.8rem; color: var(--text-secondary);">~ USD $50,934</div>
             </div>
           </div>
 
-          <!-- Engine 3: Post-Study Work Visa (Subclass 485) Calculator -->
+          <!-- Tool 3: Subclass 485 Post-Study Work Visa Calculator -->
           <div class="glass-card">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-emerald);">
-              <i data-lucide="briefcase" style="width: 20px; height: 20px;"></i>
-              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">Subclass 485 PSWV Duration</h3>
+            <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.85rem; color: var(--accent-emerald);">
+              <i data-lucide="briefcase" style="width: 18px; height: 18px;"></i>
+              <h3 style="font-size: 1.05rem; font-weight: 800;">Subclass 485 Work Rights</h3>
             </div>
 
-            <div class="input-group" style="margin-bottom: 1rem;">
-              <label class="input-label" for="visa-degree">Qualification Level</label>
+            <div class="input-group" style="margin-bottom: 0.85rem;">
+              <label class="input-label" for="visa-degree">Degree Level</label>
               <select id="visa-degree" class="form-control">
                 <option value="bachelor">Bachelor's Degree (Base 2 Yrs)</option>
                 <option value="master">Master's Degree (Base 3 Yrs)</option>
@@ -318,7 +318,7 @@
               </select>
             </div>
 
-            <div class="input-group" style="margin-bottom: 1.25rem;">
+            <div class="input-group" style="margin-bottom: 1rem;">
               <label class="input-label" for="visa-location">Campus Location</label>
               <select id="visa-location" class="form-control">
                 <option value="metro">Major Gateway City (Sydney / Melbourne)</option>
@@ -327,33 +327,32 @@
               </select>
             </div>
 
-            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.85rem; border-radius: var(--radius-sm);">
-              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Post-Study Work Rights</div>
-              <div id="out-pswv-years" style="font-size: 1.35rem; font-weight: 900; color: var(--accent-emerald); font-family: var(--font-heading);">3 Years Full Work Rights</div>
-              <div id="out-pswv-desc" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; line-height: 1.4;">Allows full-time employment anywhere in Australia post-graduation.</div>
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 0.75rem; border-radius: var(--radius-xs);">
+              <div style="font-size: 0.725rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Post-Study Work Visa</div>
+              <div id="out-pswv-years" style="font-size: 1.25rem; font-weight: 800; color: var(--accent-emerald);">3 Years Full Work Rights</div>
+              <div id="out-pswv-desc" style="font-size: 0.775rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.35;">Full-time post-study work eligibility across Australia.</div>
             </div>
           </div>
 
         </div>
 
-        <!-- Student Work Rights Compliance Banner -->
-        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-color: var(--border-active);">
-          <i data-lucide="clock" style="width: 36px; height: 36px; color: var(--accent-cyan); flex-shrink: 0;"></i>
+        <div class="glass-card" style="padding: 1.25rem; display: flex; align-items: center; gap: 1.25rem;">
+          <i data-lucide="clock" style="width: 30px; height: 30px; color: var(--accent-azure); flex-shrink: 0;"></i>
           <div>
-            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; font-family: var(--font-heading);">Subclass 500 Student Visa Work Rights Compliance</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
-              Under Australian immigration law, international students can work up to <strong>48 hours per fortnight</strong> while your course is in session, and <strong>unlimited hours</strong> during official university breaks and vacations.
+            <h4 style="font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.2rem;">Subclass 500 Work Hours Compliance</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.45;">
+              International students are permitted to work up to <strong>48 hours per fortnight</strong> while your course is in session, and <strong>unlimited hours</strong> during official university holiday breaks.
             </p>
           </div>
         </div>
 
       </section>
 
-      <!-- ================= VIEW 4: APPLICATION KANBAN TRACKER ================= -->
+      <!-- ================= VIEW 4: KANBAN TRACKER ================= -->
       <section id="view-tracker" class="tab-view">
         <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <h2 class="section-title"><i data-lucide="kanban" style="color: var(--accent-cyan);"></i> Application Pipeline & Visa Tracker</h2>
+            <h2 class="section-title"><i data-lucide="kanban" style="color: var(--accent-blue);"></i> Application Pipeline Tracker</h2>
             <p class="section-subtitle">Track CRICOS offer letters, Subclass 500 Genuine Student (GS) forms, and deadline countdowns.</p>
           </div>
           <button class="btn btn-secondary btn-sm" onclick="App.switchTab('explorer')">
@@ -367,7 +366,7 @@
       <!-- ================= VIEW 5: SCHOLARSHIPS FINDER ================= -->
       <section id="view-scholarships" class="tab-view">
         <div class="section-header">
-          <h2 class="section-title"><i data-lucide="award" style="color: var(--accent-gold);"></i> Australian Government & University Scholarships</h2>
+          <h2 class="section-title"><i data-lucide="award" style="color: var(--accent-amber);"></i> Australian Government & University Scholarships</h2>
           <p class="section-subtitle">Explore Australia Awards, destination awards, and Go8 merit tuition fee remissions.</p>
         </div>
 
@@ -381,17 +380,17 @@
         <div id="scholarships-grid" class="card-grid"></div>
       </section>
 
-      <!-- ================= VIEW 6: ESSAY & GS STATEMENT HUB ================= -->
+      <!-- ================= VIEW 6: ESSAY & GS HUB ================= -->
       <section id="view-essays" class="tab-view">
         <div class="section-header">
-          <h2 class="section-title"><i data-lucide="file-text" style="color: var(--accent-emerald);"></i> Genuine Student (GS) & SOP Statement Workspace</h2>
-          <p class="section-subtitle">Draft your Genuine Student (GS) statement for the Australian Subclass 500 Student Visa & University SOPs.</p>
+          <h2 class="section-title"><i data-lucide="file-text" style="color: var(--accent-emerald);"></i> Genuine Student (GS) & Statement Workspace</h2>
+          <p class="section-subtitle">Draft your Genuine Student (GS) statement for the Subclass 500 Visa & academic statements.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 320px; gap: 1.75rem;">
           <div class="glass-card">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="display: flex; gap: 1rem; align-items: center;">
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
                 <select id="essay-uni-select" class="form-control" style="width: auto; font-weight: 700;">
                   <option value="UniMelb">UniMelb - Genuine Student (GS) Form</option>
                   <option value="USYD">USYD - Statement of Intent</option>
@@ -405,30 +404,30 @@
               </button>
             </div>
 
-            <textarea id="essay-textarea" class="form-control" style="height: 380px; resize: vertical; line-height: 1.7; font-size: 0.95rem;" placeholder="Write your Genuine Student (GS) statement or academic Statement of Purpose here..."></textarea>
+            <textarea id="essay-textarea" class="form-control" style="height: 360px; resize: vertical; line-height: 1.6; font-size: 0.9rem;" placeholder="Write your Genuine Student (GS) statement or academic Statement of Purpose here..."></textarea>
 
-            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <div style="margin-top: 0.85rem; display: flex; justify-content: space-between; align-items: center;">
               <div style="font-size: 0.85rem; color: var(--text-secondary);">
                 Words: <strong id="essay-word-count" style="color: var(--text-primary);">0</strong> | Characters: <strong id="essay-char-count" style="color: var(--text-primary);">0</strong>
               </div>
               <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
                 Target Words:
-                <input type="number" id="essay-target-words" class="form-control" value="500" style="width: 80px; padding: 0.2rem 0.5rem;" />
+                <input type="number" id="essay-target-words" class="form-control" value="500" style="width: 75px; padding: 0.2rem 0.5rem;" />
               </div>
             </div>
 
-            <div class="kanban-progress-bar" style="margin-top: 0.75rem; height: 8px;">
+            <div class="kanban-progress-bar" style="margin-top: 0.65rem; height: 6px;">
               <div id="essay-progress-fill" class="kanban-progress-fill" style="width: 0%;"></div>
             </div>
           </div>
 
           <div class="glass-card">
-            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem; font-family: var(--font-heading);">GS Visa Criteria Requirements</h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary);">
-              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Explain why you chose Australia over your home country.</li>
-              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Detail how the CRICOS program aligns with career goals.</li>
-              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Address any study gaps or career switches clearly.</li>
-              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Provide evidence of financial ties to your home country.</li>
+            <h3 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.85rem;">GS Visa Criteria Requirements</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.85rem; color: var(--text-secondary);">
+              <li style="display: flex; gap: 0.45rem;"><i data-lucide="check" style="width: 15px; height: 15px; color: var(--accent-blue);"></i> Explain why you chose Australia over your home country.</li>
+              <li style="display: flex; gap: 0.45rem;"><i data-lucide="check" style="width: 15px; height: 15px; color: var(--accent-blue);"></i> Detail how the CRICOS program aligns with career goals.</li>
+              <li style="display: flex; gap: 0.45rem;"><i data-lucide="check" style="width: 15px; height: 15px; color: var(--accent-blue);"></i> Address any study gaps or career switches clearly.</li>
+              <li style="display: flex; gap: 0.45rem;"><i data-lucide="check" style="width: 15px; height: 15px; color: var(--accent-blue);"></i> Provide evidence of financial ties to your home country.</li>
             </ul>
           </div>
         </div>
@@ -437,28 +436,28 @@
       <!-- ================= VIEW 7: DASHBOARD ANALYTICS ================= -->
       <section id="view-dashboard" class="tab-view">
         <div class="section-header">
-          <h2 class="section-title"><i data-lucide="layout-dashboard" style="color: var(--accent-cyan);"></i> Australian Application Analytics</h2>
+          <h2 class="section-title"><i data-lucide="layout-dashboard" style="color: var(--accent-blue);"></i> Application Analytics</h2>
           <p class="section-subtitle">Real-time status overview of your target universities and document completion.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
           <div class="glass-card">
-            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Tracked Universities</div>
-            <div id="stat-total-apps" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-cyan); margin-top: 0.25rem; font-family: var(--font-heading);">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Tracked Universities</div>
+            <div id="stat-total-apps" style="font-size: 2.25rem; font-weight: 800; color: var(--accent-blue); margin-top: 0.2rem;">0</div>
           </div>
           <div class="glass-card">
-            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Submitted Applications</div>
-            <div id="stat-submitted-apps" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-emerald); margin-top: 0.25rem; font-family: var(--font-heading);">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Submitted Applications</div>
+            <div id="stat-submitted-apps" style="font-size: 2.25rem; font-weight: 800; color: var(--accent-emerald); margin-top: 0.2rem;">0</div>
           </div>
           <div class="glass-card">
-            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Document Checklist Completed</div>
-            <div id="stat-task-progress" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-gold); margin-top: 0.25rem; font-family: var(--font-heading);">0%</div>
+            <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Document Checklist Completed</div>
+            <div id="stat-task-progress" style="font-size: 2.25rem; font-weight: 800; color: var(--accent-amber); margin-top: 0.2rem;">0%</div>
           </div>
         </div>
 
-        <div class="glass-card" style="padding: 2rem;">
-          <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; font-family: var(--font-heading);">Application Stages Distribution</h3>
-          <div style="height: 300px; position: relative;">
+        <div class="glass-card" style="padding: 1.75rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 1.25rem; text-align: center;">Application Stages Distribution</h3>
+          <div style="height: 280px; position: relative;">
             <canvas id="dashboard-chart"></canvas>
           </div>
         </div>
@@ -467,11 +466,11 @@
     </main>
   </div>
 
-  <!-- Details Modal Overlay -->
+  <!-- Modal Overlay -->
   <div id="uni-modal-overlay" class="modal-overlay">
     <div class="modal-card">
       <button class="modal-close" onclick="UniExplorer.closeModal()">
-        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+        <i data-lucide="x" style="width: 18px; height: 18px;"></i>
       </button>
       <div id="uni-modal-content"></div>
     </div>
