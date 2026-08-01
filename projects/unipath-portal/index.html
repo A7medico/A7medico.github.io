@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniPath Australia - Premier Australian University Admissions & Technical Portal</title>
+  <meta name="description" content="Discover Australian Group of Eight (Go8) & top universities, calculate ATAR & IELTS eligibility, track CRICOS requirements, Subclass 500 visa guidelines, and scholarships." />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS Modules -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/kanban.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Navbar -->
+    <header class="navbar">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <i data-lucide="graduation-cap" style="width: 26px; height: 26px;"></i>
+        </div>
+        <div class="brand-text">
+          Uni<span>Path</span>
+          <span class="aus-flag-badge">🇦🇺 Study Australia</span>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="explorer">
+          <i data-lucide="compass" style="width: 16px; height: 16px;"></i> Universities
+        </button>
+        <button class="nav-tab" data-tab="matcher">
+          <i data-lucide="calculator" style="width: 16px; height: 16px;"></i> ATAR Matcher
+        </button>
+        <button class="nav-tab" data-tab="technicalities">
+          <i data-lucide="binary" style="width: 16px; height: 16px;"></i> Technicalities & Visa
+        </button>
+        <button class="nav-tab" data-tab="tracker">
+          <i data-lucide="kanban" style="width: 16px; height: 16px;"></i> Tracker
+        </button>
+        <button class="nav-tab" data-tab="scholarships">
+          <i data-lucide="award" style="width: 16px; height: 16px;"></i> Scholarships
+        </button>
+        <button class="nav-tab" data-tab="essays">
+          <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> GS Statement Hub
+        </button>
+        <button class="nav-tab" data-tab="dashboard">
+          <i data-lucide="layout-dashboard" style="width: 16px; height: 16px;"></i> Dashboard
+        </button>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="user-quick-actions">
+        <button class="btn btn-secondary btn-sm" onclick="App.switchTab('technicalities')">
+          <i data-lucide="wrench" style="width: 14px; height: 14px;"></i> Technical Tools
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Views Container -->
+    <main class="main-content">
+
+      <!-- ================= VIEW 1: AUSTRALIAN UNIVERSITY EXPLORER ================= -->
+      <section id="view-explorer" class="tab-view active">
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i data-lucide="award" style="width: 15px; height: 15px;"></i> Group of Eight (Go8) & Premier Universities
+            </div>
+            <h1 class="hero-title">Study at Australia’s <span>World-Leading Universities</span></h1>
+            <p class="hero-desc">Explore Group of Eight (Go8) research powerhouses, compare CRICOS requirements, convert ATAR cutoffs, and plan your Subclass 500 Student Visa application seamlessly.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="App.switchTab('matcher')">
+                <i data-lucide="target" style="width: 18px; height: 18px;"></i> Calculate My ATAR Match
+              </button>
+              <button class="btn btn-secondary" onclick="App.switchTab('technicalities')">
+                <i data-lucide="binary" style="width: 18px; height: 18px;"></i> Visa & Technical Tools
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <div class="stat-value">Group of 8</div>
+              <div class="stat-label">Go8 Research Institutes</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value">Top 20</div>
+              <div class="stat-label">Global QS Rankings</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value">CRICOS</div>
+              <div class="stat-label">Registered Codes</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value">Subclass 500</div>
+              <div class="stat-label">Visa Ready Engine</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <div class="input-group">
+            <label class="input-label" for="explorer-search">Search Uni, State, or Program</label>
+            <input type="text" id="explorer-search" class="form-control" placeholder="e.g. UniMelb, USYD, Computer Science..." />
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="filter-state">State / Territory</label>
+            <select id="filter-state" class="form-control">
+              <option value="all">All Australian States</option>
+              <option value="Victoria">Victoria (VIC)</option>
+              <option value="New South Wales">New South Wales (NSW)</option>
+              <option value="Queensland">Queensland (QLD)</option>
+              <option value="Australian Capital Territory">Canberra (ACT)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="filter-tuition">Max Annual Fee (AUD)</label>
+            <select id="filter-tuition" class="form-control">
+              <option value="all">Any Tuition</option>
+              <option value="40000">Under AUD $40,000 / yr</option>
+              <option value="45000">Under AUD $45,000 / yr</option>
+              <option value="50000">Under AUD $50,000 / yr</option>
+            </select>
+          </div>
+
+          <div class="input-group" style="justify-content: center;">
+            <label class="input-label" style="margin-bottom: 0.35rem;">Go8 Preference</label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); cursor: pointer;">
+              <input type="checkbox" id="filter-go8" style="accent-color: var(--accent-cyan); width: 16px; height: 16px; cursor: pointer;" />
+              Group of Eight (Go8) Only
+            </label>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="filter-sort">Sort By</label>
+            <select id="filter-sort" class="form-control">
+              <option value="rank">Global Rank</option>
+              <option value="atar">Min ATAR Cutoff</option>
+              <option value="tuition-low">Tuition: Low to High</option>
+              <option value="tuition-high">Tuition: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <div id="uni-results-count" style="font-weight: 800; color: var(--text-secondary); font-size: 0.95rem; font-family: var(--font-heading);">
+            Loading Australian Universities...
+          </div>
+        </div>
+
+        <div id="university-grid" class="card-grid"></div>
+      </section>
+
+      <!-- ================= VIEW 2: ATAR MATCH CALCULATOR ================= -->
+      <section id="view-matcher" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="calculator" style="color: var(--accent-cyan);"></i> Australian ATAR & Entry Calculator</h2>
+          <p class="section-subtitle">Input your secondary scores (ATAR, IB, SAT) and English language results to check your admission eligibility across Australia.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem;">
+          <div class="glass-card">
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem; font-family: var(--font-heading);">Academic Profile</h3>
+            <form id="matcher-form">
+              <div class="input-group" style="margin-bottom: 1rem;">
+                <label class="input-label" for="match-atar">ATAR Equivalent (0 - 99.95)</label>
+                <input type="number" step="0.5" min="50" max="99.95" id="match-atar" class="form-control" value="85.0" required />
+              </div>
+
+              <div class="input-group" style="margin-bottom: 1rem;">
+                <label class="input-label" for="match-gpa">GPA (4.0 Scale)</label>
+                <input type="number" step="0.01" min="0" max="4.0" id="match-gpa" class="form-control" value="3.6" required />
+              </div>
+
+              <div class="input-group" style="margin-bottom: 1rem;">
+                <label class="input-label" for="match-ielts">IELTS Academic Overall Band</label>
+                <input type="number" step="0.5" min="5.0" max="9.0" id="match-ielts" class="form-control" value="6.5" required />
+              </div>
+
+              <div class="input-group" style="margin-bottom: 1rem;">
+                <label class="input-label" for="match-pte">PTE Academic Score</label>
+                <input type="number" min="30" max="90" id="match-pte" class="form-control" value="64" required />
+              </div>
+
+              <div class="input-group" style="margin-bottom: 1.5rem;">
+                <label class="input-label" for="match-budget-aud">Annual Tuition Budget (AUD $)</label>
+                <input type="number" min="20000" step="2000" id="match-budget-aud" class="form-control" value="50000" required />
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i> Calculate Australian Eligibility
+              </button>
+            </form>
+          </div>
+
+          <div id="matcher-results">
+            <div class="glass-card" style="text-align: center; padding: 4rem 2rem;">
+              <i data-lucide="target" style="width: 48px; height: 48px; color: var(--accent-cyan); margin-bottom: 1rem;"></i>
+              <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-heading);">Ready to Calculate Australian Compatibility</h3>
+              <p style="color: var(--text-secondary); max-width: 440px; margin: 0 auto;">Enter your ATAR, GPA, and language test parameters on the left and click 'Calculate Australian Eligibility'.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VIEW 3: TECHNICALITIES & VISA ENGINES ================= -->
+      <section id="view-technicalities" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="binary" style="color: var(--accent-purple);"></i> Technicalities, Conversion & Visa Calculators</h2>
+          <p class="section-subtitle">Real-time engines for IB/GPA to ATAR conversion, Subclass 500 DHA financial proof, and Subclass 485 post-study work rights.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-bottom: 2rem;">
+          
+          <!-- Engine 1: International Grade to ATAR Converter -->
+          <div class="glass-card">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-cyan);">
+              <i data-lucide="arrow-right-left" style="width: 20px; height: 20px;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">ATAR Grade Converter</h3>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1rem;">
+              <label class="input-label" for="calc-ib">IB Diploma Score (out of 45)</label>
+              <input type="number" min="24" max="45" id="calc-ib" class="form-control" value="38" />
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Estimated ATAR: <strong id="out-ib-atar" style="color: var(--accent-cyan); font-size: 1rem;">95.80</strong>
+              </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1rem;">
+              <label class="input-label" for="calc-gpa">US High School GPA (out of 4.0)</label>
+              <input type="number" step="0.05" min="2.5" max="4.0" id="calc-gpa" class="form-control" value="3.80" />
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Estimated ATAR: <strong id="out-gpa-atar" style="color: var(--accent-cyan); font-size: 1rem;">95.00</strong>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label class="input-label" for="calc-cbse">CBSE / Indian Board (%)</label>
+              <input type="number" min="60" max="100" id="calc-cbse" class="form-control" value="92" />
+              <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Estimated ATAR: <strong id="out-cbse-atar" style="color: var(--accent-cyan); font-size: 1rem;">93.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engine 2: Subclass 500 Financial Capacity Calculator -->
+          <div class="glass-card">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-gold);">
+              <i data-lucide="coins" style="width: 20px; height: 20px;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">DHA Financial Proof (Subclass 500)</h3>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0.75rem;">
+              <label class="input-label" for="fin-tuition">1st Year Tuition Fee (AUD $)</label>
+              <input type="number" step="1000" id="fin-tuition" class="form-control" value="46000" />
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 0.75rem;">
+              <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">
+                <input type="checkbox" id="fin-spouse" style="accent-color: var(--accent-gold);" />
+                Include Spouse (+AUD $10,394)
+              </label>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0.75rem;">
+              <label class="input-label" for="fin-children">Number of Child Dependents</label>
+              <input type="number" min="0" max="4" id="fin-children" class="form-control" value="0" />
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1rem;">
+              <label class="input-label" for="fin-oshc-type">OSHC Health Insurance Type</label>
+              <select id="fin-oshc-type" class="form-control">
+                <option value="single">Single Policy (~AUD $650/yr)</option>
+                <option value="couple">Couple Policy (~AUD $2,800/yr)</option>
+                <option value="family">Family Policy (~AUD $4,200/yr)</option>
+              </select>
+            </div>
+
+            <div style="background: rgba(255, 183, 3, 0.08); border: 1px solid rgba(255, 183, 3, 0.3); padding: 0.85rem; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Bank Balance Required for Visa</div>
+              <div id="out-fin-total-aud" style="font-size: 1.4rem; font-weight: 900; color: var(--accent-gold); font-family: var(--font-heading);">AUD $78,360</div>
+              <div id="out-fin-total-usd" style="font-size: 0.85rem; color: var(--text-secondary);">~ USD $50,934</div>
+            </div>
+          </div>
+
+          <!-- Engine 3: Post-Study Work Visa (Subclass 485) Calculator -->
+          <div class="glass-card">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--accent-emerald);">
+              <i data-lucide="briefcase" style="width: 20px; height: 20px;"></i>
+              <h3 style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-heading);">Subclass 485 PSWV Duration</h3>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1rem;">
+              <label class="input-label" for="visa-degree">Qualification Level</label>
+              <select id="visa-degree" class="form-control">
+                <option value="bachelor">Bachelor's Degree (Base 2 Yrs)</option>
+                <option value="master">Master's Degree (Base 3 Yrs)</option>
+                <option value="phd">PhD / Doctorate (Base 4 Yrs)</option>
+              </select>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1.25rem;">
+              <label class="input-label" for="visa-location">Campus Location</label>
+              <select id="visa-location" class="form-control">
+                <option value="metro">Major Gateway City (Sydney / Melbourne)</option>
+                <option value="regional-cat2">Category 2 Regional (+1 Yr Bonus e.g. Adelaide, Perth, Brisbane, Gold Coast, Canberra)</option>
+                <option value="regional-cat3">Category 3 Regional (+2 Yrs Bonus e.g. Wollongong, Newcastle, Geelong)</option>
+              </select>
+            </div>
+
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.85rem; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Post-Study Work Rights</div>
+              <div id="out-pswv-years" style="font-size: 1.35rem; font-weight: 900; color: var(--accent-emerald); font-family: var(--font-heading);">3 Years Full Work Rights</div>
+              <div id="out-pswv-desc" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; line-height: 1.4;">Allows full-time employment anywhere in Australia post-graduation.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Student Work Rights Compliance Banner -->
+        <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-color: var(--border-active);">
+          <i data-lucide="clock" style="width: 36px; height: 36px; color: var(--accent-cyan); flex-shrink: 0;"></i>
+          <div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; font-family: var(--font-heading);">Subclass 500 Student Visa Work Rights Compliance</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+              Under Australian immigration law, international students can work up to <strong>48 hours per fortnight</strong> while your course is in session, and <strong>unlimited hours</strong> during official university breaks and vacations.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= VIEW 4: APPLICATION KANBAN TRACKER ================= -->
+      <section id="view-tracker" class="tab-view">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <h2 class="section-title"><i data-lucide="kanban" style="color: var(--accent-cyan);"></i> Application Pipeline & Visa Tracker</h2>
+            <p class="section-subtitle">Track CRICOS offer letters, Subclass 500 Genuine Student (GS) forms, and deadline countdowns.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="App.switchTab('explorer')">
+            <i data-lucide="plus" style="width: 14px; height: 14px;"></i> Track More Universities
+          </button>
+        </div>
+
+        <div id="kanban-board" class="kanban-board"></div>
+      </section>
+
+      <!-- ================= VIEW 5: SCHOLARSHIPS FINDER ================= -->
+      <section id="view-scholarships" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="award" style="color: var(--accent-gold);"></i> Australian Government & University Scholarships</h2>
+          <p class="section-subtitle">Explore Australia Awards, destination awards, and Go8 merit tuition fee remissions.</p>
+        </div>
+
+        <div class="filter-bar" style="grid-template-columns: 1fr auto; margin-bottom: 1.5rem;">
+          <input type="text" id="scholarship-search" class="form-control" placeholder="Search Australia Awards, Sydney Achievers, Melbourne International..." />
+          <button class="btn btn-primary btn-sm" onclick="UniScholarships.render()">
+            <i data-lucide="search" style="width: 14px; height: 14px;"></i> Search
+          </button>
+        </div>
+
+        <div id="scholarships-grid" class="card-grid"></div>
+      </section>
+
+      <!-- ================= VIEW 6: ESSAY & GS STATEMENT HUB ================= -->
+      <section id="view-essays" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="file-text" style="color: var(--accent-emerald);"></i> Genuine Student (GS) & SOP Statement Workspace</h2>
+          <p class="section-subtitle">Draft your Genuine Student (GS) statement for the Australian Subclass 500 Student Visa & University SOPs.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 2rem;">
+          <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <select id="essay-uni-select" class="form-control" style="width: auto; font-weight: 700;">
+                  <option value="UniMelb">UniMelb - Genuine Student (GS) Form</option>
+                  <option value="USYD">USYD - Statement of Intent</option>
+                  <option value="UNSW">UNSW - Personal Statement</option>
+                  <option value="General-GS">General Australian GS Visa Statement</option>
+                </select>
+                <button class="btn btn-secondary btn-sm" onclick="UniEssays.loadDraft()">Load Draft</button>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="UniEssays.saveDraft()">
+                <i data-lucide="save" style="width: 14px; height: 14px;"></i> Save Draft
+              </button>
+            </div>
+
+            <textarea id="essay-textarea" class="form-control" style="height: 380px; resize: vertical; line-height: 1.7; font-size: 0.95rem;" placeholder="Write your Genuine Student (GS) statement or academic Statement of Purpose here..."></textarea>
+
+            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                Words: <strong id="essay-word-count" style="color: var(--text-primary);">0</strong> | Characters: <strong id="essay-char-count" style="color: var(--text-primary);">0</strong>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+                Target Words:
+                <input type="number" id="essay-target-words" class="form-control" value="500" style="width: 80px; padding: 0.2rem 0.5rem;" />
+              </div>
+            </div>
+
+            <div class="kanban-progress-bar" style="margin-top: 0.75rem; height: 8px;">
+              <div id="essay-progress-fill" class="kanban-progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem; font-family: var(--font-heading);">GS Visa Criteria Requirements</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary);">
+              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Explain why you chose Australia over your home country.</li>
+              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Detail how the CRICOS program aligns with career goals.</li>
+              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Address any study gaps or career switches clearly.</li>
+              <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> Provide evidence of financial ties to your home country.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VIEW 7: DASHBOARD ANALYTICS ================= -->
+      <section id="view-dashboard" class="tab-view">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="layout-dashboard" style="color: var(--accent-cyan);"></i> Australian Application Analytics</h2>
+          <p class="section-subtitle">Real-time status overview of your target universities and document completion.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+          <div class="glass-card">
+            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Tracked Universities</div>
+            <div id="stat-total-apps" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-cyan); margin-top: 0.25rem; font-family: var(--font-heading);">0</div>
+          </div>
+          <div class="glass-card">
+            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Submitted Applications</div>
+            <div id="stat-submitted-apps" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-emerald); margin-top: 0.25rem; font-family: var(--font-heading);">0</div>
+          </div>
+          <div class="glass-card">
+            <div style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase;">Document Checklist Completed</div>
+            <div id="stat-task-progress" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-gold); margin-top: 0.25rem; font-family: var(--font-heading);">0%</div>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 2rem;">
+          <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; font-family: var(--font-heading);">Application Stages Distribution</h3>
+          <div style="height: 300px; position: relative;">
+            <canvas id="dashboard-chart"></canvas>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Details Modal Overlay -->
+  <div id="uni-modal-overlay" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="UniExplorer.closeModal()">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+      <div id="uni-modal-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- App Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/explorer.js"></script>
+  <script src="js/matcher.js"></script>
+  <script src="js/conversion.js"></script>
+  <script src="js/financials.js"></script>
+  <script src="js/visa.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/scholarships.js"></script>
+  <script src="js/essays.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
