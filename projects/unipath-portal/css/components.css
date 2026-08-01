@@ -7,10 +7,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  gap: 0.55rem;
+  padding: 0.7rem 1.35rem;
   font-family: var(--font-main);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
@@ -21,15 +21,14 @@
 }
 
 .btn-primary {
-  background: var(--accent-blue);
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-indigo-hover));
   color: #ffffff;
-  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--accent-blue-hover);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -42,27 +41,28 @@
 .btn-secondary:hover {
   background: var(--bg-subtle);
   border-color: var(--text-secondary);
+  transform: translateY(-1px);
 }
 
 .btn-sm {
-  padding: 0.35rem 0.75rem;
-  font-size: 0.8rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.825rem;
   border-radius: var(--radius-sm);
 }
 
 /* Card Grids */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
-/* Glass & Solid Cards */
+/* Cards */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
+  padding: 1.85rem;
   position: relative;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
@@ -86,14 +86,14 @@
 }
 
 .uni-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--border-strong);
+  border-color: var(--border-active);
 }
 
 .uni-card-header {
   position: relative;
-  height: 170px;
+  height: 180px;
   background: #0f172a;
   overflow: hidden;
 }
@@ -102,11 +102,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .uni-card:hover .uni-card-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .uni-card-overlay {
@@ -117,55 +117,55 @@
 
 .go8-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px;
+  left: 14px;
   z-index: 2;
   background: #fef3c7;
   color: #92400e;
   border: 1px solid #fde68a;
-  font-size: 0.75rem;
+  font-size: 0.775rem;
   font-weight: 700;
-  padding: 0.25rem 0.6rem;
+  padding: 0.3rem 0.7rem;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   box-shadow: var(--shadow-sm);
 }
 
 .uni-rank-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   z-index: 2;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 0.775rem;
   font-weight: 700;
-  padding: 0.25rem 0.6rem;
+  padding: 0.3rem 0.7rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .uni-title-row {
-  padding: 1.25rem 1.25rem 0.25rem 1.25rem;
+  padding: 1.35rem 1.35rem 0.35rem 1.35rem;
 }
 
 .uni-name {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.3;
 }
 
 .uni-location {
-  padding: 0 1.25rem 1rem 1.25rem;
+  padding: 0 1.35rem 1.15rem 1.35rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
+  gap: 0.45rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -175,8 +175,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   background: var(--bg-subtle);
-  padding: 0.85rem;
-  margin: 0 1.25rem 1rem 1.25rem;
+  padding: 0.95rem;
+  margin: 0 1.35rem 1.15rem 1.35rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
   text-align: center;
@@ -189,7 +189,7 @@
 
 .mini-val {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--text-primary);
 }
@@ -199,23 +199,23 @@
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
 }
 
 .uni-tags {
-  padding: 0 1.25rem 1.25rem 1.25rem;
+  padding: 0 1.35rem 1.35rem 1.35rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.2rem 0.55rem;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
-  font-size: 0.725rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -226,11 +226,11 @@
 
 .uni-footer {
   margin-top: auto;
-  padding: 1rem 1.25rem;
+  padding: 1.15rem 1.35rem;
   border-top: 1px solid var(--border-subtle);
   background: var(--bg-card);
   display: flex;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 /* Modals */
@@ -239,14 +239,14 @@
   inset: 0;
   z-index: 1000;
   background: var(--bg-overlay);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.25s ease;
 }
 
 .modal-overlay.active {
@@ -257,15 +257,15 @@
 .modal-card {
   background: #ffffff;
   border-radius: var(--radius-lg);
-  max-width: 720px;
+  max-width: 760px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 2rem;
+  padding: 2.25rem;
   position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.3);
   transform: scale(0.95);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-overlay.active .modal-card {
@@ -274,12 +274,12 @@
 
 .modal-close {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 1.35rem;
+  right: 1.35rem;
   background: var(--bg-subtle);
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
