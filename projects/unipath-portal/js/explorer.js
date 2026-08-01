@@ -5,6 +5,8 @@
 window.UniExplorer = {
   currentFilters: {
     search: '',
+    country: 'all',
+    institutionType: 'all',
     state: 'all',
     go8Only: false,
     maxTuitionAud: 'all',
@@ -18,6 +20,8 @@ window.UniExplorer = {
 
   bindEvents() {
     const searchInput = document.getElementById('explorer-search');
+    const countrySelect = document.getElementById('filter-country');
+    const typeSelect = document.getElementById('filter-type');
     const stateSelect = document.getElementById('filter-state');
     const go8Toggle = document.getElementById('filter-go8');
     const tuitionSelect = document.getElementById('filter-tuition');
@@ -25,6 +29,16 @@ window.UniExplorer = {
 
     if (searchInput) searchInput.addEventListener('input', (e) => {
       this.currentFilters.search = e.target.value.toLowerCase().trim();
+      this.render();
+    });
+
+    if (countrySelect) countrySelect.addEventListener('change', (e) => {
+      this.currentFilters.country = e.target.value;
+      this.render();
+    });
+
+    if (typeSelect) typeSelect.addEventListener('change', (e) => {
+      this.currentFilters.institutionType = e.target.value;
       this.render();
     });
 
@@ -60,8 +74,18 @@ window.UniExplorer = {
         u.city.toLowerCase().includes(q) ||
         u.state.toLowerCase().includes(q) ||
         u.cricos.toLowerCase().includes(q) ||
-        u.programs.some(p => p.toLowerCase().includes(q))
+        (u.programs && u.programs.some(p => p.toLowerCase().includes(q)))
       );
+    }
+
+    // Country filter
+    if (this.currentFilters.country !== 'all') {
+      list = list.filter(u => u.country === this.currentFilters.country);
+    }
+
+    // Institution Type filter
+    if (this.currentFilters.institutionType !== 'all') {
+      list = list.filter(u => u.institutionType === this.currentFilters.institutionType);
     }
 
     // State filter
@@ -98,14 +122,14 @@ window.UniExplorer = {
     if (!grid) return;
 
     const data = this.getFilteredData();
-    if (countBadge) countBadge.textContent = `${data.length} Australian Universities Featured`;
+    if (countBadge) countBadge.textContent = `${data.length} Institutions Featured`;
 
     if (data.length === 0) {
       grid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;" class="glass-card">
           <i data-lucide="search-x" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 1rem;"></i>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">No Australian universities match your search criteria</h3>
-          <p style="color: var(--text-secondary); max-width: 450px; margin: 0 auto;">Try unchecking Go8 filter or resetting state filters.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">No institutions match your search criteria</h3>
+          <p style="color: var(--text-secondary); max-width: 450px; margin: 0 auto;">Try clearing some filters.</p>
         </div>
       `;
       if (window.lucide) window.lucide.createIcons();
@@ -118,7 +142,7 @@ window.UniExplorer = {
           <img src="${uni.image}" alt="${uni.name}" class="uni-card-img" />
           <div class="uni-card-overlay"></div>
           ${uni.isGo8 ? `<div class="go8-badge"><i data-lucide="award" style="width: 12px; height: 12px;"></i> Group of Eight</div>` : ''}
-          <div class="uni-rank-badge">World #${uni.worldRank}</div>
+          ${uni.worldRank < 999 ? `<div class="uni-rank-badge">World #${uni.worldRank}</div>` : ''}
         </div>
 
         <div class="uni-title-row">
@@ -127,37 +151,37 @@ window.UniExplorer = {
 
         <div class="uni-location">
           <i data-lucide="map-pin" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
-          <span>${uni.city} • Australia</span>
+          <span>${uni.city} • ${uni.country}</span>
         </div>
 
         <div class="uni-stats-grid">
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.atarEquivalent}+</span>
+            <span class="mini-val">${uni.atarEquivalent > 0 ? uni.atarEquivalent + '+' : 'N/A'}</span>
             <span class="mini-lbl">Min ATAR</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">AUD $${(uni.tuitionAud / 1000).toFixed(1)}k</span>
+            <span class="mini-val">${uni.country === 'New Zealand' ? 'NZD' : 'AUD'} $${(uni.tuitionAud / 1000).toFixed(1)}k</span>
             <span class="mini-lbl">Tuition/Yr</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.minIelts}</span>
+            <span class="mini-val">${uni.minIelts > 0 ? uni.minIelts : 'N/A'}</span>
             <span class="mini-lbl">IELTS</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.minPte}+</span>
+            <span class="mini-val">${uni.minPte > 0 ? uni.minPte + '+' : 'N/A'}</span>
             <span class="mini-lbl">PTE</span>
           </div>
         </div>
 
         <div class="uni-tags">
-          <span class="tag tag-cyan">CRICOS: ${uni.cricos}</span>
-          <span class="tag tag-gold">Sem 1 & Sem 2 Intake</span>
+          ${uni.cricos !== 'N/A' ? `<span class="tag tag-cyan">CRICOS: ${uni.cricos}</span>` : ''}
+          <span class="tag tag-gold">${uni.institutionType}</span>
           ${uni.tags.slice(0, 2).map(t => `<span class="tag tag-purple">${t}</span>`).join('')}
         </div>
 
         <div class="uni-footer">
           <button class="btn btn-secondary btn-sm" onclick="UniExplorer.showModal('${uni.id}')" style="flex: 1;">
-            <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details & Entry
+            <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
           </button>
           <button class="btn btn-primary btn-sm" onclick="UniTracker.addUniversity('${uni.id}')">
             <i data-lucide="plus" style="width: 14px; height: 14px;"></i> Track
@@ -183,12 +207,12 @@ window.UniExplorer = {
         <div>
           <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.35rem;">
             ${uni.isGo8 ? '<span class="tag tag-purple" style="font-weight: 800;"><i data-lucide="award" style="width: 12px; height: 12px;"></i> Group of Eight (Go8)</span>' : ''}
-            <span class="tag tag-cyan">CRICOS Code: ${uni.cricos}</span>
-            <span class="tag tag-gold">Global Rank #${uni.worldRank}</span>
+            ${uni.cricos !== 'N/A' ? `<span class="tag tag-cyan">CRICOS Code: ${uni.cricos}</span>` : ''}
+            ${uni.worldRank < 999 ? `<span class="tag tag-gold">Global Rank #${uni.worldRank}</span>` : ''}
           </div>
           <h2 style="font-size: 1.75rem; font-weight: 900; line-height: 1.2; margin-bottom: 0.4rem; color: var(--text-primary);">${uni.name}</h2>
           <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <i data-lucide="map-pin" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> ${uni.city}, ${uni.state}, Australia
+            <i data-lucide="map-pin" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> ${uni.city}, ${uni.state}, ${uni.country}
           </div>
         </div>
       </div>
@@ -197,19 +221,19 @@ window.UniExplorer = {
 
       <div class="uni-stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem; padding: 1rem;">
         <div class="uni-mini-stat">
-          <span class="mini-val" style="color: var(--accent-cyan);">${uni.atarEquivalent}+</span>
+          <span class="mini-val" style="color: var(--accent-cyan);">${uni.atarEquivalent > 0 ? uni.atarEquivalent + '+' : 'N/A'}</span>
           <span class="mini-lbl">Min ATAR Equivalent</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">AUD $${uni.tuitionAud.toLocaleString()}</span>
+          <span class="mini-val">${uni.country === 'New Zealand' ? 'NZD' : 'AUD'} $${uni.tuitionAud.toLocaleString()}</span>
           <span class="mini-lbl">Annual Tuition</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">IELTS ${uni.minIelts}</span>
+          <span class="mini-val">${uni.minIelts > 0 ? 'IELTS ' + uni.minIelts : 'N/A'}</span>
           <span class="mini-lbl">English Requirement</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">PTE ${uni.minPte}+</span>
+          <span class="mini-val">${uni.minPte > 0 ? 'PTE ' + uni.minPte + '+' : 'N/A'}</span>
           <span class="mini-lbl">PTE Academic</span>
         </div>
       </div>

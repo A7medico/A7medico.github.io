@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UniPath Australia — Official Australian University Admissions & Technical Portal</title>
+  <title>UniPath Oceania — Official University Admissions & Technical Portal</title>
   <meta name="description" content="Discover Australian Group of Eight (Go8) & top universities, calculate ATAR & IELTS eligibility, track CRICOS requirements, Subclass 500 visa guidelines, and scholarships." />
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
@@ -34,7 +34,7 @@
         </div>
         <div class="brand-text">
           Uni<span>Path</span>
-          <span class="aus-flag-badge">🇦🇺 Australia</span>
+          <span class="aus-flag-badge">🇦🇺 🇳🇿 Oceania</span>
         </div>
       </a>
 
@@ -81,8 +81,8 @@
             <div class="hero-badge">
               <i data-lucide="award" style="width: 14px; height: 14px;"></i> Group of Eight (Go8) & Premier Universities
             </div>
-            <h1 class="hero-title">Study at Australia’s <span>Top Universities</span></h1>
-            <p class="hero-desc">Compare entry requirements, CRICOS codes, ATAR cutoffs, and Subclass 500 student visa benchmarks across Australia's leading research institutions.</p>
+            <h1 class="hero-title">Study at <span>Top Universities & Language Institutes in Oceania</span></h1>
+            <p class="hero-desc">Compare entry requirements, ATAR cutoffs, and visas across Australia and New Zealand's leading institutions.</p>
             <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
               <button class="btn btn-primary" onclick="App.switchTab('matcher')">
                 <i data-lucide="target" style="width: 16px; height: 16px;"></i> Calculate ATAR Cutoff
@@ -121,13 +121,33 @@
           </div>
 
           <div class="input-group">
+            <label class="input-label" for="filter-country">Country</label>
+            <select id="filter-country" class="form-control">
+              <option value="all">All Countries</option>
+              <option value="Australia">Australia</option>
+              <option value="New Zealand">New Zealand</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="filter-type">Institution Type</label>
+            <select id="filter-type" class="form-control">
+              <option value="all">All Types</option>
+              <option value="University">Universities</option>
+              <option value="Language Institute">Language Institutes</option>
+            </select>
+          </div>
+
+          <div class="input-group">
             <label class="input-label" for="filter-state">State / Territory</label>
             <select id="filter-state" class="form-control">
-              <option value="all">All Australian States</option>
+              <option value="all">All States/Regions</option>
               <option value="Victoria">Victoria (VIC)</option>
               <option value="New South Wales">New South Wales (NSW)</option>
               <option value="Queensland">Queensland (QLD)</option>
               <option value="Australian Capital Territory">Canberra (ACT)</option>
+              <option value="Auckland">Auckland (NZ)</option>
+              <option value="Otago">Otago (NZ)</option>
             </select>
           </div>
 
@@ -162,7 +182,7 @@
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
           <div id="uni-results-count" style="font-weight: 700; color: var(--text-secondary); font-size: 0.9rem;">
-            Loading Australian Universities...
+            Loading Institutions...
           </div>
         </div>
 
