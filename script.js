@@ -2,30 +2,14 @@
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   if (loader) {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      startBootSequence();
-    }, 600);
+    setTimeout(() => loader.classList.add('hidden'), 400);
   }
 });
 
-// ===== BOOT SEQUENCE — staggered line reveal =====
-function startBootSequence() {
-  const bootLines = document.querySelectorAll('#boot_sequence .boot-line');
-  bootLines.forEach((line) => {
-    const delay = parseInt(line.dataset.delay, 10) || 0;
-    setTimeout(() => {
-      line.classList.add('visible');
-    }, delay);
-  });
-}
-
-// ===== SCROLL REVEAL — fade in as "command output" =====
+// ===== SCROLL REVEAL =====
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ===== NAVBAR SCROLL =====
@@ -53,26 +37,23 @@ menuToggle.addEventListener('click', () => {
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
-    menuToggle.querySelectorAll('span').forEach(s => {
-      s.style.transform = '';
-      s.style.opacity = '';
-    });
+    menuToggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
   });
 });
 
-// ===== GREEN/AMBER CRT MODE TOGGLE =====
+// ===== DARK/LIGHT MODE TOGGLE =====
 const themeToggle = document.getElementById('theme_toggle');
 const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme === 'amber') {
-  document.body.classList.add('amber');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
 }
 themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('amber');
-  const isAmber = document.body.classList.contains('amber');
-  localStorage.setItem('portfolio-theme', isAmber ? 'amber' : 'green');
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
 });
 
-// ===== TYPING EFFECT — terminal style =====
+// ===== TYPING EFFECT =====
 const typingEl = document.getElementById('typing_text');
 const roles = ['Computer Engineer', 'ML Engineer', 'IoT Security Researcher', 'Full-Stack Developer'];
 let roleIdx = 0, charIdx = 0, deleting = false;
@@ -82,7 +63,7 @@ function typeEffect() {
     typingEl.textContent = current.substring(0, charIdx + 1);
     charIdx++;
     if (charIdx === current.length) {
-      setTimeout(() => { deleting = true; typeEffect(); }, 2500);
+      setTimeout(() => { deleting = true; typeEffect(); }, 2000);
       return;
     }
   } else {
@@ -93,11 +74,11 @@ function typeEffect() {
       roleIdx = (roleIdx + 1) % roles.length;
     }
   }
-  setTimeout(typeEffect, deleting ? 30 : 70);
+  setTimeout(typeEffect, deleting ? 40 : 80);
 }
-setTimeout(typeEffect, 2000);
+setTimeout(typeEffect, 1000);
 
-// ===== ANIMATED COUNTERS — rapid terminal counting =====
+// ===== ANIMATED COUNTERS =====
 const counters = document.querySelectorAll('[data-count]');
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -107,16 +88,62 @@ const counterObserver = new IntersectionObserver((entries) => {
       const suffix = e.target.dataset.suffix || '';
       const isFloat = target % 1 !== 0;
       let current = 0;
-      const step = target / 40; // faster counting
+      const step = target / 60;
       const timer = setInterval(() => {
         current += step;
         if (current >= target) { current = target; clearInterval(timer); }
         e.target.textContent = (isFloat ? current.toFixed(1) : Math.floor(current)) + suffix;
-      }, 15);
+      }, 20);
     }
   });
 }, { threshold: 0.5 });
 counters.forEach(el => counterObserver.observe(el));
+
+// ===== GRID CANVAS BACKGROUND =====
+const canvas = document.getElementById('hero_canvas');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  function resize() {
+    w = canvas.width = canvas.parentElement.offsetWidth;
+    h = canvas.height = canvas.parentElement.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 50; i++) {
+    particles.push({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 1
+    });
+  }
+  function drawParticles() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = 'rgba(59,130,246,0.3)';
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+    });
+    // Lines between close particles
+    ctx.strokeStyle = 'rgba(59,130,246,0.06)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        if (dx * dx + dy * dy < 25000) {
+          ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+}
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -136,10 +163,12 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    // Disable button and show loading state
     submitBtn.disabled = true;
-    submitBtn.querySelector('.btn-submit-text').textContent = '$ sending...';
+    submitBtn.querySelector('.btn-submit-text').textContent = 'Sending...';
     submitBtn.querySelector('.btn-submit-icon').textContent = '⏳';
     
+    // Hide any previous feedback
     formFeedback.className = 'form-feedback';
     formFeedback.textContent = '';
     
@@ -152,47 +181,19 @@ if (contactForm) {
       });
       
       if (response.ok) {
-        formFeedback.textContent = '[OK] Message sent successfully. Awaiting response...';
+        formFeedback.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
         formFeedback.className = 'form-feedback success show';
         contactForm.reset();
       } else {
         throw new Error('Server error');
       }
     } catch (err) {
-      formFeedback.textContent = '[ERR] Transmission failed. Try direct email.';
+      formFeedback.textContent = '❌ Something went wrong. Please try emailing me directly.';
       formFeedback.className = 'form-feedback error show';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.querySelector('.btn-submit-text').textContent = '$ send_message';
-      submitBtn.querySelector('.btn-submit-icon').textContent = '⏎';
+      submitBtn.querySelector('.btn-submit-text').textContent = 'Send Message';
+      submitBtn.querySelector('.btn-submit-icon').textContent = '→';
     }
   });
 }
-
-// ===== GLITCH TEXT EFFECT ON CMD HEADERS =====
-document.querySelectorAll('.cmd-header').forEach(header => {
-  header.addEventListener('mouseenter', () => {
-    header.style.animation = 'glitch-1 0.3s ease';
-    setTimeout(() => { header.style.animation = ''; }, 300);
-  });
-});
-
-// ===== RANDOM CRT SCREEN FLICKER =====
-function randomFlicker() {
-  const body = document.body;
-  const flickerChance = Math.random();
-  if (flickerChance < 0.03) { // 3% chance per tick
-    body.style.opacity = '0.97';
-    setTimeout(() => {
-      body.style.opacity = '1';
-    }, 50 + Math.random() * 100);
-  }
-  setTimeout(randomFlicker, 3000 + Math.random() * 5000);
-}
-setTimeout(randomFlicker, 5000);
-
-// ===== TERMINAL-STYLE CURRENT TIME IN CONSOLE =====
-console.log('%c╔══════════════════════════════════╗', 'color: #00ff41');
-console.log('%c║  Ahmad Ismail — Portfolio v2.0   ║', 'color: #00ff41; font-weight: bold');
-console.log('%c║  github.com/A7medico             ║', 'color: #00ff41');
-console.log('%c╚══════════════════════════════════╝', 'color: #00ff41');
