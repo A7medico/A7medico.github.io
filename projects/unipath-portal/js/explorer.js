@@ -5,8 +5,6 @@
 window.UniExplorer = {
   currentFilters: {
     search: '',
-    country: 'all',
-    institutionType: 'all',
     state: 'all',
     go8Only: false,
     maxTuitionAud: 'all',
@@ -20,8 +18,6 @@ window.UniExplorer = {
 
   bindEvents() {
     const searchInput = document.getElementById('explorer-search');
-    const countrySelect = document.getElementById('filter-country');
-    const typeSelect = document.getElementById('filter-type');
     const stateSelect = document.getElementById('filter-state');
     const go8Toggle = document.getElementById('filter-go8');
     const tuitionSelect = document.getElementById('filter-tuition');
@@ -29,16 +25,6 @@ window.UniExplorer = {
 
     if (searchInput) searchInput.addEventListener('input', (e) => {
       this.currentFilters.search = e.target.value.toLowerCase().trim();
-      this.render();
-    });
-
-    if (countrySelect) countrySelect.addEventListener('change', (e) => {
-      this.currentFilters.country = e.target.value;
-      this.render();
-    });
-
-    if (typeSelect) typeSelect.addEventListener('change', (e) => {
-      this.currentFilters.institutionType = e.target.value;
       this.render();
     });
 
@@ -74,18 +60,8 @@ window.UniExplorer = {
         u.city.toLowerCase().includes(q) ||
         u.state.toLowerCase().includes(q) ||
         u.cricos.toLowerCase().includes(q) ||
-        (u.programs && u.programs.some(p => p.toLowerCase().includes(q)))
+        u.programs.some(p => p.toLowerCase().includes(q))
       );
-    }
-
-    // Country filter
-    if (this.currentFilters.country !== 'all') {
-      list = list.filter(u => u.country === this.currentFilters.country);
-    }
-
-    // Institution Type filter
-    if (this.currentFilters.institutionType !== 'all') {
-      list = list.filter(u => u.institutionType === this.currentFilters.institutionType);
     }
 
     // State filter
@@ -122,14 +98,14 @@ window.UniExplorer = {
     if (!grid) return;
 
     const data = this.getFilteredData();
-    if (countBadge) countBadge.textContent = `${data.length} Institutions Featured`;
+    if (countBadge) countBadge.textContent = `${data.length} Australian Universities Featured`;
 
     if (data.length === 0) {
       grid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;" class="glass-card">
           <i data-lucide="search-x" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 1rem;"></i>
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">No institutions match your search criteria</h3>
-          <p style="color: var(--text-secondary); max-width: 450px; margin: 0 auto;">Try clearing some filters.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">No Australian universities match your search criteria</h3>
+          <p style="color: var(--text-secondary); max-width: 450px; margin: 0 auto;">Try unchecking Go8 filter or resetting state filters.</p>
         </div>
       `;
       if (window.lucide) window.lucide.createIcons();
@@ -142,7 +118,7 @@ window.UniExplorer = {
           <img src="${uni.image}" alt="${uni.name}" class="uni-card-img" />
           <div class="uni-card-overlay"></div>
           ${uni.isGo8 ? `<div class="go8-badge"><i data-lucide="award" style="width: 12px; height: 12px;"></i> Group of Eight</div>` : ''}
-          ${uni.worldRank < 999 ? `<div class="uni-rank-badge">World #${uni.worldRank}</div>` : ''}
+          <div class="uni-rank-badge">World #${uni.worldRank}</div>
         </div>
 
         <div class="uni-title-row">
@@ -151,37 +127,37 @@ window.UniExplorer = {
 
         <div class="uni-location">
           <i data-lucide="map-pin" style="width: 14px; height: 14px; color: var(--accent-cyan);"></i>
-          <span>${uni.city} • ${uni.country}</span>
+          <span>${uni.city} • Australia</span>
         </div>
 
         <div class="uni-stats-grid">
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.atarEquivalent > 0 ? uni.atarEquivalent + '+' : 'N/A'}</span>
+            <span class="mini-val">${uni.atarEquivalent}+</span>
             <span class="mini-lbl">Min ATAR</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.country === 'New Zealand' ? 'NZD' : 'AUD'} $${(uni.tuitionAud / 1000).toFixed(1)}k</span>
+            <span class="mini-val">AUD $${(uni.tuitionAud / 1000).toFixed(1)}k</span>
             <span class="mini-lbl">Tuition/Yr</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.minIelts > 0 ? uni.minIelts : 'N/A'}</span>
+            <span class="mini-val">${uni.minIelts}</span>
             <span class="mini-lbl">IELTS</span>
           </div>
           <div class="uni-mini-stat">
-            <span class="mini-val">${uni.minPte > 0 ? uni.minPte + '+' : 'N/A'}</span>
+            <span class="mini-val">${uni.minPte}+</span>
             <span class="mini-lbl">PTE</span>
           </div>
         </div>
 
         <div class="uni-tags">
-          ${uni.cricos !== 'N/A' ? `<span class="tag tag-cyan">CRICOS: ${uni.cricos}</span>` : ''}
-          <span class="tag tag-gold">${uni.institutionType}</span>
+          <span class="tag tag-cyan">CRICOS: ${uni.cricos}</span>
+          <span class="tag tag-gold">Sem 1 & Sem 2 Intake</span>
           ${uni.tags.slice(0, 2).map(t => `<span class="tag tag-purple">${t}</span>`).join('')}
         </div>
 
         <div class="uni-footer">
           <button class="btn btn-secondary btn-sm" onclick="UniExplorer.showModal('${uni.id}')" style="flex: 1;">
-            <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details
+            <i data-lucide="info" style="width: 14px; height: 14px;"></i> Details & Entry
           </button>
           <button class="btn btn-primary btn-sm" onclick="UniTracker.addUniversity('${uni.id}')">
             <i data-lucide="plus" style="width: 14px; height: 14px;"></i> Track
@@ -207,12 +183,12 @@ window.UniExplorer = {
         <div>
           <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.35rem;">
             ${uni.isGo8 ? '<span class="tag tag-purple" style="font-weight: 800;"><i data-lucide="award" style="width: 12px; height: 12px;"></i> Group of Eight (Go8)</span>' : ''}
-            ${uni.cricos !== 'N/A' ? `<span class="tag tag-cyan">CRICOS Code: ${uni.cricos}</span>` : ''}
-            ${uni.worldRank < 999 ? `<span class="tag tag-gold">Global Rank #${uni.worldRank}</span>` : ''}
+            <span class="tag tag-cyan">CRICOS Code: ${uni.cricos}</span>
+            <span class="tag tag-gold">Global Rank #${uni.worldRank}</span>
           </div>
           <h2 style="font-size: 1.75rem; font-weight: 900; line-height: 1.2; margin-bottom: 0.4rem; color: var(--text-primary);">${uni.name}</h2>
           <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <i data-lucide="map-pin" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> ${uni.city}, ${uni.state}, ${uni.country}
+            <i data-lucide="map-pin" style="width: 16px; height: 16px; color: var(--accent-cyan);"></i> ${uni.city}, ${uni.state}, Australia
           </div>
         </div>
       </div>
@@ -221,19 +197,19 @@ window.UniExplorer = {
 
       <div class="uni-stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem; padding: 1rem;">
         <div class="uni-mini-stat">
-          <span class="mini-val" style="color: var(--accent-cyan);">${uni.atarEquivalent > 0 ? uni.atarEquivalent + '+' : 'N/A'}</span>
+          <span class="mini-val" style="color: var(--accent-cyan);">${uni.atarEquivalent}+</span>
           <span class="mini-lbl">Min ATAR Equivalent</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">${uni.country === 'New Zealand' ? 'NZD' : 'AUD'} $${uni.tuitionAud.toLocaleString()}</span>
+          <span class="mini-val">AUD $${uni.tuitionAud.toLocaleString()}</span>
           <span class="mini-lbl">Annual Tuition</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">${uni.minIelts > 0 ? 'IELTS ' + uni.minIelts : 'N/A'}</span>
+          <span class="mini-val">IELTS ${uni.minIelts}</span>
           <span class="mini-lbl">English Requirement</span>
         </div>
         <div class="uni-mini-stat">
-          <span class="mini-val">${uni.minPte > 0 ? 'PTE ' + uni.minPte + '+' : 'N/A'}</span>
+          <span class="mini-val">PTE ${uni.minPte}+</span>
           <span class="mini-lbl">PTE Academic</span>
         </div>
       </div>
@@ -241,22 +217,59 @@ window.UniExplorer = {
       <div style="background: rgba(255, 183, 3, 0.08); border: 1px solid rgba(255, 183, 3, 0.3); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
         <i data-lucide="calendar" style="width: 28px; height: 28px; color: var(--accent-gold); flex-shrink: 0;"></i>
         <div>
-          <div style="font-weight: 700; font-size: 0.9rem; color: var(--accent-gold);">Australian Academic Intakes</div>
+          <div style="font-weight: 700; font-size: 0.9rem; color: var(--accent-gold);">Australian Academic Intakes & Portal Info</div>
           <div style="font-size: 0.85rem; color: var(--text-secondary);">
-            • <strong>Semester 1 (Feb/March Start)</strong>: Application Deadline <strong>${uni.sem1Deadline}</strong><br/>
-            • <strong>Semester 2 (July Start)</strong>: Application Deadline <strong>${uni.sem2Deadline}</strong>
+            • <strong>Semester 1 (Feb/March Start)</strong>: Deadline <strong>${uni.sem1Deadline}</strong><br/>
+            • <strong>Semester 2 (July Start)</strong>: Deadline <strong>${uni.sem2Deadline}</strong><br/>
+            ${uni.applicationPortal ? `• <strong>Application Portal</strong>: ${uni.applicationPortal.portalName} (${uni.applicationPortal.fee})` : ''}
           </div>
         </div>
       </div>
 
-      <h4 style="font-size: 1rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary);">Featured Undergraduate Programs</h4>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-        ${uni.programs.map(p => `<span class="tag tag-emerald">${p}</span>`).join('')}
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+        <i data-lucide="graduation-cap" style="width: 18px; height: 18px; color: var(--accent-cyan);"></i> 1. Academic Entry Qualifications & Minimum Thresholds
+      </h4>
+      ${uni.academicRequirements ? `
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <div><strong>ATAR / Selection Rank:</strong> ${uni.academicRequirements.atar}</div>
+        <div><strong>IB Diploma:</strong> ${uni.academicRequirements.ib}</div>
+        <div><strong>GCE A-Levels:</strong> ${uni.academicRequirements.aLevels}</div>
+        <div><strong>SAT / ACT & APs:</strong> ${uni.academicRequirements.sat}</div>
+        <div><strong>Indian CBSE / ISC:</strong> ${uni.academicRequirements.cbse}</div>
+        <div><strong>Chinese Gaokao:</strong> ${uni.academicRequirements.gaokao}</div>
       </div>
+      ` : ''}
 
-      <h4 style="font-size: 1rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary);">Australian Visa Subclass 500 & Entry Requirements</h4>
-      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.75rem;">
-        ${uni.requirements.map(req => `
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+        <i data-lucide="languages" style="width: 18px; height: 18px; color: var(--accent-cyan);"></i> 2. English Language Proficiency Requirements
+      </h4>
+      ${uni.englishRequirements ? `
+      <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.6;">
+        <div>• <strong>IELTS Academic:</strong> ${uni.englishRequirements.ielts}</div>
+        <div>• <strong>PTE Academic:</strong> ${uni.englishRequirements.pte}</div>
+        <div>• <strong>TOEFL iBT:</strong> ${uni.englishRequirements.toefl}</div>
+        <div>• <strong>Cambridge C1/C2:</strong> ${uni.englishRequirements.cambridge}</div>
+        ${uni.englishRequirements.notes ? `<div style="margin-top: 0.5rem; color: var(--accent-gold); font-size: 0.85rem; font-style: italic;">* ${uni.englishRequirements.notes}</div>` : ''}
+      </div>
+      ` : ''}
+
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+        <i data-lucide="book-open" style="width: 18px; height: 18px; color: var(--accent-cyan);"></i> 3. Subject Prerequisites & Special Requirements
+      </h4>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        ${(uni.coursePrerequisites || []).map(p => `
+          <li style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+            <i data-lucide="check" style="width: 16px; height: 16px; color: var(--accent-emerald); flex-shrink: 0; margin-top: 2px;"></i>
+            <span>${p}</span>
+          </li>
+        `).join('')}
+      </ul>
+
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+        <i data-lucide="file-check" style="width: 18px; height: 18px; color: var(--accent-cyan);"></i> 4. Mandatory Document Checklist & Subclass 500 Visa Requirements
+      </h4>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.75rem; background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        ${(uni.requiredDocuments || uni.requirements).map(req => `
           <li style="display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.9rem; color: var(--text-secondary);">
             <i data-lucide="check-circle-2" style="width: 18px; height: 18px; color: var(--accent-cyan); flex-shrink: 0; margin-top: 2px;"></i>
             <span>${req}</span>
@@ -267,7 +280,7 @@ window.UniExplorer = {
       <div style="display: flex; gap: 1rem; justify-content: flex-end;">
         <button class="btn btn-secondary" onclick="UniExplorer.closeModal()">Close</button>
         <button class="btn btn-primary" onclick="UniTracker.addUniversity('${uni.id}'); UniExplorer.closeModal();">
-          <i data-lucide="plus-circle" style="width: 16px; height: 16px;"></i> Add to Australian Tracker
+          <i data-lucide="plus-circle" style="width: 16px; height: 16px;"></i> Add to Application Tracker
         </button>
       </div>
     `;
