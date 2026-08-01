@@ -1,54 +1,54 @@
 /* ==========================================================================
-   UNIPATH - PREMIUM EDITORIAL DESIGN SYSTEM (Clean, Human, Professional)
+   UNIPATH - STANDARD CORPORATE DESIGN SYSTEM (Classic, Clean, Non-AI)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Editorial Color Palette - Professional Slate & Ocean Navy */
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: #151d30;
-  --bg-card-hover: #1c2742;
-  --bg-subtle: rgba(255, 255, 255, 0.03);
-  --bg-overlay: rgba(6, 9, 15, 0.85);
+  /* Classic Corporate Color Palette - Light Theme */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-subtle: #e2e8f0;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
 
-  /* Refined Accents (No Loud Neons) */
-  --accent-blue: #3b82f6;
-  --accent-blue-hover: #2563eb;
-  --accent-azure: #60a5fa;
-  --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
-  --accent-rose: #f43f5e;
-  --accent-indigo: #6366f1;
+  /* Standard Brand Accents */
+  --accent-blue: #0056b3;
+  --accent-blue-hover: #004494;
+  --accent-azure: #0275d8;
+  --accent-emerald: #198754;
+  --accent-amber: #ffc107;
+  --accent-rose: #dc3545;
+  --accent-indigo: #6610f2;
 
-  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  --accent-subtle-gradient: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(96, 165, 250, 0.05) 100%);
+  --accent-gradient: var(--accent-blue);
+  --accent-subtle-gradient: var(--bg-subtle);
 
   /* Typography */
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
 
   /* Borders & Shadows */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(59, 130, 246, 0.35);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-subtle: #dee2e6;
+  --border-active: #0056b3;
+  --border-strong: #ced4da;
 
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-sm: none;
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
 
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: var(--font-main);
 
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.2s ease;
+  --transition-fast: 0s;
+  --transition-normal: 0.1s ease;
 }
 
 *, *::before, *::after {
@@ -58,19 +58,19 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-size: 16px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: auto;
 }
 
 .app-container {
@@ -81,14 +81,10 @@ body {
 
 /* Header Navbar */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(11, 15, 25, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 0.85rem 2.25rem;
+  position: static;
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--accent-blue);
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,85 +93,83 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: -0.02em;
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
 .brand-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
   background: var(--accent-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-weight: 800;
+  font-weight: bold;
 }
 
 .brand-text span {
-  color: var(--accent-azure);
+  color: var(--text-primary);
 }
 
 .aus-flag-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.06);
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 0.5rem;
 }
 
 .nav-tabs {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.3rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  gap: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
 .nav-tab {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-secondary);
-  padding: 0.55rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   font-family: inherit;
-  border-radius: var(--radius-xs);
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  transition: var(--transition-fast);
+  gap: 0.25rem;
+  border-bottom: 3px solid transparent;
 }
 
 .nav-tab:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-primary);
 }
 
 .nav-tab.active {
-  color: #fff;
-  background: var(--accent-blue);
-  font-weight: 700;
+  color: var(--accent-blue);
+  border-bottom-color: var(--accent-blue);
+  font-weight: 600;
 }
 
 .main-content {
   flex: 1;
-  padding: 2rem 2.25rem;
-  max-width: 1440px;
+  padding: 2rem;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
@@ -188,93 +182,77 @@ body {
   display: block;
 }
 
-/* Editorial Hero Header */
+/* Standard Hero Header */
 .hero-card {
   position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  padding: 3rem 2.5rem;
-  margin-bottom: 2.25rem;
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(11, 15, 25, 0.98)),
-              url('../assets/images/hero_australia.png') center/cover no-repeat;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 2rem;
-  align-items: center;
+  border-radius: 0;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
+  width: 100%;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  color: var(--accent-azure);
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: 2.6rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
 
 .hero-title span {
-  color: var(--accent-azure);
+  color: var(--accent-blue);
 }
 
 .hero-desc {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  margin-bottom: 1.75rem;
-  max-width: 600px;
-  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
 }
 
 .hero-stats {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  display: flex;
+  gap: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+  width: 100%;
 }
 
 .hero-stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  padding: 1.25rem 1rem;
-  border-radius: var(--radius-sm);
-  text-align: center;
-  transition: var(--transition-fast);
-}
-
-.hero-stat-card:hover {
-  border-color: var(--border-active);
-  background: var(--bg-card-hover);
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-value {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-blue);
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-top: 0.2rem;
+  text-transform: uppercase;
 }
