@@ -37,7 +37,7 @@
 
 <!-- NAVBAR — tmux-style status bar -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-brand">ahmad@portfolio:~</a>
+  <a href="#" class="nav-brand"><span class="brand-user">ahmad</span><span class="brand-at">@</span><span class="brand-host">portfolio</span><span class="brand-path">:~</span></a>
   <div class="nav-links" id="nav_links">
     <a href="#about">about</a>
     <a href="#services">expertise</a>
@@ -49,35 +49,53 @@
   <div class="nav-right">
     <div class="theme-picker" id="theme_picker">
       <button class="theme-picker-btn" id="theme_picker_btn" aria-label="Choose color theme" title="Switch color theme">
-        <span class="theme-indicator-dot"></span>
-        <span class="theme-label" id="theme_label">CYAN</span>
+        <span class="theme-indicator-dots">
+          <span class="theme-indicator-dot dot-1"></span>
+          <span class="theme-indicator-dot dot-2"></span>
+        </span>
+        <span class="theme-label" id="theme_label">CYBERPUNK</span>
         <span class="theme-arrow">▾</span>
       </button>
       <div class="theme-dropdown-menu" id="theme_menu" role="menu">
-        <div class="theme-menu-title">// color_scheme</div>
+        <div class="theme-menu-title">// creative_palettes</div>
         <button class="theme-opt active" data-theme="cyan" role="menuitem">
-          <span class="theme-opt-dot" style="background:#00f0ff;box-shadow:0 0 8px #00f0ff"></span>
-          <span class="theme-opt-name">Electric Cyan</span>
+          <span class="theme-opt-dots">
+            <span class="theme-dot" style="background:#00f0ff;box-shadow:0 0 6px #00f0ff"></span>
+            <span class="theme-dot" style="background:#ff2a85;box-shadow:0 0 6px #ff2a85"></span>
+          </span>
+          <span class="theme-opt-name">Cyberpunk <span class="theme-opt-sub">Cyan & Neon Pink</span></span>
           <span class="theme-opt-check">✓</span>
         </button>
         <button class="theme-opt" data-theme="violet" role="menuitem">
-          <span class="theme-opt-dot" style="background:#a855f7;box-shadow:0 0 8px #a855f7"></span>
-          <span class="theme-opt-name">Neon Violet</span>
+          <span class="theme-opt-dots">
+            <span class="theme-dot" style="background:#c084fc;box-shadow:0 0 6px #c084fc"></span>
+            <span class="theme-dot" style="background:#ff5e62;box-shadow:0 0 6px #ff5e62"></span>
+          </span>
+          <span class="theme-opt-name">Synthwave <span class="theme-opt-sub">Violet & Coral</span></span>
           <span class="theme-opt-check">✓</span>
         </button>
         <button class="theme-opt" data-theme="emerald" role="menuitem">
-          <span class="theme-opt-dot" style="background:#10b981;box-shadow:0 0 8px #10b981"></span>
-          <span class="theme-opt-name">Cyber Emerald</span>
+          <span class="theme-opt-dots">
+            <span class="theme-dot" style="background:#10b981;box-shadow:0 0 6px #10b981"></span>
+            <span class="theme-dot" style="background:#a3e635;box-shadow:0 0 6px #a3e635"></span>
+          </span>
+          <span class="theme-opt-name">Cyberdeck <span class="theme-opt-sub">Emerald & Lime</span></span>
           <span class="theme-opt-check">✓</span>
         </button>
         <button class="theme-opt" data-theme="amber" role="menuitem">
-          <span class="theme-opt-dot" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b"></span>
-          <span class="theme-opt-name">Solar Amber</span>
+          <span class="theme-opt-dots">
+            <span class="theme-dot" style="background:#f59e0b;box-shadow:0 0 6px #f59e0b"></span>
+            <span class="theme-dot" style="background:#ff3b5c;box-shadow:0 0 6px #ff3b5c"></span>
+          </span>
+          <span class="theme-opt-name">Solar Flare <span class="theme-opt-sub">Gold & Flame</span></span>
           <span class="theme-opt-check">✓</span>
         </button>
         <button class="theme-opt" data-theme="rose" role="menuitem">
-          <span class="theme-opt-dot" style="background:#ff2a6d;box-shadow:0 0 8px #ff2a6d"></span>
-          <span class="theme-opt-name">Synth Rose</span>
+          <span class="theme-opt-dots">
+            <span class="theme-dot" style="background:#38bdf8;box-shadow:0 0 6px #38bdf8"></span>
+            <span class="theme-dot" style="background:#ff2a85;box-shadow:0 0 6px #ff2a85"></span>
+          </span>
+          <span class="theme-opt-name">Aurora Rose <span class="theme-opt-sub">Glacial & Rose</span></span>
           <span class="theme-opt-check">✓</span>
         </button>
       </div>
@@ -142,7 +160,7 @@
 <section id="about">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ cat about.txt
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">cat about.txt</span>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
@@ -172,11 +190,11 @@
 <section id="services">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ ls -la ./expertise/
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">ls -la ./expertise/</span>
     </div>
 
     <div class="services-grid">
-      <div class="service-card reveal">
+      <div class="service-card service-ml reveal">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
@@ -188,7 +206,7 @@
           </div>
         </div>
       </div>
-      <div class="service-card reveal reveal-delay-1">
+      <div class="service-card service-sec reveal reveal-delay-1">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -200,7 +218,7 @@
           </div>
         </div>
       </div>
-      <div class="service-card reveal reveal-delay-2">
+      <div class="service-card service-dev reveal reveal-delay-2">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
@@ -212,7 +230,7 @@
           </div>
         </div>
       </div>
-      <div class="service-card reveal reveal-delay-3">
+      <div class="service-card service-net reveal reveal-delay-3">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="16" y="16" width="6" height="6" rx="1"/>
@@ -238,7 +256,7 @@
 <section id="projects">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ cat ./projects/README.md
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">cat ./projects/README.md</span>
     </div>
 
     <div class="projects-grid">
@@ -254,10 +272,10 @@
           <div class="project-tagline">// AI-Powered Intrusion Detection System for IoT Networks</div>
           <p>A production-grade network security system that uses LightGBM + IsolationForest ensemble to detect DDoS attacks, SYN floods, and anomalies in real-time IoT traffic. Features SHAP-based explainability, automated firewall response, and a professional monitoring dashboard.</p>
           <div class="project-metrics">
-            <div class="project-metric"><span class="val">96.1%</span><span class="lbl">AUC</span></div>
-            <div class="project-metric"><span class="val">2.1M+</span><span class="lbl">Samples</span></div>
-            <div class="project-metric"><span class="val">112</span><span class="lbl">Tests</span></div>
-            <div class="project-metric"><span class="val">13</span><span class="lbl">Features</span></div>
+            <div class="project-metric metric-auc"><span class="val">96.1%</span><span class="lbl">AUC</span></div>
+            <div class="project-metric metric-samples"><span class="val">2.1M+</span><span class="lbl">Samples</span></div>
+            <div class="project-metric metric-tests"><span class="val">112</span><span class="lbl">Tests</span></div>
+            <div class="project-metric metric-features"><span class="val">13</span><span class="lbl">Features</span></div>
           </div>
           <div class="project-tags">
             <span class="project-tag">Python</span>
@@ -294,10 +312,10 @@
           <div class="project-tagline">// Australian & Oceania University Admissions & Visa Portal</div>
           <p>A comprehensive web portal for international students exploring Australian Group of Eight (Go8) & top New Zealand universities. Features ATAR & IELTS eligibility calculators, Subclass 485 post-study work visa calculators, Kanban application tracking, and scholarship directory.</p>
           <div class="project-metrics">
-            <div class="project-metric"><span class="val">50+</span><span class="lbl">Universities</span></div>
-            <div class="project-metric"><span class="val">485</span><span class="lbl">Visa Calc</span></div>
-            <div class="project-metric"><span class="val">Go8</span><span class="lbl">Tracker</span></div>
-            <div class="project-metric"><span class="val">100%</span><span class="lbl">Interactive</span></div>
+            <div class="project-metric metric-unis"><span class="val">50+</span><span class="lbl">Universities</span></div>
+            <div class="project-metric metric-visa"><span class="val">485</span><span class="lbl">Visa Calc</span></div>
+            <div class="project-metric metric-go8"><span class="val">Go8</span><span class="lbl">Tracker</span></div>
+            <div class="project-metric metric-live"><span class="val">100%</span><span class="lbl">Interactive</span></div>
           </div>
           <div class="project-tags">
             <span class="project-tag">JavaScript</span>
@@ -374,7 +392,7 @@
 <section id="experience">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ history --career
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">history --career</span>
     </div>
 
     <div class="timeline">
@@ -426,11 +444,11 @@
 <section id="skills">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ printenv SKILLS
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">printenv SKILLS</span>
     </div>
 
     <div class="skills-container">
-      <div class="skill-category reveal">
+      <div class="skill-category skill-cat-lang reveal">
         <h3>Languages</h3>
         <div class="skill-list">
           <span class="skill-item">Python</span>
@@ -441,7 +459,7 @@
           <span class="skill-item">Bash</span>
         </div>
       </div>
-      <div class="skill-category reveal reveal-delay-1">
+      <div class="skill-category skill-cat-ml reveal reveal-delay-1">
         <h3>Machine Learning</h3>
         <div class="skill-list">
           <span class="skill-item">LightGBM</span>
@@ -452,7 +470,7 @@
           <span class="skill-item">IsolationForest</span>
         </div>
       </div>
-      <div class="skill-category reveal reveal-delay-2">
+      <div class="skill-category skill-cat-sec reveal reveal-delay-2">
         <h3>Security & Networking</h3>
         <div class="skill-list">
           <span class="skill-item">Suricata IDS</span>
@@ -467,7 +485,7 @@
           <span class="skill-item">JWT Auth</span>
         </div>
       </div>
-      <div class="skill-category reveal reveal-delay-3">
+      <div class="skill-category skill-cat-tools reveal reveal-delay-3">
         <h3>Tools & Frameworks</h3>
         <div class="skill-list">
           <span class="skill-item">Flask</span>
@@ -487,7 +505,7 @@
 <section id="contact">
   <div class="section-inner">
     <div class="cmd-header reveal">
-      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ ./contact.sh
+      <span class="prompt">ahmad@portfolio</span>:<span class="path">~</span>$ <span class="cmd-action">./contact.sh</span>
     </div>
 
     <div class="contact-grid">

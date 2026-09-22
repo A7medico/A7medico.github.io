@@ -62,6 +62,13 @@ navLinks.querySelectorAll('a').forEach(a => {
 
 // ===== MULTI-THEME COLOR SYSTEM =====
 const THEMES = ['cyan', 'violet', 'emerald', 'amber', 'rose'];
+const THEME_NAMES = {
+  cyan: 'CYBERPUNK',
+  violet: 'SYNTHWAVE',
+  emerald: 'CYBERDECK',
+  amber: 'SOLAR FLARE',
+  rose: 'AURORA ROSE'
+};
 const themePicker = document.getElementById('theme_picker');
 const themePickerBtn = document.getElementById('theme_picker_btn');
 const themeLabel = document.getElementById('theme_label');
@@ -76,7 +83,7 @@ function applyTheme(name) {
   document.body.classList.remove('amber', 'green');
   
   localStorage.setItem('portfolio-theme', name);
-  if (themeLabel) themeLabel.textContent = name.toUpperCase();
+  if (themeLabel) themeLabel.textContent = THEME_NAMES[name] || name.toUpperCase();
 
   themeOpts.forEach(opt => {
     opt.classList.toggle('active', opt.dataset.theme === name);
