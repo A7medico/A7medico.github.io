@@ -47,7 +47,41 @@
     <a href="#contact" class="nav-cta">contact</a>
   </div>
   <div class="nav-right">
-    <button class="theme-toggle" id="theme_toggle" aria-label="Toggle theme color mode"></button>
+    <div class="theme-picker" id="theme_picker">
+      <button class="theme-picker-btn" id="theme_picker_btn" aria-label="Choose color theme" title="Switch color theme">
+        <span class="theme-indicator-dot"></span>
+        <span class="theme-label" id="theme_label">CYAN</span>
+        <span class="theme-arrow">▾</span>
+      </button>
+      <div class="theme-dropdown-menu" id="theme_menu" role="menu">
+        <div class="theme-menu-title">// color_scheme</div>
+        <button class="theme-opt active" data-theme="cyan" role="menuitem">
+          <span class="theme-opt-dot" style="background:#00f0ff;box-shadow:0 0 8px #00f0ff"></span>
+          <span class="theme-opt-name">Electric Cyan</span>
+          <span class="theme-opt-check">✓</span>
+        </button>
+        <button class="theme-opt" data-theme="violet" role="menuitem">
+          <span class="theme-opt-dot" style="background:#a855f7;box-shadow:0 0 8px #a855f7"></span>
+          <span class="theme-opt-name">Neon Violet</span>
+          <span class="theme-opt-check">✓</span>
+        </button>
+        <button class="theme-opt" data-theme="emerald" role="menuitem">
+          <span class="theme-opt-dot" style="background:#10b981;box-shadow:0 0 8px #10b981"></span>
+          <span class="theme-opt-name">Cyber Emerald</span>
+          <span class="theme-opt-check">✓</span>
+        </button>
+        <button class="theme-opt" data-theme="amber" role="menuitem">
+          <span class="theme-opt-dot" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b"></span>
+          <span class="theme-opt-name">Solar Amber</span>
+          <span class="theme-opt-check">✓</span>
+        </button>
+        <button class="theme-opt" data-theme="rose" role="menuitem">
+          <span class="theme-opt-dot" style="background:#ff2a6d;box-shadow:0 0 8px #ff2a6d"></span>
+          <span class="theme-opt-name">Synth Rose</span>
+          <span class="theme-opt-check">✓</span>
+        </button>
+      </div>
+    </div>
     <button class="menu-toggle" id="menu_toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>

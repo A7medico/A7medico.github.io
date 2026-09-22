@@ -60,15 +60,100 @@
   --glow: var(--accent-glow);
 }
 
-/* ===== ALT MODE (Electric Violet / Purple) ===== */
-body.amber {
-  --glow-color: var(--violet);
-  --glow: var(--violet-glow);
-  --accent: var(--violet);
-  --accent-dim: var(--violet-dim);
-  --accent-faint: rgba(168, 85, 247, 0.1);
-  --green-faint: rgba(168, 85, 247, 0.1);
-  --green-glow: var(--violet-glow);
+/* ===== 5 VIBRANT COLOR THEMES ===== */
+/* 1. Electric Cyan (Default) */
+body.theme-cyan {
+  --accent: #00f0ff;
+  --accent-dim: #00c8d6;
+  --accent-faint: rgba(0, 240, 255, 0.08);
+  --accent-glow: 0 0 12px rgba(0, 240, 255, 0.45), 0 0 45px rgba(0, 240, 255, 0.15);
+  --bg-deep: #080c14;
+  --bg-primary: #0d121f;
+  --bg-secondary: #12192b;
+  --bg-panel: #162035;
+  --bg-elevated: #1c2742;
+  --border-color: rgba(0, 240, 255, 0.16);
+  --border-dashed: rgba(0, 240, 255, 0.28);
+  --glow-color: #00f0ff;
+  --glow: var(--accent-glow);
+  --green-faint: var(--accent-faint);
+  --green-glow: var(--accent-glow);
+}
+
+/* 2. Neon Violet */
+body.theme-violet, body.amber {
+  --accent: #a855f7;
+  --accent-dim: #9333ea;
+  --accent-faint: rgba(168, 85, 247, 0.08);
+  --accent-glow: 0 0 12px rgba(168, 85, 247, 0.45), 0 0 45px rgba(168, 85, 247, 0.15);
+  --bg-deep: #0a0714;
+  --bg-primary: #0f0b1e;
+  --bg-secondary: #17112c;
+  --bg-panel: #1e1638;
+  --bg-elevated: #261c46;
+  --border-color: rgba(168, 85, 247, 0.18);
+  --border-dashed: rgba(168, 85, 247, 0.3);
+  --glow-color: #a855f7;
+  --glow: var(--accent-glow);
+  --green-faint: var(--accent-faint);
+  --green-glow: var(--accent-glow);
+}
+
+/* 3. Cyber Emerald */
+body.theme-emerald {
+  --accent: #10b981;
+  --accent-dim: #059669;
+  --accent-faint: rgba(16, 185, 129, 0.08);
+  --accent-glow: 0 0 12px rgba(16, 185, 129, 0.45), 0 0 45px rgba(16, 185, 129, 0.15);
+  --bg-deep: #060e0a;
+  --bg-primary: #0a1610;
+  --bg-secondary: #0f2219;
+  --bg-panel: #152c21;
+  --bg-elevated: #1c392b;
+  --border-color: rgba(16, 185, 129, 0.18);
+  --border-dashed: rgba(16, 185, 129, 0.3);
+  --glow-color: #10b981;
+  --glow: var(--accent-glow);
+  --green-faint: var(--accent-faint);
+  --green-glow: var(--accent-glow);
+}
+
+/* 4. Solar Amber */
+body.theme-amber {
+  --accent: #f59e0b;
+  --accent-dim: #d97706;
+  --accent-faint: rgba(245, 158, 11, 0.08);
+  --accent-glow: 0 0 12px rgba(245, 158, 11, 0.45), 0 0 45px rgba(245, 158, 11, 0.15);
+  --bg-deep: #0d0905;
+  --bg-primary: #140f08;
+  --bg-secondary: #1d160d;
+  --bg-panel: #261d11;
+  --bg-elevated: #322716;
+  --border-color: rgba(245, 158, 11, 0.18);
+  --border-dashed: rgba(245, 158, 11, 0.3);
+  --glow-color: #f59e0b;
+  --glow: var(--accent-glow);
+  --green-faint: var(--accent-faint);
+  --green-glow: var(--accent-glow);
+}
+
+/* 5. Synth Rose */
+body.theme-rose {
+  --accent: #ff2a6d;
+  --accent-dim: #e01a5b;
+  --accent-faint: rgba(255, 42, 109, 0.08);
+  --accent-glow: 0 0 12px rgba(255, 42, 109, 0.45), 0 0 45px rgba(255, 42, 109, 0.15);
+  --bg-deep: #0e060a;
+  --bg-primary: #170a12;
+  --bg-secondary: #210f1a;
+  --bg-panel: #2c1423;
+  --bg-elevated: #391a2d;
+  --border-color: rgba(255, 42, 109, 0.18);
+  --border-dashed: rgba(255, 42, 109, 0.3);
+  --glow-color: #ff2a6d;
+  --glow: var(--accent-glow);
+  --green-faint: var(--accent-faint);
+  --green-glow: var(--accent-glow);
 }
 
 /* ===== RESET ===== */
@@ -227,34 +312,119 @@ body.amber::before {
   display: flex; align-items: stretch;
   margin-left: auto;
 }
-.theme-toggle {
-  width: 40px; height: 40px; border-radius: 0;
+/* ===== THEME PICKER DROPDOWN ===== */
+.theme-picker {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+.theme-picker-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
   background: transparent;
   border: none;
   border-left: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: var(--transition);
+  color: var(--text-primary);
   font-family: var(--font-mono);
-}
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--accent);
-}
-/* hide the SVG icons, use text instead */
-.theme-toggle .icon-moon,
-.theme-toggle .icon-sun { display: none !important; }
-.theme-toggle::after {
-  content: 'CYN';
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.theme-picker-btn:hover {
+  background: var(--accent-faint);
   color: var(--accent);
 }
-body.amber .theme-toggle::after {
-  content: 'VIO';
+.theme-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  display: inline-block;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.theme-label {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.theme-arrow {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.theme-picker.open .theme-arrow {
+  transform: rotate(180deg);
+}
+
+.theme-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 190px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px var(--accent-faint);
+  backdrop-filter: blur(16px);
+  display: none;
+  flex-direction: column;
+  z-index: 1002;
+  padding: 6px;
+}
+.theme-picker.open .theme-dropdown-menu {
+  display: flex;
+}
+.theme-menu-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  padding: 6px 10px 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed var(--border-dashed);
+  margin-bottom: 4px;
+}
+.theme-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+.theme-opt:hover {
+  background: var(--accent-faint);
+  color: var(--text-bright);
+}
+.theme-opt.active {
   color: var(--accent);
+  background: var(--accent-faint);
+  font-weight: 600;
+}
+.theme-opt-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.theme-opt-name {
+  flex: 1;
+}
+.theme-opt-check {
+  font-size: 0.7rem;
+  opacity: 0;
+}
+.theme-opt.active .theme-opt-check {
+  opacity: 1;
 }
 
 .menu-toggle {

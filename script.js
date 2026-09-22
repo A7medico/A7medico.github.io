@@ -60,17 +60,58 @@ navLinks.querySelectorAll('a').forEach(a => {
   });
 });
 
-// ===== GREEN/AMBER CRT MODE TOGGLE =====
-const themeToggle = document.getElementById('theme_toggle');
-const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme === 'amber') {
-  document.body.classList.add('amber');
+// ===== MULTI-THEME COLOR SYSTEM =====
+const THEMES = ['cyan', 'violet', 'emerald', 'amber', 'rose'];
+const themePicker = document.getElementById('theme_picker');
+const themePickerBtn = document.getElementById('theme_picker_btn');
+const themeLabel = document.getElementById('theme_label');
+const themeOpts = document.querySelectorAll('.theme-opt');
+
+function applyTheme(name) {
+  if (!THEMES.includes(name)) name = 'cyan';
+  THEMES.forEach(t => document.body.classList.remove(`theme-${t}`));
+  if (name !== 'cyan') {
+    document.body.classList.add(`theme-${name}`);
+  }
+  document.body.classList.remove('amber', 'green');
+  
+  localStorage.setItem('portfolio-theme', name);
+  if (themeLabel) themeLabel.textContent = name.toUpperCase();
+
+  themeOpts.forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.theme === name);
+  });
 }
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('amber');
-  const isAmber = document.body.classList.contains('amber');
-  localStorage.setItem('portfolio-theme', isAmber ? 'amber' : 'green');
+
+if (themePicker && themePickerBtn) {
+  themePickerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themePicker.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!themePicker.contains(e.target)) {
+      themePicker.classList.remove('open');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') themePicker.classList.remove('open');
+  });
+}
+
+themeOpts.forEach(opt => {
+  opt.addEventListener('click', () => {
+    const chosen = opt.dataset.theme;
+    applyTheme(chosen);
+    if (themePicker) themePicker.classList.remove('open');
+  });
 });
+
+// Load saved theme
+let activeTheme = localStorage.getItem('portfolio-theme') || 'cyan';
+if (activeTheme === 'green') activeTheme = 'emerald';
+applyTheme(activeTheme);
 
 // ===== TYPING EFFECT — terminal style =====
 const typingEl = document.getElementById('typing_text');
