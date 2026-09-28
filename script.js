@@ -767,34 +767,6 @@ applyLanguage(currentLang);
         '<span class="f-cyan">[ENCLAVE]</span> Encrypted Client Acquisition Portal Online'
       ],
       idx: 4
-    },
-    {
-      feed: document.querySelector('.module-terminal-feed[data-feed="ospf"]') || document.querySelectorAll('.module-terminal-feed')[3],
-      lines: [
-        '<span class="f-green">[OSPF]</span> Area 0.0.0.0: Full Adjacency with 10.255.0.2',
-        '<span class="f-cyan">[802.1Q]</span> Trunk Gi0/1: VLANs 10, 20, 30, 99 [FORWARDING]',
-        '<span class="f-warn">[INTER-VLAN]</span> SVI Vlan20: 192.168.20.1/24 UP/UP',
-        '<span class="f-green">[WIRESHARK]</span> Captured 14,820 frames: 0 dropped',
-        '<span class="f-cyan">[RSTP]</span> Root Bridge Election: Gi0/2 Designated Forwarding',
-        '<span class="f-warn">[ACL]</span> Extended Rule #101: Permit TCP Established',
-        '<span class="f-green">[NAT/PAT]</span> Overload Pool 203.0.113.1 Active [99.8% Hits]',
-        '<span class="f-cyan">[DHCP_SNOOP]</span> Untrusted port rate-limited: 15 pps'
-      ],
-      idx: 4
-    },
-    {
-      feed: document.querySelector('.module-terminal-feed[data-feed="security"]') || document.querySelectorAll('.module-terminal-feed')[4],
-      lines: [
-        '<span class="f-green">[SCAPY]</span> Sniffing raw frames on eth0: SYN packet decoded',
-        '<span class="f-warn">[PORT_SCAN]</span> 10.0.0.0/24 subnet: 14 open services mapped',
-        '<span class="f-danger">[CVE_CHECK]</span> Heuristic audit: zero critical vectors found',
-        '<span class="f-cyan">[ZERO_TRUST]</span> Mutual TLS token verified for node #04',
-        '<span class="f-green">[ALGORITHM]</span> Isolation forest anomaly detector trained',
-        '<span class="f-warn">[PAYLOAD]</span> Hexadecimal packet dissection: 0 malformed',
-        '<span class="f-danger">[FIREWALL]</span> Dynamic nftables ruleset compiled in 0.8ms',
-        '<span class="f-cyan">[TELEMETRY]</span> Continuous threat hunting daemon running'
-      ],
-      idx: 4
     }
   ];
 

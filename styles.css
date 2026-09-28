@@ -741,10 +741,8 @@ section {
   animation: float-card 6s ease-in-out infinite;
 }
 .project-card:nth-child(1) { animation-delay: 0s; }
-.project-card:nth-child(2) { animation-delay: -1.5s; }
-.project-card:nth-child(3) { animation-delay: -3s; }
-.project-card:nth-child(4) { animation-delay: -4.5s; }
-.project-card:nth-child(5) { animation-delay: -2.2s; }
+.project-card:nth-child(2) { animation-delay: -2s; }
+.project-card:nth-child(3) { animation-delay: -4s; }
 .project-card:hover {
   border-color: rgba(0, 255, 65, 0.2);
   box-shadow: 0 8px 30px rgba(0, 255, 65, 0.04);
@@ -922,19 +920,7 @@ section {
 .deco-gold-star { fill: #d4af37; filter: drop-shadow(0 0 8px #d4af37); }
 .deco-chevron { fill: none; stroke: rgba(212, 175, 55, 0.4); stroke-width: 1.5; }
 
-/* OSPF Topology SVG */
-.ospf-topology-svg { width: 180px; height: 180px; }
-.ospf-core-node { fill: rgba(0, 255, 65, 0.15); stroke: var(--green); stroke-width: 2; filter: drop-shadow(0 0 8px var(--green)); }
-.ospf-edge-node { fill: rgba(0, 212, 255, 0.12); stroke: var(--green-dim); stroke-width: 1.5; }
-.ospf-link { stroke: rgba(0, 255, 65, 0.25); stroke-width: 1.5; stroke-dasharray: 5 3; }
-.ospf-packet { fill: var(--green); filter: drop-shadow(0 0 6px var(--green)); animation: blip-pulse 1.8s ease-in-out infinite; }
 
-/* Security Matrix SVG */
-.security-matrix-svg { width: 180px; height: 180px; }
-.sec-shield-outer { fill: none; stroke: rgba(0, 255, 65, 0.35); stroke-width: 1.5; }
-.sec-grid-ring { fill: none; stroke: rgba(0, 255, 65, 0.15); stroke-width: 1; stroke-dasharray: 4 4; }
-.sec-scanner-sweep { stroke: var(--green); stroke-width: 2; transform-origin: 100px 100px; animation: radar-sweep 5s linear infinite; filter: drop-shadow(0 0 6px var(--green)); }
-.sec-target-node { fill: #ff5f57; filter: drop-shadow(0 0 6px #ff5f57); animation: blip-pulse 2.2s ease-in-out infinite; }
 
 /* ===== TIMELINE ===== */
 .timeline {
