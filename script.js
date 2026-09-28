@@ -18,7 +18,7 @@ const translations = {
     "hero.boot2": '[  <span class="ok-tag">OK</span>  ] Network interfaces & telemetry listeners mounted.',
     "hero.boot3": "[  <span class=\"ok-tag\">OK</span>  ] Loading engineer profile: Ahmad Ismail.",
     "hero.boot4": "[  <span class=\"ok-tag\">OK</span>  ] Neural & Security pipelines active. Welcome.",
-    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> Ahmad Ismail 👋',
+    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> Ahmad Ismail',
     "hero.available": "Open to Opportunities",
     "hero.name": "Ahmad Ismail",
     "hero.desc": "Engineering intelligent systems where <strong>Machine Learning</strong>, <strong>IoT Threat Detection</strong>, and <strong>Enterprise Networking</strong> converge into resilient, production-ready software.",
@@ -85,29 +85,29 @@ const translations = {
     "cmd.projects": "cat ./projects/README.md",
     "projects.eyebrow": "// deployed_engineering",
     "projects.title": "Featured Systems & Live Deployments",
-    "badge.featured": "★ SENIOR CAPSTONE",
+    "badge.featured": "SENIOR CAPSTONE",
     "iotguard.tagline": "// AI-Powered Intrusion Detection & Mitigation",
     "iotguard.desc": "A production-grade cyber-defense framework protecting IoT ecosystems from DDoS, SYN floods, and port scans. Ensemble of LightGBM and IsolationForest trained on 2.1M+ flows, achieving 96.1% AUC with SHAP explainability and automated firewall enforcement.",
     "iotguard.point1": "✦ <strong>Real-Time Pipeline:</strong> Scapy + Suricata for microsecond classification.",
     "iotguard.point2": "✦ <strong>Explainable AI:</strong> SHAP values pinpoint triggering features.",
     "iotguard.point3": "✦ <strong>Automated Response:</strong> nftables rule injection to isolate threats.",
-    "badge.portal": "★ LIVE PORTAL",
+    "badge.portal": "LIVE PORTAL",
     "unipath.tagline": "// Australian & Oceania Higher Education Admissions Hub",
     "unipath.desc": "Interactive portal for international scholars navigating admissions across Australia's Group of Eight and NZ universities. ATAR/IELTS conversion, Subclass 485 visa calculators, and Kanban trackers.",
     "unipath.point1": "✦ <strong>Eligibility Engine:</strong> GPA, ATAR, IELTS multi-tier matching.",
     "unipath.point2": "✦ <strong>Visa Calculators:</strong> Post-study visa & CRICOS compliance.",
     "unipath.point3": "✦ <strong>Dynamic UI:</strong> Client-side Kanban and interactive charts.",
-    "badge.concept": "★ CONCEPT SHOWCASE",
+    "badge.concept": "CONCEPT SHOWCASE",
     "aureum.tagline": "// Exclusive Art Deco Digital Experience & Collection Curation",
     "aureum.desc": "A single-page digital masterpiece embodying 1920s Art Deco grandeur and contemporary digital engineering. Built to showcase ultra-high-end UI/UX capabilities: custom geometric sunbursts, gold foil shimmer shaders, interactive collection vaults, and refined typography.",
     "aureum.point1": "✦ <strong>Art Deco Design System:</strong> Handcrafted sunburst geometry, chevron motifs, and jewel-tone palette.",
     "aureum.point2": "✦ <strong>Curated Capabilities:</strong> Bespoke animations, interactive catalog filtering, and theatrical narrative.",
     "aureum.point3": "✦ <strong>Performance & Craft:</strong> Zero-dependency vanilla architecture achieving 60fps animations.",
-    "badge.netlab": "★ ARCH LAB",
+    "badge.netlab": "ARCH LAB",
     "ospf.point1": "✦ <strong>Dynamic Routing:</strong> Multi-area OSPFv2/v3 convergence & cost tuning.",
     "ospf.point2": "✦ <strong>VLAN & Trunking:</strong> 802.1Q encapsulation, SVIs, Router-on-a-Stick.",
     "ospf.point3": "✦ <strong>Packet Forensics:</strong> Wireshark deep inspection, ACLs, NAT/PAT.",
-    "badge.security": "★ OPEN LAB",
+    "badge.security": "OPEN LAB",
     "sec.point1": "✦ <strong>Packet Crafting:</strong> Scapy raw frame generation & protocol dissection.",
     "sec.point2": "✦ <strong>Zero-Trust Engine:</strong> Automated port inspection & CVE heuristics.",
     "sec.point3": "✦ <strong>Intelligent Triage:</strong> Lightweight ML triage for anomaly categorization.",
@@ -171,7 +171,7 @@ const translations = {
     "hero.boot2": '[  <span class="ok-tag">OK</span>  ] تم تشغيل واجهات الشبكة.',
     "hero.boot3": "[  <span class=\"ok-tag\">OK</span>  ] تحميل ملف المهندس: أحمد إسماعيل.",
     "hero.boot4": "[  <span class=\"ok-tag\">OK</span>  ] خطوط الذكاء الاصطناعي والأمن نشطة. مرحباً.",
-    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> أحمد إسماعيل 👋',
+    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> أحمد إسماعيل',
     "hero.available": "متاح للفرص المتميزة",
     "hero.name": "أحمد إسماعيل",
     "hero.desc": "هندسة أنظمة ذكية تجمع بين <strong>تعلم الآلة</strong>، و<strong>أمن إنترنت الأشياء</strong>، و<strong>شبكات المؤسسات</strong> في برمجيات متينة وجاهزة للإنتاج.",
@@ -238,29 +238,29 @@ const translations = {
     "cmd.projects": "cat ./المشاريع/README.md",
     "projects.eyebrow": "// الأنظمة_المنشورة",
     "projects.title": "أبرز الأنظمة والمشاريع",
-    "badge.featured": "★ مشروع التخرج",
+    "badge.featured": "مشروع التخرج",
     "iotguard.tagline": "// نظام ذكي لكشف التسلل",
     "iotguard.desc": "منظومة دفاع سيبراني تحمي شبكات IoT من الهجمات الكثيفة. نموذجي LightGBM وIsolationForest على أكثر من 2.1 مليون تدفق بدقة 96.1%.",
     "iotguard.point1": "✦ <strong>معالجة لحظية:</strong> Scapy + Suricata.",
     "iotguard.point2": "✦ <strong>ذكاء قابل للتفسير:</strong> قيم SHAP.",
     "iotguard.point3": "✦ <strong>استجابة تلقائية:</strong> حقن قواعد nftables.",
-    "badge.portal": "★ منصة حية",
+    "badge.portal": "منصة حية",
     "unipath.tagline": "// بوابة القبول الجامعي لأستراليا ونيوزيلندا",
     "unipath.desc": "بوابة تفاعلية للطلاب الدوليين مع حواسب ATAR وIELTS وحساب تأشيرة 485 ولوحة كانبان.",
     "unipath.point1": "✦ <strong>محرك الأهلية:</strong> مطابقة المعدلات.",
     "unipath.point2": "✦ <strong>حاسبة التأشيرة:</strong> مدد العمل بعد التخرج.",
     "unipath.point3": "✦ <strong>واجهة ديناميكية:</strong> كانبان ورسوم تفاعلية.",
-    "badge.concept": "★ مشروع مفاهيمي",
+    "badge.concept": "مشروع مفاهيمي",
     "aureum.tagline": "// تجربة رقمية فاخرة بنمط الآرت ديكو لإدارة المقتنيات الفنية",
     "aureum.desc": "تحفة رقمية تجسد فخامة الآرت ديكو الكلاسيكي في العشرينيات بأسلوب هندسي معاصر. صُممت لاستعراض أحدث قدرات تصميم وتطوير الواجهات الفاخرة (UI/UX): رسومات هندسية متقدمة، لمعان ذهبي تفاعلي، وتنسيق بصري متقن.",
     "aureum.point1": "✦ <strong>نظام تصميم آرت ديكو:</strong> هندسة شعاعية، نقوش شيفرون، وألوان زمردية وذهبية فاخرة.",
     "aureum.point2": "✦ <strong>استعراض القدرات:</strong> تحريك سلس ومؤثرات تفاعلية وسرد بصري استثنائي.",
     "aureum.point3": "✦ <strong>أداء فائق:</strong> كود أصلي 100% بدون مكتبات ثقيلة بسرعة 60 إطاراً في الثانية.",
-    "badge.netlab": "★ مختبر معمارية الشبكات",
+    "badge.netlab": "مختبر معمارية الشبكات",
     "ospf.point1": "✦ <strong>توجيه ديناميكي:</strong> OSPFv2/v3 متعدد المناطق وضبط المسارات.",
     "ospf.point2": "✦ <strong>تجزئة الشبكات:</strong> 802.1Q وSVIs وتوجيه Inter-VLAN.",
     "ospf.point3": "✦ <strong>تحليل الحزم:</strong> تشخيص متقدم بـ Wireshark وACLs وNAT/PAT.",
-    "badge.security": "★ أبحاث وأدوات أمنية",
+    "badge.security": "أبحاث وأدوات أمنية",
     "sec.point1": "✦ <strong>تشكيل الحزم:</strong> Scapy لتوليد وتحليل الإطارات المباشرة.",
     "sec.point2": "✦ <strong>محرك Zero-Trust:</strong> فحص المنافذ واكتشاف الثغرات آلياً.",
     "sec.point3": "✦ <strong>فرز ذكي:</strong> تصنيف الشذوذ بخوارزميات ذكاء اصطناعي خفيفة.",
@@ -669,7 +669,7 @@ if (contactForm) {
     e.preventDefault();
     submitBtn.disabled = true;
     submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? '$ جاري الإرسال...' : '$ sending...';
-    submitBtn.querySelector('.btn-submit-icon').textContent = '⏳';
+    submitBtn.querySelector('.btn-submit-icon').textContent = '...';
     formFeedback.className = 'form-feedback';
     formFeedback.textContent = '';
 
@@ -694,7 +694,7 @@ if (contactForm) {
     } finally {
       submitBtn.disabled = false;
       submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? '$ إرسال_الرسالة' : '$ transmit_message';
-      submitBtn.querySelector('.btn-submit-icon').textContent = '⏎';
+      submitBtn.querySelector('.btn-submit-icon').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>';
     }
   });
 }

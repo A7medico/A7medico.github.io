@@ -319,7 +319,7 @@ body::before {
   cursor: pointer; transition: var(--transition);
 }
 .lang-switch-btn:hover { background: var(--green-faint); color: var(--green); }
-.lang-icon { font-size: 1rem; }
+.lang-icon { font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; }
 
 .nav-live-status {
   display: flex; align-items: center; gap: 6px;
@@ -995,7 +995,7 @@ section {
 .skill-category.hidden { display: none; }
 .skill-category:hover { border-color: rgba(0, 255, 65, 0.2); transform: translateY(-2px); }
 .skill-cat-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.cat-icon { font-size: 1.1rem; }
+.cat-icon { font-size: 1.1rem; display: inline-flex; align-items: center; justify-content: center; color: var(--green); flex-shrink: 0; }
 .skill-category h3 {
   font-family: var(--font-heading);
   font-size: 1.05rem; font-weight: 700; color: var(--green);
@@ -1060,6 +1060,10 @@ section {
   border: 1px dashed rgba(0, 255, 65, 0.15);
   font-size: 0.75rem; color: var(--green);
 }
+.response-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--green); flex-shrink: 0;
+}
 
 .contact-form { padding: 32px; }
 .form-group { margin-bottom: 16px; }
@@ -1093,6 +1097,7 @@ section {
 }
 .btn-submit:hover { box-shadow: var(--green-glow-strong); transform: translateY(-2px); }
 .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-submit-icon { display: inline-flex; align-items: center; justify-content: center; }
 .form-feedback {
   margin-top: 12px; font-size: 0.82rem;
   transition: all 0.3s ease; max-height: 0; overflow: hidden; opacity: 0;
