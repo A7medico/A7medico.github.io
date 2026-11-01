@@ -471,17 +471,39 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 counters.forEach(el => counterObserver.observe(el));
 
-// ===== 3D CARD TILT =====
+// ===== 3D CARD TILT (RESPONSIVE MOUSE MOVEMENT ON ALL PROJECT CARDS) =====
 document.querySelectorAll('[data-tilt]').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const rotateX = ((y - rect.height / 2) / rect.height) * -4;
-    const rotateY = ((x - rect.width / 2) / rect.width) * 4;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-3px)`;
+  let rafId = null;
+
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.08s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease';
+    card.style.transitionDelay = '0s';
   });
-  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+
+  card.addEventListener('mousemove', e => {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
+      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-5px)`;
+    });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    card.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+    card.style.transitionDelay = '0s';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    setTimeout(() => {
+      if (!card.matches(':hover')) {
+        card.style.transition = '';
+        card.style.transitionDelay = '';
+      }
+    }, 450);
+  });
 });
 
 // ===== SKILLS FILTER =====
