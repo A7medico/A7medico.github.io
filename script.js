@@ -1,24 +1,23 @@
 // ============================================
-// AHMAD ISMAIL — PORTFOLIO SCRIPT v4.0
-// Clean Hacker Terminal · Matrix Rain · Live Elements
-// Single Green Theme · Bilingual (EN/AR)
+// AHMAD ISMAIL — PORTFOLIO SCRIPT v5.0
+// Modern Dark · Bilingual (EN/AR)
 // ============================================
 
 // ===== TRANSLATIONS =====
 const translations = {
   en: {
-    "nav.about": "about",
-    "nav.strengths": "strengths",
-    "nav.expertise": "expertise",
-    "nav.projects": "projects",
-    "nav.journey": "journey",
-    "nav.stack": "stack",
-    "nav.contact": "contact",
-    "hero.boot1": "GNU/Portfolio v4.0.0 — Kernel Boot Completed",
-    "hero.boot2": '[  <span class="ok-tag">OK</span>  ] Network interfaces & telemetry listeners mounted.',
-    "hero.boot3": "[  <span class=\"ok-tag\">OK</span>  ] Loading engineer profile: Ahmad Ismail.",
-    "hero.boot4": "[  <span class=\"ok-tag\">OK</span>  ] Neural & Security pipelines active. Welcome.",
-    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> Ahmad Ismail',
+    "nav.about": "About",
+    "nav.strengths": "Strengths",
+    "nav.expertise": "Expertise",
+    "nav.projects": "Projects",
+    "nav.journey": "Journey",
+    "nav.stack": "Stack",
+    "nav.contact": "Contact",
+    "hero.boot1": "",
+    "hero.boot2": "",
+    "hero.boot3": "",
+    "hero.boot4": "",
+    "hero.greeting": '<span class="badge-prefix">Portfolio ·</span> Ahmad Ismail',
     "hero.available": "Open to Opportunities",
     "hero.name": "Ahmad Ismail",
     "hero.desc": "Engineering intelligent systems where <strong>Machine Learning</strong>, <strong>IoT Threat Detection</strong>, and <strong>Enterprise Networking</strong> converge into resilient, production-ready software.",
@@ -26,11 +25,11 @@ const translations = {
     "chip.sec": "IoT Intrusion Defense",
     "chip.net": "Network Infrastructure",
     "chip.dev": "Full-Stack Systems",
-    "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> ./projects',
-    "btn.cv": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> wget cv.pdf',
-    "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> ./contact.sh',
-    "cmd.about": "cat about.txt",
-    "about.eyebrow": "// who_i_am",
+    "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> Explore Projects',
+    "btn.cv": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CV',
+    "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Get in Touch',
+    "cmd.about": "about",
+    "about.eyebrow": "About Me",
     "about.title": "Turning Raw Flows & Complex Data into Resilient Engineering",
     "about.p1": "I'm a <strong>Computer Engineer</strong> driven by the challenge of designing resilient, high-performance systems. My work bridges algorithmic intelligence and physical network infrastructure — from training ensemble ML models on millions of packet flows to building real-time dashboards.",
     "about.p2": "Whether constructing <strong>IoTGuard</strong> to combat DDoS threats with automated responses or building production web apps with <strong>Next.js</strong> and <strong>WebSockets</strong>, I focus on clean architecture, verifiable security, and great interfaces.",
@@ -42,8 +41,8 @@ const translations = {
     "stat.tests_sub": "Passing 100%",
     "stat.years": "Years Engineering",
     "stat.years_sub": "Hardware & Software",
-    "cmd.strengths": "ls -la ./strengths/",
-    "strengths.eyebrow": "// what_i_bring",
+    "cmd.strengths": "strengths",
+    "strengths.eyebrow": "Core Strengths",
     "strengths.title": "Beyond Code — What Drives My Engineering",
     "bento.systems_title": "Systems Thinking & Architecture Design",
     "bento.systems_desc": "I don't just write code — I architect complete systems. From packet capture pipelines to real-time dashboards, every component is designed to work harmoniously at scale.",
@@ -57,8 +56,8 @@ const translations = {
     "bento.fullstack_desc": "From Python ML backends to React frontends, Docker to Vercel — I own the entire lifecycle.",
     "bento.collab_title": "Collaborative & Bilingual",
     "bento.collab_desc": "Fluent in English and Arabic, comfortable in cross-functional teams, passionate about clear documentation.",
-    "cmd.services": "ls -la ./expertise/",
-    "expertise.eyebrow": "// core_competencies",
+    "cmd.services": "expertise",
+    "expertise.eyebrow": "Specializations",
     "expertise.title": "Four Pillars of Engineering Precision",
     "exp.ml_title": "Machine Learning & AI Systems",
     "exp.ml_desc": "Designing, training, and deploying production-grade ML pipelines with ensemble models, feature engineering, and model explainability.",
@@ -82,23 +81,23 @@ const translations = {
     "exp.net_point3": "✦ IPv4/IPv6 VLSM, STP/RSTP/PortFast, EtherChannel",
     "exp.net_point4": "✦ ACLs, NAT/PAT, DHCP Snooping, Port Security",
     "exp.net_point5": "✦ Wireshark forensics and diagnostic packet analysis",
-    "cmd.projects": "cat ./projects/README.md",
-    "projects.eyebrow": "// deployed_engineering",
+    "cmd.projects": "projects",
+    "projects.eyebrow": "Featured Work",
     "projects.title": "Featured Systems & Live Deployments",
     "badge.featured": "SENIOR CAPSTONE",
-    "iotguard.tagline": "// AI-Powered Intrusion Detection & Mitigation",
+    "iotguard.tagline": "AI-Powered Intrusion Detection & Mitigation System",
     "iotguard.desc": "A production-grade cyber-defense framework protecting IoT ecosystems from DDoS, SYN floods, and port scans. Ensemble of LightGBM and IsolationForest trained on 2.1M+ flows, achieving 96.1% AUC with SHAP explainability and automated firewall enforcement.",
     "iotguard.point1": "✦ <strong>Real-Time Pipeline:</strong> Scapy + Suricata for microsecond classification.",
     "iotguard.point2": "✦ <strong>Explainable AI:</strong> SHAP values pinpoint triggering features.",
     "iotguard.point3": "✦ <strong>Automated Response:</strong> nftables rule injection to isolate threats.",
     "badge.portal": "LIVE PORTAL",
-    "unipath.tagline": "// Australian & Oceania Higher Education Admissions Hub",
+    "unipath.tagline": "Australian & Oceania Higher Education Admissions Hub",
     "unipath.desc": "Interactive portal for international scholars navigating admissions across Australia's Group of Eight and NZ universities. ATAR/IELTS conversion, Subclass 485 visa calculators, and Kanban trackers.",
     "unipath.point1": "✦ <strong>Eligibility Engine:</strong> GPA, ATAR, IELTS multi-tier matching.",
     "unipath.point2": "✦ <strong>Visa Calculators:</strong> Post-study visa & CRICOS compliance.",
     "unipath.point3": "✦ <strong>Dynamic UI:</strong> Client-side Kanban and interactive charts.",
     "badge.concept": "CONCEPT SHOWCASE",
-    "aureum.tagline": "// Exclusive Art Deco Digital Experience & Collection Curation",
+    "aureum.tagline": "Exclusive Art Deco Digital Experience & Collection Curation",
     "aureum.desc": "A single-page digital masterpiece embodying 1920s Art Deco grandeur and contemporary digital engineering. Built to showcase ultra-high-end UI/UX capabilities: custom geometric sunbursts, gold foil shimmer shaders, interactive collection vaults, and refined typography.",
     "aureum.point1": "✦ <strong>Art Deco Design System:</strong> Handcrafted sunburst geometry, chevron motifs, and jewel-tone palette.",
     "aureum.point2": "✦ <strong>Curated Capabilities:</strong> Bespoke animations, interactive catalog filtering, and theatrical narrative.",
@@ -111,17 +110,17 @@ const translations = {
     "sec.point1": "✦ <strong>Packet Crafting:</strong> Scapy raw frame generation & protocol dissection.",
     "sec.point2": "✦ <strong>Zero-Trust Engine:</strong> Automated port inspection & CVE heuristics.",
     "sec.point3": "✦ <strong>Intelligent Triage:</strong> Lightweight ML triage for anomaly categorization.",
-    "tools.used": "// tools_and_stack:",
-    "btn.git_clone": "git clone",
-    "btn.open_site": "open live",
+    "tools.used": "Technologies & Tools:",
+    "btn.git_clone": "View Code",
+    "btn.open_site": "Live Demo",
     "proj3.title": "Multi-Area OSPF & Inter-VLAN Infrastructure",
-    "proj3.tagline": "// Enterprise Routing & Packet Forensics",
+    "proj3.tagline": "Enterprise Routing & Packet Forensics",
     "proj3.desc": "Production-grade multi-tier enterprise network infrastructure featuring multi-area OSPFv2/v3, 802.1Q trunking, inter-VLAN routing, and hardened perimeter ACLs with deep Wireshark packet forensics.",
     "proj4.title": "Security Tooling & AI Algorithms",
-    "proj4.tagline": "// Open-Source Contributions & Research",
+    "proj4.tagline": "Open-Source Contributions & Research",
     "proj4.desc": "Advanced security tooling and machine learning heuristics suite. Packet parsing with Scapy, zero-trust perimeter verification, dynamic nftables enforcement, and automated vulnerability scanning.",
-    "cmd.journey": "history --milestones",
-    "journey.eyebrow": "// how_i_got_here",
+    "cmd.journey": "journey",
+    "journey.eyebrow": "Experience & Education",
     "journey.title": "Academic & Engineering Trajectory",
     "milestone.degree_title": "B.Sc. in Computer Engineering",
     "milestone.degree_org": "Faculty of Engineering · Graduated 2025",
@@ -132,8 +131,8 @@ const translations = {
     "milestone.infra_title": "Enterprise Network Lab & Full-Stack Systems",
     "milestone.infra_org": "Production Deployments & Continuous Mastery",
     "milestone.infra_desc": "OSPF topologies, 802.1Q trunking, inter-VLAN routing. Built and launched UniPath portal. Active GitHub development.",
-    "cmd.skills": "printenv SKILLS --all",
-    "skills.eyebrow": "// technology_stack",
+    "cmd.skills": "stack",
+    "skills.eyebrow": "Technology Stack",
     "skills.title": "Every Tool & Framework in My Arsenal",
     "skills.subtitle": "Everything I use to design, build, test, and protect intelligent systems.",
     "tab.all": "All Stack",
@@ -147,16 +146,16 @@ const translations = {
     "cat.sec": "Cybersecurity & Defense",
     "cat.dev": "Full-Stack & Web",
     "cat.tools": "DevOps & Tools",
-    "cmd.contact": "./contact.sh",
-    "contact.eyebrow": "// establish_connection",
+    "cmd.contact": "contact",
+    "contact.eyebrow": "Get In Touch",
     "contact.title": "Have an Idea? Let's Connect.",
-    "contact.info_title": "# Available for Opportunities",
+    "contact.info_title": "Available for Opportunities",
     "contact.info_desc": "Open to engineering roles, ML research, network architecture consultations, and freelance collaborations.",
     "contact.guarantee": "Response within 24h · Direct to inbox",
-    "form.name": "sender_name",
-    "form.email": "return_email",
-    "form.message": "transmission_payload",
-    "form.submit": "$ transmit_message",
+    "form.name": "Your Name",
+    "form.email": "Email Address",
+    "form.message": "Your Message",
+    "form.submit": "Send Message",
     "footer.copyright": "© 2026 Ahmad Ismail — Computer Engineering & Intelligent Systems"
   },
   ar: {
@@ -167,11 +166,11 @@ const translations = {
     "nav.journey": "المسار",
     "nav.stack": "التقنيات",
     "nav.contact": "تواصل",
-    "hero.boot1": "GNU/Portfolio v4.0.0 — اكتمل الإقلاع بنجاح",
-    "hero.boot2": '[  <span class="ok-tag">OK</span>  ] تم تشغيل واجهات الشبكة.',
-    "hero.boot3": "[  <span class=\"ok-tag\">OK</span>  ] تحميل ملف المهندس: أحمد إسماعيل.",
-    "hero.boot4": "[  <span class=\"ok-tag\">OK</span>  ] خطوط الذكاء الاصطناعي والأمن نشطة. مرحباً.",
-    "hero.greeting": '<span class="badge-prefix">// sys.init() :</span> أحمد إسماعيل',
+    "hero.boot1": "",
+    "hero.boot2": "",
+    "hero.boot3": "",
+    "hero.boot4": "",
+    "hero.greeting": '<span class="badge-prefix">الملف الهندسي ·</span> أحمد إسماعيل',
     "hero.available": "متاح للفرص المتميزة",
     "hero.name": "أحمد إسماعيل",
     "hero.desc": "هندسة أنظمة ذكية تجمع بين <strong>تعلم الآلة</strong>، و<strong>أمن إنترنت الأشياء</strong>، و<strong>شبكات المؤسسات</strong> في برمجيات متينة وجاهزة للإنتاج.",
@@ -179,11 +178,11 @@ const translations = {
     "chip.sec": "أمن IoT",
     "chip.net": "البنية التحتية",
     "chip.dev": "أنظمة متكاملة",
-    "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> ./المشاريع',
+    "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> استعراض المشاريع',
     "btn.cv": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> تحميل السيرة',
-    "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> ./تواصل',
-    "cmd.about": "cat نبذة.txt",
-    "about.eyebrow": "// من_أنا",
+    "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> تواصل معي',
+    "cmd.about": "نبذة",
+    "about.eyebrow": "من أنا",
     "about.title": "تحويل البيانات المعقدة إلى أنظمة هندسية ذكية",
     "about.p1": "أنا <strong>مهندس حاسوب</strong> شغوف بتصميم أنظمة عالية الأداء. يجمع عملي بين الذكاء الخوارزمي والبنية التحتية للشبكات — من تدريب نماذج تعلم الآلة على ملايين التدفقات إلى بناء لوحات تحكم تفاعلية لحظية.",
     "about.p2": "سواء عبر بناء <strong>IoTGuard</strong> للتصدي لهجمات DDoS أو تطوير تطبيقات باستخدام <strong>Next.js</strong> و <strong>WebSockets</strong>، أركز على المعمارية النظيفة والأمان والواجهات الجذابة.",
@@ -195,8 +194,8 @@ const translations = {
     "stat.tests_sub": "ناجحة 100%",
     "stat.years": "سنوات هندسة",
     "stat.years_sub": "عتاد وبرمجيات",
-    "cmd.strengths": "ls -la ./نقاط_القوة/",
-    "strengths.eyebrow": "// ما_أضيفه",
+    "cmd.strengths": "نقاط_القوة",
+    "strengths.eyebrow": "نقاط القوة",
     "strengths.title": "أكثر من كود — ما يحرك هندستي",
     "bento.systems_title": "التفكير المنظومي",
     "bento.systems_desc": "لا أكتب كود فقط — أصمم أنظمة متكاملة. كل مكوّن مصمم ليعمل بتناغم على نطاق واسع.",
@@ -210,8 +209,8 @@ const translations = {
     "bento.fullstack_desc": "من Python إلى React، Docker إلى Vercel — أملك دورة التطوير الكاملة.",
     "bento.collab_title": "تعاوني ثنائي اللغة",
     "bento.collab_desc": "إتقان للعربية والإنجليزية وشغف بالتوثيق ومشاركة المعرفة.",
-    "cmd.services": "ls -la ./الخبرات/",
-    "expertise.eyebrow": "// مجالات_الخبرة",
+    "cmd.services": "الخبرات",
+    "expertise.eyebrow": "مجالات الخبرة",
     "expertise.title": "أربعة محاور هندسية",
     "exp.ml_title": "تعلم الآلة والذكاء الاصطناعي",
     "exp.ml_desc": "تصميم وتدريب ونشر خطوط معالجة تعلم الآلة الجاهزة للإنتاج.",
@@ -235,23 +234,23 @@ const translations = {
     "exp.net_point3": "✦ VLSM, STP/RSTP, EtherChannel",
     "exp.net_point4": "✦ ACLs, NAT/PAT, أمان المنافذ",
     "exp.net_point5": "✦ تحليل Wireshark الجنائي",
-    "cmd.projects": "cat ./المشاريع/README.md",
-    "projects.eyebrow": "// الأنظمة_المنشورة",
+    "cmd.projects": "المشاريع",
+    "projects.eyebrow": "الأنظمة المنشورة",
     "projects.title": "أبرز الأنظمة والمشاريع",
     "badge.featured": "مشروع التخرج",
-    "iotguard.tagline": "// نظام ذكي لكشف التسلل",
+    "iotguard.tagline": "نظام ذكي لكشف التسلل والتعامل مع الهجمات",
     "iotguard.desc": "منظومة دفاع سيبراني تحمي شبكات IoT من الهجمات الكثيفة. نموذجي LightGBM وIsolationForest على أكثر من 2.1 مليون تدفق بدقة 96.1%.",
     "iotguard.point1": "✦ <strong>معالجة لحظية:</strong> Scapy + Suricata.",
     "iotguard.point2": "✦ <strong>ذكاء قابل للتفسير:</strong> قيم SHAP.",
     "iotguard.point3": "✦ <strong>استجابة تلقائية:</strong> حقن قواعد nftables.",
     "badge.portal": "منصة حية",
-    "unipath.tagline": "// بوابة القبول الجامعي لأستراليا ونيوزيلندا",
+    "unipath.tagline": "بوابة القبول الجامعي لأستراليا ونيوزيلندا",
     "unipath.desc": "بوابة تفاعلية للطلاب الدوليين مع حواسب ATAR وIELTS وحساب تأشيرة 485 ولوحة كانبان.",
     "unipath.point1": "✦ <strong>محرك الأهلية:</strong> مطابقة المعدلات.",
     "unipath.point2": "✦ <strong>حاسبة التأشيرة:</strong> مدد العمل بعد التخرج.",
     "unipath.point3": "✦ <strong>واجهة ديناميكية:</strong> كانبان ورسوم تفاعلية.",
     "badge.concept": "مشروع مفاهيمي",
-    "aureum.tagline": "// تجربة رقمية فاخرة بنمط الآرت ديكو لإدارة المقتنيات الفنية",
+    "aureum.tagline": "تجربة رقمية فاخرة بنمط الآرت ديكو لإدارة المقتنيات الفنية",
     "aureum.desc": "تحفة رقمية تجسد فخامة الآرت ديكو الكلاسيكي في العشرينيات بأسلوب هندسي معاصر. صُممت لاستعراض أحدث قدرات تصميم وتطوير الواجهات الفاخرة (UI/UX): رسومات هندسية متقدمة، لمعان ذهبي تفاعلي، وتنسيق بصري متقن.",
     "aureum.point1": "✦ <strong>نظام تصميم آرت ديكو:</strong> هندسة شعاعية، نقوش شيفرون، وألوان زمردية وذهبية فاخرة.",
     "aureum.point2": "✦ <strong>استعراض القدرات:</strong> تحريك سلس ومؤثرات تفاعلية وسرد بصري استثنائي.",
@@ -264,17 +263,17 @@ const translations = {
     "sec.point1": "✦ <strong>تشكيل الحزم:</strong> Scapy لتوليد وتحليل الإطارات المباشرة.",
     "sec.point2": "✦ <strong>محرك Zero-Trust:</strong> فحص المنافذ واكتشاف الثغرات آلياً.",
     "sec.point3": "✦ <strong>فرز ذكي:</strong> تصنيف الشذوذ بخوارزميات ذكاء اصطناعي خفيفة.",
-    "tools.used": "// الأدوات:",
-    "btn.git_clone": "استعراض الكود",
-    "btn.open_site": "فتح المنصة",
+    "tools.used": "التقنيات المستخدمة:",
+    "btn.git_clone": "كود المشروع",
+    "btn.open_site": "معاينة حية",
     "proj3.title": "OSPF متعدد المناطق وInter-VLAN",
-    "proj3.tagline": "// محاكاة شبكات المؤسسات",
+    "proj3.tagline": "محاكاة شبكات المؤسسات",
     "proj3.desc": "شبكات متقدمة مع OSPF و802.1Q وACLs وNAT/PAT وWireshark.",
     "proj4.title": "أدوات الأمن وخوارزميات AI",
-    "proj4.tagline": "// مساهمات مفتوحة المصدر",
+    "proj4.tagline": "مساهمات مفتوحة المصدر",
     "proj4.desc": "تجارب Python وScapy ونماذج ذكاء اصطناعي.",
-    "cmd.journey": "history --المسار",
-    "journey.eyebrow": "// كيف_وصلت",
+    "cmd.journey": "المسار",
+    "journey.eyebrow": "المسار المهني والأكاديمي",
     "journey.title": "المسار الأكاديمي والهندسي",
     "milestone.degree_title": "بكالوريوس هندسة حاسوب",
     "milestone.degree_org": "كلية الهندسة · تخرج 2025",
@@ -285,8 +284,8 @@ const translations = {
     "milestone.infra_title": "مختبر الشبكات والأنظمة",
     "milestone.infra_org": "مشاريع حية وتطوير مستمر",
     "milestone.infra_desc": "تصميم طوبولوجيا OSPF وإطلاق UniPath والنشر المستمر على GitHub.",
-    "cmd.skills": "printenv التقنيات --all",
-    "skills.eyebrow": "// حزمة_التقنيات",
+    "cmd.skills": "التقنيات",
+    "skills.eyebrow": "حزمة التقنيات",
     "skills.title": "كل الأدوات والأطر في ترسانتي",
     "skills.subtitle": "كل ما أستخدمه لتصميم وبناء واختبار وحماية الأنظمة الذكية.",
     "tab.all": "الكل",
@@ -300,16 +299,16 @@ const translations = {
     "cat.sec": "الأمن السيبراني",
     "cat.dev": "التطوير المتكامل",
     "cat.tools": "أدوات التطوير",
-    "cmd.contact": "./تواصل.sh",
-    "contact.eyebrow": "// إنشاء_اتصال",
+    "cmd.contact": "تواصل",
+    "contact.eyebrow": "تواصل معي",
     "contact.title": "لديك فكرة؟ دعنا نتحدث.",
-    "contact.info_title": "# متاح للفرص",
+    "contact.info_title": "متاح للفرص المتميزة",
     "contact.info_desc": "متاح للوظائف الهندسية وبحوث تعلم الآلة واستشارات الشبكات والتعاون التقني.",
     "contact.guarantee": "الرد خلال 24 ساعة",
-    "form.name": "اسم_المرسل",
-    "form.email": "البريد_الإلكتروني",
-    "form.message": "نص_الرسالة",
-    "form.submit": "$ إرسال_الرسالة",
+    "form.name": "الاسم الكامل",
+    "form.email": "البريد الإلكتروني",
+    "form.message": "نص الرسالة",
+    "form.submit": "إرسال الرسالة",
     "footer.copyright": "© 2026 أحمد إسماعيل — هندسة الحاسوب والأنظمة الذكية"
   }
 };
@@ -357,51 +356,9 @@ if (langToggleBtn) {
   });
 }
 
-// ===== MATRIX RAIN BACKGROUND =====
+// ===== MATRIX RAIN (DISABLED FOR MODERN DESIGN) =====
 (function initMatrixRain() {
-  const canvas = document.getElementById('matrix_canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ<>{}[]|/\\=+-_@#$%&';
-  const charArray = chars.split('');
-  const fontSize = 14;
-  let columns = Math.floor(canvas.width / fontSize);
-  let drops = Array(columns).fill(1);
-
-  window.addEventListener('resize', () => {
-    columns = Math.floor(canvas.width / fontSize);
-    drops = Array(columns).fill(1);
-  });
-
-  function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff41';
-    ctx.font = fontSize + 'px monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = charArray[Math.floor(Math.random() * charArray.length)];
-      // Brighten the "head" of each column
-      const brightness = Math.random() > 0.95 ? '#fff' : '#00ff41';
-      ctx.fillStyle = brightness;
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      ctx.fillStyle = '#00ff41';
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
+  /* Matrix canvas disabled for clean modern design */
 })();
 
 // ===== LOADER =====
@@ -580,24 +537,15 @@ window.addEventListener('scroll', updateActiveNav);
   let threatCount = 0;
 
   const logMessages = [
-    'visitor connected from remote...',
-    'loading portfolio modules...',
-    'scanning network interfaces...',
-    'all systems nominal...',
-    'neural pipeline healthy...',
-    'firewall rules synced...',
-    'monitoring active connections...',
-    'IDS signatures updated...',
-    'packet capture running...',
-    'secure tunnel established...',
-    'TLS handshake complete...',
-    'session encryption verified...',
-    'heartbeat OK | latency < 2ms...',
-    'ML model warm, ready for inference...',
-    'git pull: portfolio up-to-date...',
-    'running integrity checks...',
-    'memory: 42% | CPU: 12%...',
-    'no anomalies detected...'
+    'systems nominal · telemetry stream active',
+    'monitoring live network flows & endpoints',
+    'LightGBM + IsolationForest inference ready',
+    'OSPF multi-area topology converged',
+    'zero-trust network access verified',
+    'real-time WebSocket data stream synced',
+    'automated firewall mitigation rules synced',
+    'low-latency full-stack pipeline active',
+    '112 automated unit & integration tests passing'
   ];
   let logIdx = 0;
 
@@ -618,7 +566,7 @@ window.addEventListener('scroll', updateActiveNav);
 
   function updatePackets() {
     packetCount += Math.floor(Math.random() * 47) + 8;
-    if (packetsEl) packetsEl.textContent = packetCount.toLocaleString();
+    if (packetsEl) packetsEl.textContent = (2148920 + packetCount).toLocaleString();
   }
 
   function updateThreats() {
@@ -643,7 +591,7 @@ window.addEventListener('scroll', updateActiveNav);
   setInterval(updateUptime, 1000);
   setInterval(updateClock, 1000);
   setInterval(updatePackets, 2000);
-  setInterval(updateThreats, 5000);
+  if (threatsEl) setInterval(updateThreats, 5000);
   setInterval(cycleLog, 4000);
 
   // Initial
@@ -651,11 +599,11 @@ window.addEventListener('scroll', updateActiveNav);
   updateClock();
 })();
 
-// ===== TERMINAL HEADER GLITCH =====
+// ===== TERMINAL HEADER HOVER =====
+// Clean subtle interaction without glitch
 document.querySelectorAll('.cmd-header').forEach(header => {
   header.addEventListener('mouseenter', () => {
-    header.style.animation = 'glitch-1 0.25s ease';
-    setTimeout(() => { header.style.animation = ''; }, 250);
+    header.style.transition = 'color 0.2s ease';
   });
 });
 
@@ -668,7 +616,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     submitBtn.disabled = true;
-    submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? '$ جاري الإرسال...' : '$ sending...';
+    submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
     submitBtn.querySelector('.btn-submit-icon').textContent = '...';
     formFeedback.className = 'form-feedback';
     formFeedback.textContent = '';
@@ -681,19 +629,19 @@ if (contactForm) {
       });
       if (response.ok) {
         formFeedback.textContent = currentLang === 'ar'
-          ? '[OK] تم الإرسال بنجاح!'
-          : '[OK] Transmission dispatched. Will reply shortly!';
+          ? 'تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.'
+          : 'Message sent successfully! I will reply shortly.';
         formFeedback.className = 'form-feedback success show';
         contactForm.reset();
       } else { throw new Error('Server error'); }
     } catch {
       formFeedback.textContent = currentLang === 'ar'
-        ? '[ERR] فشل الإرسال. راسلني مباشرة.'
-        : '[ERR] Failed. Contact directly via email.';
+        ? 'تعذر الإرسال. يرجى مراسلتي عبر البريد الإلكتروني مباشرة.'
+        : 'Failed to send message. Please contact me directly via email.';
       formFeedback.className = 'form-feedback error show';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? '$ إرسال_الرسالة' : '$ transmit_message';
+      submitBtn.querySelector('.btn-submit-text').textContent = currentLang === 'ar' ? 'إرسال الرسالة' : 'Send Message';
       submitBtn.querySelector('.btn-submit-icon').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>';
     }
   });
@@ -791,27 +739,9 @@ applyLanguage(currentLang);
   });
 })();
 
-// ===== MOUSE GREEN GLOW FOLLOWER =====
+// ===== MOUSE GLOW FOLLOWER (DISABLED FOR MODERN MINIMAL LOOK) =====
 (function initMouseGlow() {
-  const glow = document.createElement('div');
-  glow.style.cssText = `
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9996;
-    background: radial-gradient(circle, rgba(0, 255, 65, 0.04) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    transition: left 0.15s ease, top 0.15s ease;
-    will-change: left, top;
-  `;
-  document.body.appendChild(glow);
-
-  document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
+  /* Disabled for clean modern design */
 })();
 
 // ===== SCROLL PROGRESS INDICATOR =====
@@ -819,12 +749,12 @@ applyLanguage(currentLang);
   const bar = document.createElement('div');
   bar.style.cssText = `
     position: fixed;
-    top: 46px;
+    top: 56px;
     left: 0;
     height: 2px;
     width: 0%;
-    background: #00ff41;
-    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+    background: #6366f1;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
     z-index: 1001;
     transition: width 0.1s linear;
     pointer-events: none;
@@ -849,7 +779,7 @@ applyLanguage(currentLang);
         e.target.dataset.typed = 'true';
         const fullText = e.target.textContent;
         e.target.textContent = '';
-        e.target.style.borderRight = '2px solid #00ff41';
+        e.target.style.borderRight = '2px solid #6366f1';
         e.target.style.animation = 'typing-cursor 1s step-end infinite';
         let ci = 0;
         const typeInterval = setInterval(() => {
@@ -869,11 +799,10 @@ applyLanguage(currentLang);
   cmdHeaders.forEach(el => cmdObserver.observe(el));
 })();
 
-// ===== HOVER GLITCH ON SECTION TITLES =====
+// ===== HOVER EFFECT ON SECTION TITLES =====
 document.querySelectorAll('.section-big-title').forEach(title => {
   title.addEventListener('mouseenter', () => {
-    title.style.animation = 'glitch-1 0.3s ease';
-    setTimeout(() => { title.style.animation = ''; }, 300);
+    title.style.transition = 'transform 0.3s ease';
   });
 });
 
@@ -902,8 +831,98 @@ document.querySelectorAll('.section-big-title').forEach(title => {
   });
 })();
 
-console.log('%c╔══════════════════════════════════════════╗', 'color: #00ff41');
-console.log('%c║  Ahmad Ismail — Portfolio v4.5 (Blacker) ║', 'color: #00ff41; font-weight: bold');
-console.log('%c║  github.com/A7medico                     ║', 'color: #00ff41');
-console.log('%c╚══════════════════════════════════════════╝', 'color: #00ff41');
+// ===== INTERACTIVE CARD SPOTLIGHT TRACKING =====
+(function initCardSpotlight() {
+  const cards = document.querySelectorAll('.bento-card, .service-card, .project-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+})();
+
+// ===== BACK TO TOP SMOOTH SCROLL =====
+(function initBackToTop() {
+  const btn = document.getElementById('back_to_top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+})();
+
+// ===== COPY EMAIL INTERACTION & TOAST =====
+(function initCopyEmail() {
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  emailLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const email = link.getAttribute('href').replace('mailto:', '');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast(document.body.classList.contains('lang-ar') ? 'تم نسخ البريد الإلكتروني إلى الحافظة!' : 'Email copied to clipboard!');
+        }).catch(() => {});
+      }
+    });
+  });
+
+  function showToast(msg) {
+    let toast = document.getElementById('copy_toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'copy_toast';
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: rgba(18, 20, 29, 0.95);
+        color: #fff;
+        border: 1px solid rgba(99, 102, 241, 0.4);
+        padding: 10px 22px;
+        border-radius: 100px;
+        font-family: var(--font-body);
+        font-size: 0.84rem;
+        font-weight: 500;
+        z-index: 10000;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 10px 35px rgba(0,0,0,0.5), 0 0 20px rgba(99,102,241,0.25);
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      `;
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>${msg}</span>`;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 2400);
+  }
+})();
+
+console.log('%c╔══════════════════════════════════════════╗', 'color: #6366f1');
+console.log('%c║  Ahmad Ismail — Portfolio v5.0 (Modern)  ║', 'color: #6366f1; font-weight: bold');
+console.log('%c║  github.com/A7medico                     ║', 'color: #6366f1');
+console.log('%c╚══════════════════════════════════════════╝', 'color: #6366f1');
 
