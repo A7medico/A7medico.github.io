@@ -33,7 +33,43 @@
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-brand"><span class="brand-logo">AI</span><span class="brand-name">Ahmad Ismail</span></a>
+  <a href="#" class="nav-brand">
+    <span class="brand-logo" aria-hidden="true">
+      <svg class="brand-logo-svg" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cubeTop" x1="7" y1="6" x2="25" y2="16" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#38bdf8"/>
+            <stop offset="100%" stop-color="#818cf8"/>
+          </linearGradient>
+          <linearGradient id="cubeRight" x1="16" y1="11" x2="25" y2="26" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#4338ca"/>
+          </linearGradient>
+          <linearGradient id="cubeLeft" x1="7" y1="11" x2="16" y2="26" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#4f46e5"/>
+            <stop offset="100%" stop-color="#312e81"/>
+          </linearGradient>
+          <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="1.2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="#0c0d14" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1.2"/>
+        <path d="M16 6.5 L24.2 11.2 L16 15.8 L7.8 11.2 Z" fill="url(#cubeTop)"/>
+        <path d="M7.2 12.3 L15.4 16.9 L15.4 25.5 L7.2 20.8 Z" fill="url(#cubeLeft)"/>
+        <path d="M16.6 16.9 L24.8 12.3 L24.8 20.8 L16.6 25.5 Z" fill="url(#cubeRight)"/>
+        <circle cx="16" cy="6.5" r="1.3" fill="#e0e7ff"/>
+        <circle cx="24.8" cy="12.3" r="1.3" fill="#e0e7ff"/>
+        <circle cx="24.8" cy="20.8" r="1.3" fill="#a5b4fc"/>
+        <circle cx="16" cy="25.5" r="1.3" fill="#818cf8"/>
+        <circle cx="7.2" cy="20.8" r="1.3" fill="#a5b4fc"/>
+        <circle cx="7.2" cy="12.3" r="1.3" fill="#e0e7ff"/>
+        <circle cx="16" cy="16.4" r="2.2" fill="#ffffff" filter="url(#logoGlow)"/>
+        <circle cx="16" cy="16.4" r="1.2" fill="#38bdf8"/>
+      </svg>
+    </span>
+    <span class="brand-name">Ahmad Ismail</span>
+  </a>
   <div class="nav-links" id="nav_links">
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#strengths" data-i18n="nav.strengths">Strengths</a>
