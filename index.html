@@ -16,14 +16,12 @@
 </head>
 <body>
 
-<!-- DYNAMIC BACKGROUND CANVAS & TEXTURE -->
-<canvas id="bg_canvas" aria-hidden="true"></canvas>
-<div class="grain-overlay" aria-hidden="true"></div>
-
-<!-- AMBIENT VOLUMETRIC AURORAS -->
-<div class="ambient-glow glow-1" aria-hidden="true"></div>
-<div class="ambient-glow glow-2" aria-hidden="true"></div>
-<div class="ambient-glow glow-3" aria-hidden="true"></div>
+<!-- ARCHITECTURAL PRO BACKGROUND & SILKY LIGHTING -->
+<div class="pro-ambient-bg" id="pro_bg" aria-hidden="true">
+  <div class="pro-grid-layer"></div>
+  <div class="pro-spotlight-beam" id="pro_spotlight"></div>
+  <div class="grain-overlay"></div>
+</div>
 
 <!-- LOADER -->
 <div class="loader" id="loader">
@@ -41,30 +39,30 @@
         <defs>
           <linearGradient id="cubeTop" x1="7" y1="6" x2="25" y2="16" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stop-color="#38bdf8"/>
-            <stop offset="100%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
           </linearGradient>
           <linearGradient id="cubeRight" x1="16" y1="11" x2="25" y2="26" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#6366f1"/>
-            <stop offset="100%" stop-color="#4338ca"/>
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="100%" stop-color="#1d4ed8"/>
           </linearGradient>
           <linearGradient id="cubeLeft" x1="7" y1="11" x2="16" y2="26" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#4f46e5"/>
-            <stop offset="100%" stop-color="#312e81"/>
+            <stop offset="0%" stop-color="#1e40af"/>
+            <stop offset="100%" stop-color="#0f172a"/>
           </linearGradient>
           <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="1.2" result="blur"/>
             <feComposite in="SourceGraphic" in2="blur" operator="over"/>
           </filter>
         </defs>
-        <rect x="1" y="1" width="30" height="30" rx="8" fill="#0c0d14" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1.2"/>
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="#090b10" stroke="rgba(59, 130, 246, 0.35)" stroke-width="1.2"/>
         <path d="M16 6.5 L24.2 11.2 L16 15.8 L7.8 11.2 Z" fill="url(#cubeTop)"/>
         <path d="M7.2 12.3 L15.4 16.9 L15.4 25.5 L7.2 20.8 Z" fill="url(#cubeLeft)"/>
         <path d="M16.6 16.9 L24.8 12.3 L24.8 20.8 L16.6 25.5 Z" fill="url(#cubeRight)"/>
-        <circle cx="16" cy="6.5" r="1.3" fill="#e0e7ff"/>
+        <circle cx="16" cy="6.5" r="1.3" fill="#ffffff"/>
         <circle cx="24.8" cy="12.3" r="1.3" fill="#e0e7ff"/>
-        <circle cx="24.8" cy="20.8" r="1.3" fill="#a5b4fc"/>
-        <circle cx="16" cy="25.5" r="1.3" fill="#818cf8"/>
-        <circle cx="7.2" cy="20.8" r="1.3" fill="#a5b4fc"/>
+        <circle cx="24.8" cy="20.8" r="1.3" fill="#60a5fa"/>
+        <circle cx="16" cy="25.5" r="1.3" fill="#3b82f6"/>
+        <circle cx="7.2" cy="20.8" r="1.3" fill="#60a5fa"/>
         <circle cx="7.2" cy="12.3" r="1.3" fill="#e0e7ff"/>
         <circle cx="16" cy="16.4" r="2.2" fill="#ffffff" filter="url(#logoGlow)"/>
         <circle cx="16" cy="16.4" r="1.2" fill="#38bdf8"/>
@@ -73,25 +71,23 @@
     <span class="brand-name">Ahmad Ismail</span>
   </a>
   <div class="nav-links" id="nav_links">
-    <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#services" data-i18n="nav.expertise">Capabilities</a>
-    <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
-    <a href="#projects" data-i18n="nav.projects">Projects</a>
-    <a href="#journey" data-i18n="nav.journey">Journey</a>
+    <a href="#projects" data-i18n="nav.projects">Work</a>
+    <a href="#services" data-i18n="nav.services">Workbench</a>
+    <a href="#solutions" data-i18n="nav.solutions">Value</a>
     <a href="#skills" data-i18n="nav.stack">Stack</a>
-    <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+    <a href="#journey" data-i18n="nav.journey">Journey</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
   </div>
   <div class="nav-right">
+    <a href="#contact" class="nav-cta-btn" data-i18n="nav.hire_btn">
+      <span>Discuss Project</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
     <button class="lang-switch-btn" id="lang_toggle" aria-label="Switch Language">
-      <span class="lang-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
-      <span id="lang_label">عربي</span>
+      <span class="lang-text">AR</span>
+      <span class="lang-indicator"></span>
     </button>
-    <!-- Live status indicator -->
-    <div class="nav-live-status">
-      <span class="nav-live-dot"></span>
-      <span id="nav_clock">00:00:00</span>
-    </div>
-    <button class="menu-toggle" id="menu_toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobile_toggle" aria-label="Open Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -336,38 +332,9 @@
   </div>
 </section>
 
-<!-- LIVE TELEMETRY STATUS BAR -->
-<div class="live-terminal-bar">
-  <div class="live-terminal">
-    <div class="live-terminal-cell">
-      <span class="live-dot"></span>
-      <span class="label">STATUS</span>
-      <span class="value">ONLINE</span>
-    </div>
-    <div class="live-terminal-cell">
-      <span class="label">UPTIME</span>
-      <span class="value" id="live_uptime">00:00:00</span>
-    </div>
-    <div class="live-terminal-cell">
-      <span class="label">NETWORK FLOWS</span>
-      <span class="value" id="live_packets">2,148,920</span>
-    </div>
-    <div class="live-terminal-cell">
-      <span class="label">AVAILABILITY</span>
-      <span class="value" id="live_session">OPEN</span>
-    </div>
-    <div class="live-terminal-typing">
-      <span id="terminal_log_text">systems nominal · telemetry active</span><span class="cursor"></span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
-    <div class="cmd-header reveal">
-      <span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.about">about</span>
-    </div>
+    <div class="section-tag-ribbon reveal"><span class="section-index-num">01</span><span class="section-index-line"></span><span class="section-index-label" data-i18n="tag.about">EXECUTIVE PROFILE</span></div>
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-eyebrow" data-i18n="about.eyebrow">About Me</div>
@@ -385,418 +352,9 @@
   </div>
 </section>
 
-<!-- CAPABILITIES & INTERACTIVE SYSTEMS MATRIX -->
-<section id="services" class="capabilities-matrix-section">
-  <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.services">capabilities_matrix</span></div>
-    <div class="section-heading-wrap reveal">
-      <div class="section-eyebrow" data-i18n="expertise.eyebrow">Engineering Matrix &amp; Live Simulation</div>
-      <h2 class="section-big-title" data-i18n="expertise.title">Four Domains of Technical Rigor — Tested Live</h2>
-      <p class="section-sub-desc" data-i18n="expertise.subtitle">Select an engineering domain on the left to inspect its live reactive testbed on the right. Experience real-time latency simulations, dynamic ROC threshold sweeps, and automated cyber defense execution.</p>
-    </div>
-
-    <div class="capabilities-studio reveal">
-      <!-- Left side: 4 Engineering Channels -->
-      <div class="studio-channels" role="tablist" aria-label="Engineering Capabilities">
-        <!-- Channel 01 -->
-        <button class="studio-channel-btn active" data-channel="fullstack" role="tab" aria-selected="true" aria-controls="pane-fullstack">
-          <div class="channel-indicator"></div>
-          <div class="channel-head">
-            <span class="channel-num">01</span>
-            <span class="channel-badge green" data-i18n="studio.badge_fullstack">REAL-TIME ENGINE</span>
-          </div>
-          <h3 class="channel-title" data-i18n="exp.dev_title">Full-Stack &amp; Real-Time Systems</h3>
-          <p class="channel-summary" data-i18n="exp.dev_desc">Reactive web architectures, low-latency WebSocket streaming, and hardened containerized APIs. From PostgreSQL schema indexing to 60fps frontends.</p>
-          <div class="channel-tags">
-            <span>Next.js</span><span>Flask</span><span>WebSockets</span><span>Docker</span><span>PostgreSQL</span><span>JWT Auth</span>
-          </div>
-        </button>
-
-        <!-- Channel 02 -->
-        <button class="studio-channel-btn" data-channel="ml" role="tab" aria-selected="false" aria-controls="pane-ml">
-          <div class="channel-indicator"></div>
-          <div class="channel-head">
-            <span class="channel-num">02</span>
-            <span class="channel-badge purple" data-i18n="studio.badge_ml">AUC: 96.1%</span>
-          </div>
-          <h3 class="channel-title" data-i18n="exp.ml_title">Machine Learning &amp; AI Systems</h3>
-          <p class="channel-summary" data-i18n="exp.ml_desc">Production ensemble models (LightGBM, IsolationForest) with SHAP explainability, robust feature engineering, and high-throughput vector math.</p>
-          <div class="channel-tags">
-            <span>LightGBM</span><span>IsolationForest</span><span>SHAP</span><span>scikit-learn</span><span>Pandas</span><span>NumPy</span>
-          </div>
-        </button>
-
-        <!-- Channel 03 -->
-        <button class="studio-channel-btn" data-channel="cyber" role="tab" aria-selected="false" aria-controls="pane-cyber">
-          <div class="channel-indicator"></div>
-          <div class="channel-head">
-            <span class="channel-num">03</span>
-            <span class="channel-badge cyan" data-i18n="studio.badge_cyber">AUTOMATED MITIGATION</span>
-          </div>
-          <h3 class="channel-title" data-i18n="exp.sec_title">IoT &amp; Network Cyber Defense</h3>
-          <p class="channel-summary" data-i18n="exp.sec_desc">Autonomous intrusion defense. Real-time packet parsing via Scapy &amp; Suricata with sub-millisecond dynamic nftables firewall rule injection.</p>
-          <div class="channel-tags">
-            <span>Suricata</span><span>nftables</span><span>Scapy</span><span>Threat Intel</span><span>Zero Trust</span><span>Nmap</span>
-          </div>
-        </button>
-
-        <!-- Channel 04 -->
-        <button class="studio-channel-btn" data-channel="net" role="tab" aria-selected="false" aria-controls="pane-net">
-          <div class="channel-indicator"></div>
-          <div class="channel-head">
-            <span class="channel-num">04</span>
-            <span class="channel-badge amber" data-i18n="studio.badge_net">L2/L3 HARDENED</span>
-          </div>
-          <h3 class="channel-title" data-i18n="exp.net_title">Enterprise Network Architecture</h3>
-          <p class="channel-summary" data-i18n="exp.net_desc">Multi-Area OSPF, 802.1Q VLAN trunking, EtherChannel bonding, strict ACL perimeter policies, and deep Wireshark protocol diagnostics.</p>
-          <div class="channel-tags">
-            <span>OSPFv2/v3</span><span>802.1Q</span><span>VLAN Trunking</span><span>ACLs</span><span>Wireshark</span><span>STP/RSTP</span>
-          </div>
-        </button>
-      </div>
-
-      <!-- Right side: Live Engineering Workstation / Interactive Sandbox -->
-      <div class="studio-sandbox">
-        <!-- Workstation Frame Header -->
-        <div class="sandbox-header">
-          <div class="sandbox-window-controls">
-            <span class="window-dot red"></span>
-            <span class="window-dot yellow"></span>
-            <span class="window-dot green"></span>
-          </div>
-          <div class="sandbox-center-id">
-            <span class="sandbox-mode-pill">INTERACTIVE TESTBED</span>
-            <span id="sandbox_title" class="sandbox-active-file">realtime_stream.ts</span>
-          </div>
-          <div class="sandbox-header-status">
-            <span class="live-pulse-dot"></span>
-            <span id="sandbox_conn_status" class="sandbox-status-text">ONLINE · 60 FPS</span>
-          </div>
-        </div>
-
-        <!-- Pane 01: Full-Stack & WebSocket Telemetry Stream -->
-        <div class="sandbox-pane active" id="pane-fullstack" data-pane="fullstack">
-          <div class="sandbox-toolbar">
-            <div class="toolbar-stat">
-              <span class="stat-meta">PIPE LATENCY:</span>
-              <span id="live_ping_val" class="stat-accent">0.82 ms</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">AUTH:</span>
-              <span class="stat-accent green">JWT_VERIFIED</span>
-            </div>
-            <button id="btn_send_payload" class="sandbox-action-btn" title="Simulate sending a WebSocket event payload">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              <span>Dispatch Payload</span>
-            </button>
-          </div>
-          <div class="interactive-terminal-screen" id="fullstack_terminal">
-            <div class="term-line timestamp">[00:00:01.002] <span class="c-keyword">INIT</span> WebSocket Server listening on wss://cluster-01.telemetry:8443</div>
-            <div class="term-line">[00:00:01.120] <span class="c-fn">AUTHENTICATE</span> Bearer token verified · scope [telemetry:rw, stream:events]</div>
-            <div class="term-line success">[00:00:01.240] <span class="c-string">ESTABLISHED</span> Connection 172.16.0.1:443 (Client v4.12.0 - TLS 1.3)</div>
-            <div class="term-line">[00:00:01.405] <span class="c-keyword">STREAM_EVENT</span> Frame #10492 | Size: 1.4KB | Ingest Latency: 0.82ms</div>
-            <div class="term-line active-pulse">[00:00:01.650] <span class="c-type">STATE_SYNC</span> Next.js UI hydrated · Zero dropped frames (60.0 FPS)</div>
-          </div>
-          <div class="sandbox-metrics-bar">
-            <div class="metric-item">
-              <span class="metric-label">STREAM THROUGHPUT</span>
-              <span class="metric-num">12,400 msg/s</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">EVENT EMITTER</span>
-              <span class="metric-num">Zero-Allocation</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">UPTIME</span>
-              <span class="metric-num green">99.99%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pane 02: ML ROC-AUC Curve & Dynamic Threshold Slider -->
-        <div class="sandbox-pane" id="pane-ml" data-pane="ml">
-          <div class="sandbox-toolbar">
-            <div class="toolbar-stat">
-              <span class="stat-meta">MODEL:</span>
-              <span class="stat-accent">LightGBM + IsoForest</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">DATASET:</span>
-              <span class="stat-accent">2,100,000+ Flows</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">OVERALL AUC:</span>
-              <span class="stat-accent purple">96.1%</span>
-            </div>
-          </div>
-
-          <div class="pane-slider-bar">
-            <label for="roc_slider" class="slider-label">
-              <span>Decision Threshold:</span>
-              <strong id="threshold_val">0.50</strong>
-            </label>
-            <input type="range" id="roc_slider" class="interactive-range" min="0.05" max="0.95" step="0.01" value="0.50">
-          </div>
-
-          <div class="interactive-roc-wrap">
-            <svg class="roc-interactive-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="rocStudioGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#818cf8" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <line x1="40" y1="20" x2="380" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="40" y1="55" x2="380" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="40" y1="90" x2="380" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="40" y1="125" x2="380" y2="125" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="125" y1="20" x2="125" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="210" y1="20" x2="210" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="295" y1="20" x2="295" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-              <line x1="40" y1="15" x2="40" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-              <line x1="40" y1="140" x2="385" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-              <line x1="40" y1="140" x2="380" y2="20" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4" stroke-width="1"/>
-              <path d="M 40 140 Q 65 30, 380 20 L 380 140 Z" fill="url(#rocStudioGrad)"/>
-              <path d="M 40 140 Q 65 30, 380 20" fill="none" stroke="#818cf8" stroke-width="3" filter="drop-shadow(0 0 8px rgba(99,102,241,0.6))"/>
-              <circle id="roc_point_marker" cx="210" cy="25" r="7" fill="#6366f1" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px #a5b4fc)"/>
-              <text x="35" y="25" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
-              <text x="35" y="80" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.5</text>
-              <text x="35" y="142" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.0</text>
-              <text x="40" y="153" fill="#64748b" font-size="9" text-anchor="start" font-family="monospace">0.0 (FPR)</text>
-              <text x="380" y="153" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
-            </svg>
-          </div>
-
-          <div class="sandbox-metrics-bar">
-            <div class="metric-item">
-              <span class="metric-label">TRUE POSITIVE RATE</span>
-              <span id="metric_tpr" class="metric-num green">96.8%</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">FALSE POSITIVE RATE</span>
-              <span id="metric_fpr" class="metric-num cyan">1.4%</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">SHAP TOP FEATURE</span>
-              <span class="metric-num purple">Flow_Duration (0.94)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pane 03: Cyber Defense & Threat Mitigation Simulator -->
-        <div class="sandbox-pane" id="pane-cyber" data-pane="cyber">
-          <div class="sandbox-toolbar">
-            <div class="toolbar-stat">
-              <span class="stat-meta">DEFENSE ENGINE:</span>
-              <span class="stat-accent cyan">Suricata + nftables</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">STATUS:</span>
-              <span id="firewall_state_pill" class="stat-accent green">PERIMETER_SECURE</span>
-            </div>
-            <button id="btn_simulate_attack" class="sandbox-action-btn danger" title="Simulate a live SYN flood attack burst">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Simulate SYN Flood</span>
-            </button>
-          </div>
-
-          <div class="cyber-radar-terminal-split">
-            <div class="radar-box">
-              <svg class="interactive-radar-svg" viewBox="0 0 180 180">
-                <circle cx="90" cy="90" r="80" fill="none" stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
-                <circle cx="90" cy="90" r="55" fill="none" stroke="rgba(14,165,233,0.22)" stroke-width="1"/>
-                <circle cx="90" cy="90" r="30" fill="none" stroke="rgba(14,165,233,0.26)" stroke-width="1"/>
-                <line x1="90" y1="10" x2="90" y2="170" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
-                <line x1="10" y1="90" x2="170" y2="90" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
-                <line x1="90" y1="90" x2="160" y2="35" class="radar-live-sweep"/>
-                <circle cx="130" cy="50" r="3.5" class="radar-target-blip active"/>
-                <circle cx="60" cy="115" r="3" class="radar-target-blip"/>
-                <circle cx="90" cy="90" r="4" fill="#38bdf8"/>
-              </svg>
-            </div>
-            <div class="interactive-terminal-screen cyber-term" id="cyber_terminal">
-              <div class="term-line timestamp">[14:02:18.110] <span class="c-keyword">[SURICATA]</span> Packet ingestion queue primed · 0 alerts</div>
-              <div class="term-line">[14:02:18.420] <span class="c-fn">[FLOW]</span> 192.168.1.45:49210 → 10.0.0.1:443 (TLS Handshake OK)</div>
-              <div class="term-line success">[14:02:19.012] <span class="c-string">[HEALTH]</span> Zero anomalous vectors in sliding 10s window</div>
-              <div class="term-line active-pulse">[14:02:20.100] <span class="c-type">[MONITOR]</span> Listening for TCP flag anomalies on interface eth0...</div>
-            </div>
-          </div>
-
-          <div class="sandbox-metrics-bar">
-            <div class="metric-item">
-              <span class="metric-label">MITIGATION SPEED</span>
-              <span class="metric-num cyan">&lt; 0.4 ms</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">ACTIVE FIREWALL RULES</span>
-              <span id="active_rules_val" class="metric-num">14 Active</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-label">POLICY</span>
-              <span class="metric-num green">Default DROP</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pane 04: Enterprise Network Topology Inspector -->
-        <div class="sandbox-pane" id="pane-net" data-pane="net">
-          <div class="sandbox-toolbar">
-            <div class="toolbar-stat">
-              <span class="stat-meta">TOPOLOGY:</span>
-              <span class="stat-accent amber">Multi-Area OSPFv2/v3</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">CONVERGENCE:</span>
-              <span class="stat-accent green">0 ms (Sub-second BFD)</span>
-            </div>
-            <div class="toolbar-stat">
-              <span class="stat-meta">INTERACTION:</span>
-              <span class="stat-accent">Click node to inspect</span>
-            </div>
-          </div>
-
-          <div class="interactive-topo-stage">
-            <svg class="topo-interactive-svg" viewBox="0 0 460 170">
-              <line x1="80" y1="85" x2="230" y2="40" class="topo-mesh-link"/>
-              <line x1="80" y1="85" x2="230" y2="130" class="topo-mesh-link"/>
-              <line x1="230" y1="40" x2="380" y2="85" class="topo-mesh-link"/>
-              <line x1="230" y1="130" x2="380" y2="85" class="topo-mesh-link"/>
-              <line x1="230" y1="40" x2="230" y2="130" class="topo-mesh-link backbone"/>
-
-              <circle cx="155" cy="62" r="3.5" class="topo-packet"/>
-              <circle cx="305" cy="108" r="3.5" class="topo-packet" style="animation-delay: 0.9s;"/>
-              <circle cx="230" cy="85" r="3.5" class="topo-packet" style="animation-delay: 1.4s;"/>
-
-              <g class="topo-node-g active" data-node="R1" transform="translate(230, 40)" role="button" tabindex="0">
-                <circle cx="0" cy="0" r="22" class="node-halo"/>
-                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
-                <text x="0" y="4" class="node-txt">R1</text>
-                <text x="0" y="-22" class="node-sub">Area 0 (ABR)</text>
-              </g>
-
-              <g class="topo-node-g" data-node="R2" transform="translate(230, 130)" role="button" tabindex="0">
-                <circle cx="0" cy="0" r="22" class="node-halo"/>
-                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
-                <text x="0" y="4" class="node-txt">R2</text>
-                <text x="0" y="32" class="node-sub">Area 0 (Core)</text>
-              </g>
-
-              <g class="topo-node-g" data-node="SW1" transform="translate(80, 85)" role="button" tabindex="0">
-                <circle cx="0" cy="0" r="20" class="node-halo"/>
-                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
-                <text x="0" y="4" class="node-txt">SW1</text>
-                <text x="0" y="30" class="node-sub">VLAN 10/20 Trunk</text>
-              </g>
-
-              <g class="topo-node-g" data-node="SW2" transform="translate(380, 85)" role="button" tabindex="0">
-                <circle cx="0" cy="0" r="20" class="node-halo"/>
-                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
-                <text x="0" y="4" class="node-txt">SW2</text>
-                <text x="0" y="30" class="node-sub">VLAN 30/40 Trunk</text>
-              </g>
-            </svg>
-          </div>
-
-          <div class="interactive-terminal-screen net-inspector" id="topo_node_details">
-            <span class="c-keyword">[NODE: R1]</span> Cisco IOS-XE / OSPF Router-ID 10.255.255.1 · State: FULL/DR · Metric Cost: 10<br>
-            <span class="c-fn">INTERFACES:</span> GigabitEthernet0/0/0 (Area 0), Gi0/0/1 (Area 1) · MTU: 1500 · 802.1Q Active<br>
-            <span class="c-string">SECURITY:</span> ACL Ingress Filter: 10.0.0.0/8 PERMIT · Spoof Prevention Enabled
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTIONS / VALUE PROPOSITION -->
-<section id="solutions">
-  <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.solutions">solutions</span></div>
-    <div class="section-heading-wrap reveal">
-      <div class="section-eyebrow" data-i18n="solutions.eyebrow">Engineered for High-Stakes Impact</div>
-      <h2 class="section-big-title" data-i18n="solutions.title">Why Work With Me · Enterprise Value Proposition</h2>
-    </div>
-    
-    <!-- EXECUTIVE PROOF RIBBON -->
-    <div class="executive-proof-ribbon">
-      <div class="proof-pillar reveal">
-        <div class="proof-head">
-          <span class="proof-num">01</span>
-          <span class="proof-badge" data-i18n="sol.item1_badge">FULL-CYCLE OWNERSHIP</span>
-        </div>
-        <div class="proof-kpi">
-          <span class="kpi-val">100%</span>
-          <span class="kpi-unit">ARCHITECTED</span>
-        </div>
-        <h3 class="proof-title" data-i18n="sol.item1_title">End-to-End Systems Execution</h3>
-        <p class="proof-desc" data-i18n="sol.item1_desc">No handoff friction between design, frontend, backend microservices, and network security. From database schema indexing to pixel-perfect Next.js interfaces, every layer is built to run reliably at scale.</p>
-      </div>
-
-      <div class="proof-pillar reveal reveal-delay-1">
-        <div class="proof-head">
-          <span class="proof-num">02</span>
-          <span class="proof-badge" data-i18n="sol.item2_badge">ALGORITHMIC SPEED</span>
-        </div>
-        <div class="proof-kpi">
-          <span class="kpi-val">&lt; 1.2</span>
-          <span class="kpi-unit">MS LATENCY</span>
-        </div>
-        <h3 class="proof-title" data-i18n="sol.item2_title">Sub-Millisecond Inference &amp; Streaming</h3>
-        <p class="proof-desc" data-i18n="sol.item2_desc">Trained across 2.1M+ traffic flows, optimized for real-time WebSocket pipelines and low-latency inference. High-throughput algorithmic code engineered without memory leaks or framework bloat.</p>
-      </div>
-
-      <div class="proof-pillar reveal reveal-delay-2">
-        <div class="proof-head">
-          <span class="proof-num">03</span>
-          <span class="proof-badge" data-i18n="sol.item3_badge">CYBER DEFENSE</span>
-        </div>
-        <div class="proof-kpi">
-          <span class="kpi-val">96.1%</span>
-          <span class="kpi-unit">ROC-AUC</span>
-        </div>
-        <h3 class="proof-title" data-i18n="sol.item3_title">Zero-Trust &amp; Hardened Infrastructure</h3>
-        <p class="proof-desc" data-i18n="sol.item3_desc">Built with defense-in-depth principles: automated firewall enforcement via nftables, Suricata IDS flow correlation, rigorous input sanitization, and strict L2/L3 enterprise network isolation.</p>
-      </div>
-
-      <div class="proof-pillar reveal reveal-delay-3">
-        <div class="proof-head">
-          <span class="proof-num">04</span>
-          <span class="proof-badge" data-i18n="sol.item4_badge">GLOBAL DELIVERY</span>
-        </div>
-        <div class="proof-kpi">
-          <span class="kpi-val">&lt; 24h</span>
-          <span class="kpi-unit">TURNAROUND</span>
-        </div>
-        <h3 class="proof-title" data-i18n="sol.item4_title">Bilingual Delivery &amp; Transparent Comms</h3>
-        <p class="proof-desc" data-i18n="sol.item4_desc">Seamless native communication in English and Arabic. Fast iterations, clean Git commits, architectural documentation, and production readiness for international clients.</p>
-      </div>
-    </div>
-
-    <!-- Client CTA Banner inside Solutions -->
-    <div class="solutions-cta-box reveal">
-      <div class="cta-box-content">
-        <div class="cta-box-badge" data-i18n="sol.cta_badge">HIRING &amp; CONTRACTS</div>
-        <h3 data-i18n="sol.cta_title">Have an ambitious project or a role to fill?</h3>
-        <p data-i18n="sol.cta_desc">Whether you need an end-to-end full-stack SaaS platform, an intelligent ML pipeline, or hardened network defense, I bring senior engineering rigor to your mission.</p>
-      </div>
-      <div class="cta-box-actions">
-        <a href="#contact" class="btn btn-primary-accent" data-i18n="btn.hire_discuss">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span>Discuss Your Project</span>
-        </a>
-        <a href="https://github.com/A7medico" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="btn.review_code">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85 0 1.7.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>Review GitHub Code</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.projects">projects</span></div>
+    <div class="section-tag-ribbon reveal"><span class="section-index-num">02</span><span class="section-index-line"></span><span class="section-index-label" data-i18n="tag.projects">FLAGSHIP SYSTEMS</span></div>
     <div class="section-heading-wrap reveal">
       <div class="section-eyebrow" data-i18n="projects.eyebrow">Featured Work</div>
       <h2 class="section-big-title" data-i18n="projects.title">Featured Systems &amp; Live Deployments</h2>
@@ -985,10 +543,453 @@
   </div>
 </section>
 
-<!-- JOURNEY -->
+<!-- CAPABILITIES & INTERACTIVE SYSTEMS WORKBENCH -->
+<section id="services" class="capabilities-matrix-section">
+  <div class="section-inner">
+    <div class="section-tag-ribbon reveal">
+      <span class="section-index-num">03</span>
+      <span class="section-index-line"></span>
+      <span class="section-index-label" data-i18n="tag.workbench">SYSTEMS WORKBENCH</span>
+    </div>
+    <div class="section-heading-wrap reveal">
+      <div class="section-eyebrow" data-i18n="expertise.eyebrow">Interactive Systems Testbed</div>
+      <h2 class="section-big-title" data-i18n="expertise.title">Four Domains of Technical Rigor — Tested Live</h2>
+      <p class="section-sub-desc" data-i18n="expertise.subtitle">Select an engineering domain on the left to inspect its live reactive testbed on the right. Experience real-time latency simulations, dynamic ROC threshold sweeps, and automated cyber defense execution.</p>
+    </div>
+
+    <div class="capabilities-studio reveal">
+      <!-- Left side: 4 Engineering Channels -->
+      <div class="studio-channels" role="tablist" aria-label="Engineering Capabilities">
+        <!-- Channel 01 -->
+        <button class="studio-channel-btn active" data-channel="fullstack" role="tab" aria-selected="true" aria-controls="pane-fullstack">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">01</span>
+            <span class="channel-badge green" data-i18n="studio.badge_fullstack">REAL-TIME ENGINE</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.dev_title">Full-Stack &amp; Real-Time Systems</h3>
+          <p class="channel-summary" data-i18n="exp.dev_desc">Reactive web architectures, low-latency WebSocket streaming, and hardened containerized APIs. From PostgreSQL schema indexing to 60fps frontends.</p>
+          <div class="channel-tags">
+            <span>Next.js</span><span>Flask</span><span>WebSockets</span><span>Docker</span><span>PostgreSQL</span><span>JWT Auth</span>
+          </div>
+        </button>
+
+        <!-- Channel 02 -->
+        <button class="studio-channel-btn" data-channel="ml" role="tab" aria-selected="false" aria-controls="pane-ml">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">02</span>
+            <span class="channel-badge purple" data-i18n="studio.badge_ml">AUC: 96.1%</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.ml_title">Machine Learning &amp; AI Systems</h3>
+          <p class="channel-summary" data-i18n="exp.ml_desc">Production ensemble models (LightGBM, IsolationForest) with SHAP explainability, robust feature engineering, and high-throughput vector math.</p>
+          <div class="channel-tags">
+            <span>LightGBM</span><span>IsolationForest</span><span>SHAP</span><span>scikit-learn</span><span>Pandas</span><span>NumPy</span>
+          </div>
+        </button>
+
+        <!-- Channel 03 -->
+        <button class="studio-channel-btn" data-channel="cyber" role="tab" aria-selected="false" aria-controls="pane-cyber">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">03</span>
+            <span class="channel-badge cyan" data-i18n="studio.badge_cyber">AUTOMATED MITIGATION</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.sec_title">IoT &amp; Network Cyber Defense</h3>
+          <p class="channel-summary" data-i18n="exp.sec_desc">Autonomous intrusion defense. Real-time packet parsing via Scapy &amp; Suricata with sub-millisecond dynamic nftables firewall rule injection.</p>
+          <div class="channel-tags">
+            <span>Suricata</span><span>nftables</span><span>Scapy</span><span>Threat Intel</span><span>Zero Trust</span><span>Nmap</span>
+          </div>
+        </button>
+
+        <!-- Channel 04 -->
+        <button class="studio-channel-btn" data-channel="net" role="tab" aria-selected="false" aria-controls="pane-net">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">04</span>
+            <span class="channel-badge amber" data-i18n="studio.badge_net">L2/L3 HARDENED</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.net_title">Enterprise Network Architecture</h3>
+          <p class="channel-summary" data-i18n="exp.net_desc">Multi-Area OSPF, 802.1Q VLAN trunking, EtherChannel bonding, strict ACL perimeter policies, and deep Wireshark protocol diagnostics.</p>
+          <div class="channel-tags">
+            <span>OSPFv2/v3</span><span>802.1Q</span><span>VLAN Trunking</span><span>ACLs</span><span>Wireshark</span><span>STP/RSTP</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Right side: Live Engineering Workstation / Interactive Sandbox -->
+      <div class="studio-sandbox">
+        <!-- Workstation Frame Header -->
+        <div class="sandbox-header">
+          <div class="sandbox-window-controls">
+            <span class="window-dot red"></span>
+            <span class="window-dot yellow"></span>
+            <span class="window-dot green"></span>
+          </div>
+          <div class="sandbox-center-id">
+            <span class="sandbox-mode-pill">LIVE TESTBED</span>
+            <span id="sandbox_title" class="sandbox-active-file">realtime_stream.ts</span>
+          </div>
+          <div class="sandbox-header-status">
+            <span class="live-pulse-dot"></span>
+            <span id="sandbox_conn_status" class="sandbox-status-text">ONLINE · 60 FPS</span>
+          </div>
+        </div>
+
+        <!-- Pane 01: Full-Stack & WebSocket Telemetry Stream -->
+        <div class="sandbox-pane active" id="pane-fullstack" data-pane="fullstack">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">PIPE LATENCY:</span>
+              <span id="live_ping_val" class="stat-accent">0.82 ms</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">AUTH:</span>
+              <span class="stat-accent green">JWT_VERIFIED</span>
+            </div>
+            <button id="btn_send_payload" class="sandbox-action-btn" title="Simulate sending a WebSocket event payload">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Dispatch Payload</span>
+            </button>
+          </div>
+          <div class="interactive-terminal-screen" id="fullstack_terminal">
+            <div class="term-line timestamp">[00:00:01.002] <span class="c-keyword">INIT</span> WebSocket Server listening on wss://cluster-01.telemetry:8443</div>
+            <div class="term-line">[00:00:01.120] <span class="c-fn">AUTHENTICATE</span> Bearer token verified · scope [telemetry:rw, stream:events]</div>
+            <div class="term-line success">[00:00:01.240] <span class="c-string">ESTABLISHED</span> Connection 172.16.0.1:443 (Client v4.12.0 - TLS 1.3)</div>
+            <div class="term-line">[00:00:01.405] <span class="c-keyword">STREAM_EVENT</span> Frame #10492 | Size: 1.4KB | Ingest Latency: 0.82ms</div>
+            <div class="term-line active-pulse">[00:00:01.650] <span class="c-type">STATE_SYNC</span> Next.js UI hydrated · Zero dropped frames (60.0 FPS)</div>
+          </div>
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">STREAM THROUGHPUT</span>
+              <span class="metric-num">12,400 msg/s</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">EVENT EMITTER</span>
+              <span class="metric-num">Zero-Allocation</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">UPTIME</span>
+              <span class="metric-num green">99.99%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 02: ML ROC-AUC Curve & Dynamic Threshold Slider -->
+        <div class="sandbox-pane" id="pane-ml" data-pane="ml">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">MODEL:</span>
+              <span class="stat-accent">LightGBM + IsoForest</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">DATASET:</span>
+              <span class="stat-accent">2,100,000+ Flows</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">OVERALL AUC:</span>
+              <span class="stat-accent purple">96.1%</span>
+            </div>
+          </div>
+
+          <div class="pane-slider-bar">
+            <label for="roc_slider" class="slider-label">
+              <span>Decision Threshold:</span>
+              <strong id="threshold_val">0.50</strong>
+            </label>
+            <input type="range" id="roc_slider" class="interactive-range" min="0.05" max="0.95" step="0.01" value="0.50">
+          </div>
+
+          <div class="interactive-roc-wrap">
+            <svg class="roc-interactive-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="rocStudioGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="40" y1="20" x2="380" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="55" x2="380" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="90" x2="380" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="125" x2="380" y2="125" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="125" y1="20" x2="125" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="210" y1="20" x2="210" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="295" y1="20" x2="295" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="15" x2="40" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+              <line x1="40" y1="140" x2="385" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+              <line x1="40" y1="140" x2="380" y2="20" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4" stroke-width="1"/>
+              <path d="M 40 140 Q 65 30, 380 20 L 380 140 Z" fill="url(#rocStudioGrad)"/>
+              <path d="M 40 140 Q 65 30, 380 20" fill="none" stroke="#3b82f6" stroke-width="3" filter="drop-shadow(0 0 8px rgba(37,99,235,0.6))"/>
+              <circle id="roc_point_marker" cx="210" cy="25" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px #60a5fa)"/>
+              <text x="35" y="25" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
+              <text x="35" y="80" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.5</text>
+              <text x="35" y="142" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.0</text>
+              <text x="40" y="153" fill="#64748b" font-size="9" text-anchor="start" font-family="monospace">0.0 (FPR)</text>
+              <text x="380" y="153" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
+            </svg>
+          </div>
+
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">TRUE POSITIVE RATE</span>
+              <span id="metric_tpr" class="metric-num green">96.8%</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">FALSE POSITIVE RATE</span>
+              <span id="metric_fpr" class="metric-num cyan">1.4%</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">SHAP TOP FEATURE</span>
+              <span class="metric-num purple">Flow_Duration (0.94)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 03: Cyber Defense & Threat Mitigation Simulator -->
+        <div class="sandbox-pane" id="pane-cyber" data-pane="cyber">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">DEFENSE ENGINE:</span>
+              <span class="stat-accent cyan">Suricata + nftables</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">STATUS:</span>
+              <span id="firewall_state_pill" class="stat-accent green">PERIMETER_SECURE</span>
+            </div>
+            <button id="btn_simulate_attack" class="sandbox-action-btn danger" title="Simulate a live SYN flood attack burst">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Simulate SYN Flood</span>
+            </button>
+          </div>
+
+          <div class="cyber-radar-terminal-split">
+            <div class="radar-box">
+              <svg class="interactive-radar-svg" viewBox="0 0 180 180">
+                <circle cx="90" cy="90" r="80" fill="none" stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+                <circle cx="90" cy="90" r="55" fill="none" stroke="rgba(14,165,233,0.22)" stroke-width="1"/>
+                <circle cx="90" cy="90" r="30" fill="none" stroke="rgba(14,165,233,0.26)" stroke-width="1"/>
+                <line x1="90" y1="10" x2="90" y2="170" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="10" y1="90" x2="170" y2="90" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="90" y1="90" x2="160" y2="35" class="radar-live-sweep"/>
+                <circle cx="130" cy="50" r="3.5" class="radar-target-blip active"/>
+                <circle cx="60" cy="115" r="3" class="radar-target-blip"/>
+                <circle cx="90" cy="90" r="4" fill="#38bdf8"/>
+              </svg>
+            </div>
+            <div class="interactive-terminal-screen cyber-term" id="cyber_terminal">
+              <div class="term-line timestamp">[14:02:18.110] <span class="c-keyword">[SURICATA]</span> Packet ingestion queue primed · 0 alerts</div>
+              <div class="term-line">[14:02:18.420] <span class="c-fn">[FLOW]</span> 192.168.1.45:49210 → 10.0.0.1:443 (TLS Handshake OK)</div>
+              <div class="term-line success">[14:02:19.012] <span class="c-string">[HEALTH]</span> Zero anomalous vectors in sliding 10s window</div>
+              <div class="term-line active-pulse">[14:02:20.100] <span class="c-type">[MONITOR]</span> Listening for TCP flag anomalies on interface eth0...</div>
+            </div>
+          </div>
+
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">MITIGATION SPEED</span>
+              <span class="metric-num cyan">&lt; 0.4 ms</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">ACTIVE FIREWALL RULES</span>
+              <span id="active_rules_val" class="metric-num">14 Active</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">POLICY</span>
+              <span class="metric-num green">Default DROP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 04: Enterprise Network Topology Inspector -->
+        <div class="sandbox-pane" id="pane-net" data-pane="net">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">TOPOLOGY:</span>
+              <span class="stat-accent amber">Multi-Area OSPFv2/v3</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">CONVERGENCE:</span>
+              <span class="stat-accent green">0 ms (Sub-second BFD)</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">INTERACTION:</span>
+              <span class="stat-accent">Click node to inspect</span>
+            </div>
+          </div>
+
+          <div class="interactive-topo-stage">
+            <svg class="topo-interactive-svg" viewBox="0 0 460 170">
+              <line x1="80" y1="85" x2="230" y2="40" class="topo-mesh-link"/>
+              <line x1="80" y1="85" x2="230" y2="130" class="topo-mesh-link"/>
+              <line x1="230" y1="40" x2="380" y2="85" class="topo-mesh-link"/>
+              <line x1="230" y1="130" x2="380" y2="85" class="topo-mesh-link"/>
+              <line x1="230" y1="40" x2="230" y2="130" class="topo-mesh-link backbone"/>
+
+              <circle cx="155" cy="62" r="3.5" class="topo-packet"/>
+              <circle cx="305" cy="108" r="3.5" class="topo-packet" style="animation-delay: 0.9s;"/>
+              <circle cx="230" cy="85" r="3.5" class="topo-packet" style="animation-delay: 1.4s;"/>
+
+              <g class="topo-node-g active" data-node="R1" transform="translate(230, 40)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="22" class="node-halo"/>
+                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
+                <text x="0" y="4" class="node-txt">R1</text>
+                <text x="0" y="-22" class="node-sub">Area 0 (ABR)</text>
+              </g>
+
+              <g class="topo-node-g" data-node="R2" transform="translate(230, 130)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="22" class="node-halo"/>
+                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
+                <text x="0" y="4" class="node-txt">R2</text>
+                <text x="0" y="32" class="node-sub">Area 0 (Core)</text>
+              </g>
+
+              <g class="topo-node-g" data-node="SW1" transform="translate(80, 85)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="20" class="node-halo"/>
+                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
+                <text x="0" y="4" class="node-txt">SW1</text>
+                <text x="0" y="30" class="node-sub">VLAN 10/20 Trunk</text>
+              </g>
+
+              <g class="topo-node-g" data-node="SW2" transform="translate(380, 85)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="20" class="node-halo"/>
+                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
+                <text x="0" y="4" class="node-txt">SW2</text>
+                <text x="0" y="30" class="node-sub">VLAN 30/40 Trunk</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="interactive-terminal-screen net-inspector" id="topo_node_details">
+            <span class="c-keyword">[NODE: R1]</span> Cisco IOS-XE / OSPF Router-ID 10.255.255.1 · State: FULL/DR · Metric Cost: 10<br>
+            <span class="c-fn">INTERFACES:</span> GigabitEthernet0/0/0 (Area 0), Gi0/0/1 (Area 1) · MTU: 1500 · 802.1Q Active<br>
+            <span class="c-string">SECURITY:</span> ACL Ingress Filter: 10.0.0.0/8 PERMIT · Spoof Prevention Enabled
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXECUTIVE VALUE PROPOSITION -->
+<section id="solutions">
+  <div class="section-inner">
+    <div class="section-tag-ribbon reveal">
+      <span class="section-index-num">04</span>
+      <span class="section-index-line"></span>
+      <span class="section-index-label" data-i18n="tag.value">EXECUTIVE VALUE</span>
+    </div>
+    <div class="section-heading-wrap reveal">
+      <div class="section-eyebrow" data-i18n="solutions.eyebrow">Engineered for High-Stakes Impact</div>
+      <h2 class="section-big-title" data-i18n="solutions.title">Why Work With Me · Enterprise Value Proposition</h2>
+    </div>
+    
+    <!-- EXECUTIVE PROOF RIBBON -->
+    <div class="executive-proof-ribbon">
+      <div class="proof-pillar reveal">
+        <div class="proof-head">
+          <span class="proof-num">01</span>
+          <span class="proof-badge" data-i18n="sol.item1_badge">FULL-CYCLE OWNERSHIP</span>
+        </div>
+        <div class="proof-kpi">
+          <span class="kpi-val">100%</span>
+          <span class="kpi-unit">ARCHITECTED</span>
+        </div>
+        <h3 class="proof-title" data-i18n="sol.item1_title">End-to-End Systems Execution</h3>
+        <p class="proof-desc" data-i18n="sol.item1_desc">No handoff friction between data schemas, backend microservices, and network security. From database schema indexing to pixel-perfect Next.js interfaces, every layer is built to run reliably at scale.</p>
+      </div>
+
+      <div class="proof-pillar reveal reveal-delay-1">
+        <div class="proof-head">
+          <span class="proof-num">02</span>
+          <span class="proof-badge" data-i18n="sol.item2_badge">ALGORITHMIC SPEED</span>
+        </div>
+        <div class="proof-kpi">
+          <span class="kpi-val">&lt; 1.2</span>
+          <span class="kpi-unit">MS LATENCY</span>
+        </div>
+        <h3 class="proof-title" data-i18n="sol.item2_title">Sub-Millisecond Inference &amp; Streaming</h3>
+        <p class="proof-desc" data-i18n="sol.item2_desc">Trained across 2.1M+ traffic flows, optimized for real-time WebSocket pipelines and low-latency inference. High-throughput algorithmic code engineered without memory leaks or framework bloat.</p>
+      </div>
+
+      <div class="proof-pillar reveal reveal-delay-2">
+        <div class="proof-head">
+          <span class="proof-num">03</span>
+          <span class="proof-badge" data-i18n="sol.item3_badge">CYBER DEFENSE</span>
+        </div>
+        <div class="proof-kpi">
+          <span class="kpi-val">96.1%</span>
+          <span class="kpi-unit">ROC-AUC</span>
+        </div>
+        <h3 class="proof-title" data-i18n="sol.item3_title">Zero-Trust &amp; Hardened Infrastructure</h3>
+        <p class="proof-desc" data-i18n="sol.item3_desc">Built with defense-in-depth principles: automated firewall enforcement via nftables, Suricata IDS flow correlation, rigorous input sanitization, and strict L2/L3 enterprise network isolation.</p>
+      </div>
+
+      <div class="proof-pillar reveal reveal-delay-3">
+        <div class="proof-head">
+          <span class="proof-num">04</span>
+          <span class="proof-badge" data-i18n="sol.item4_badge">GLOBAL DELIVERY</span>
+        </div>
+        <div class="proof-kpi">
+          <span class="kpi-val">&lt; 24h</span>
+          <span class="kpi-unit">TURNAROUND</span>
+        </div>
+        <h3 class="proof-title" data-i18n="sol.item4_title">Bilingual Delivery &amp; Transparent Comms</h3>
+        <p class="proof-desc" data-i18n="sol.item4_desc">Seamless native communication in English and Arabic. Fast iterations, clean Git commits, architectural documentation, and production readiness for international clients.</p>
+      </div>
+    </div>
+
+    <!-- Client CTA Banner inside Solutions -->
+    <div class="solutions-cta-box reveal">
+      <div class="cta-box-content">
+        <div class="cta-box-badge" data-i18n="sol.cta_badge">HIRING &amp; CONTRACTS</div>
+        <h3 data-i18n="sol.cta_title">Have an ambitious project or a role to fill?</h3>
+        <p data-i18n="sol.cta_desc">Whether you need an end-to-end full-stack SaaS platform, an intelligent ML pipeline, or hardened network defense, I bring senior engineering rigor to your mission.</p>
+      </div>
+      <div class="cta-box-actions">
+        <a href="#contact" class="btn btn-primary-accent" data-i18n="btn.hire_discuss">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Discuss Your Project</span>
+        </a>
+        <a href="https://github.com/A7medico" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="btn.review_code">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>Review GitHub Code</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-tag-ribbon reveal"><span class="section-index-num">05</span><span class="section-index-line"></span><span class="section-index-label" data-i18n="tag.stack">TECHNICAL ECOSYSTEM</span></div>
+    <div class="section-heading-wrap reveal">
+      <div class="section-eyebrow" data-i18n="skills.eyebrow">Technology Stack</div>
+      <h2 class="section-big-title" data-i18n="skills.title">Every Tool &amp; Framework in My Arsenal</h2>
+      <p class="section-subtitle" data-i18n="skills.subtitle">Everything I use to design, build, test, and protect intelligent systems.</p>
+    </div>
+    <div class="skills-filter-tabs reveal">
+      <button class="skill-tab active" data-filter="all" data-i18n="tab.all">All Stack</button>
+      <button class="skill-tab" data-filter="ml" data-i18n="tab.ml">ML &amp; AI</button>
+      <button class="skill-tab" data-filter="net" data-i18n="tab.net">Networking</button>
+      <button class="skill-tab" data-filter="sec" data-i18n="tab.sec">Security</button>
+      <button class="skill-tab" data-filter="dev" data-i18n="tab.dev">Full-Stack</button>
+      <button class="skill-tab" data-filter="tools" data-i18n="tab.tools">DevOps</button>
+    </div>
+    <div class="skills-container">
+      <div class="skill-category reveal" data-category="ml"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><h3 data-i18n="cat.ml">Machine Learning &amp; AI</h3></div><div class="skill-list"><span class="skill-item">LightGBM</span><span class="skill-item">IsolationForest</span><span class="skill-item">scikit-learn</span><span class="skill-item">SHAP</span><span class="skill-item">Pandas</span><span class="skill-item">NumPy</span><span class="skill-item">PyTorch</span><span class="skill-item">XGBoost</span><span class="skill-item">ROC-AUC Tuning</span><span class="skill-item">Feature Engineering</span><span class="skill-item">Matplotlib</span><span class="skill-item">Seaborn</span><span class="skill-item">Data Preprocessing</span><span class="skill-item">Hyperparameter Tuning</span></div></div>
+      <div class="skill-category reveal reveal-delay-1" data-category="net"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3 data-i18n="cat.net">Networking &amp; Infrastructure</h3></div><div class="skill-list"><span class="skill-item">Routing &amp; Switching</span><span class="skill-item">OSPFv2/v3</span><span class="skill-item">VLANs &amp; 802.1Q</span><span class="skill-item">Inter-VLAN Routing</span><span class="skill-item">Subnetting (VLSM)</span><span class="skill-item">IPv4 &amp; IPv6</span><span class="skill-item">ACLs (Std/Ext)</span><span class="skill-item">NAT/PAT</span><span class="skill-item">STP/RSTP</span><span class="skill-item">EtherChannel</span><span class="skill-item">Wireshark</span><span class="skill-item">Cisco Packet Tracer</span><span class="skill-item">DHCP Snooping</span><span class="skill-item">Port Security</span><span class="skill-item">GNS3</span><span class="skill-item">TCP/IP</span></div></div>
+      <div class="skill-category reveal reveal-delay-2" data-category="sec"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3 data-i18n="cat.sec">Cybersecurity &amp; Defense</h3></div><div class="skill-list"><span class="skill-item">Suricata IDS/IPS</span><span class="skill-item">nftables/iptables</span><span class="skill-item">Scapy</span><span class="skill-item">Threat Intel</span><span class="skill-item">DDoS Mitigation</span><span class="skill-item">Zero Trust</span><span class="skill-item">JWT Auth</span><span class="skill-item">Nmap</span><span class="skill-item">Linux Hardening</span><span class="skill-item">Network Forensics</span><span class="skill-item">Log Correlation</span><span class="skill-item">Firewall Automation</span></div></div>
+      <div class="skill-category reveal reveal-delay-3" data-category="dev"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3 data-i18n="cat.dev">Full-Stack &amp; Web</h3></div><div class="skill-list"><span class="skill-item">Python 3.11</span><span class="skill-item">JavaScript (ES6+)</span><span class="skill-item">Next.js / React</span><span class="skill-item">Flask REST API</span><span class="skill-item">FastAPI</span><span class="skill-item">WebSockets</span><span class="skill-item">Chart.js</span><span class="skill-item">HTML5 / CSS</span><span class="skill-item">Node.js</span><span class="skill-item">C / C++</span><span class="skill-item">SQL &amp; SQLite</span><span class="skill-item">Responsive Design</span><span class="skill-item">REST APIs</span></div></div>
+      <div class="skill-category reveal reveal-delay-2" data-category="tools"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h3 data-i18n="cat.tools">DevOps &amp; Tools</h3></div><div class="skill-list"><span class="skill-item">Docker</span><span class="skill-item">Git &amp; GitHub</span><span class="skill-item">Linux / Bash</span><span class="skill-item">Pytest &amp; CI</span><span class="skill-item">Postman</span><span class="skill-item">Vercel</span><span class="skill-item">VS Code</span><span class="skill-item">GNS3</span><span class="skill-item">Jupyter</span><span class="skill-item">npm / pip</span><span class="skill-item">SSH</span><span class="skill-item">Markdown</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="journey">
   <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.journey">journey</span></div>
+    <div class="section-tag-ribbon reveal"><span class="section-index-num">06</span><span class="section-index-line"></span><span class="section-index-label" data-i18n="tag.journey">CAREER TRAJECTORY</span></div>
     <div class="section-heading-wrap reveal">
       <div class="section-eyebrow" data-i18n="journey.eyebrow">Experience &amp; Education</div>
       <h2 class="section-big-title" data-i18n="journey.title">Academic &amp; Engineering Trajectory</h2>
@@ -1025,37 +1026,9 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.skills">stack</span></div>
-    <div class="section-heading-wrap reveal">
-      <div class="section-eyebrow" data-i18n="skills.eyebrow">Technology Stack</div>
-      <h2 class="section-big-title" data-i18n="skills.title">Every Tool &amp; Framework in My Arsenal</h2>
-      <p class="section-subtitle" data-i18n="skills.subtitle">Everything I use to design, build, test, and protect intelligent systems.</p>
-    </div>
-    <div class="skills-filter-tabs reveal">
-      <button class="skill-tab active" data-filter="all" data-i18n="tab.all">All Stack</button>
-      <button class="skill-tab" data-filter="ml" data-i18n="tab.ml">ML &amp; AI</button>
-      <button class="skill-tab" data-filter="net" data-i18n="tab.net">Networking</button>
-      <button class="skill-tab" data-filter="sec" data-i18n="tab.sec">Security</button>
-      <button class="skill-tab" data-filter="dev" data-i18n="tab.dev">Full-Stack</button>
-      <button class="skill-tab" data-filter="tools" data-i18n="tab.tools">DevOps</button>
-    </div>
-    <div class="skills-container">
-      <div class="skill-category reveal" data-category="ml"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><h3 data-i18n="cat.ml">Machine Learning &amp; AI</h3></div><div class="skill-list"><span class="skill-item">LightGBM</span><span class="skill-item">IsolationForest</span><span class="skill-item">scikit-learn</span><span class="skill-item">SHAP</span><span class="skill-item">Pandas</span><span class="skill-item">NumPy</span><span class="skill-item">PyTorch</span><span class="skill-item">XGBoost</span><span class="skill-item">ROC-AUC Tuning</span><span class="skill-item">Feature Engineering</span><span class="skill-item">Matplotlib</span><span class="skill-item">Seaborn</span><span class="skill-item">Data Preprocessing</span><span class="skill-item">Hyperparameter Tuning</span></div></div>
-      <div class="skill-category reveal reveal-delay-1" data-category="net"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3 data-i18n="cat.net">Networking &amp; Infrastructure</h3></div><div class="skill-list"><span class="skill-item">Routing &amp; Switching</span><span class="skill-item">OSPFv2/v3</span><span class="skill-item">VLANs &amp; 802.1Q</span><span class="skill-item">Inter-VLAN Routing</span><span class="skill-item">Subnetting (VLSM)</span><span class="skill-item">IPv4 &amp; IPv6</span><span class="skill-item">ACLs (Std/Ext)</span><span class="skill-item">NAT/PAT</span><span class="skill-item">STP/RSTP</span><span class="skill-item">EtherChannel</span><span class="skill-item">Wireshark</span><span class="skill-item">Cisco Packet Tracer</span><span class="skill-item">DHCP Snooping</span><span class="skill-item">Port Security</span><span class="skill-item">GNS3</span><span class="skill-item">TCP/IP</span></div></div>
-      <div class="skill-category reveal reveal-delay-2" data-category="sec"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3 data-i18n="cat.sec">Cybersecurity &amp; Defense</h3></div><div class="skill-list"><span class="skill-item">Suricata IDS/IPS</span><span class="skill-item">nftables/iptables</span><span class="skill-item">Scapy</span><span class="skill-item">Threat Intel</span><span class="skill-item">DDoS Mitigation</span><span class="skill-item">Zero Trust</span><span class="skill-item">JWT Auth</span><span class="skill-item">Nmap</span><span class="skill-item">Linux Hardening</span><span class="skill-item">Network Forensics</span><span class="skill-item">Log Correlation</span><span class="skill-item">Firewall Automation</span></div></div>
-      <div class="skill-category reveal reveal-delay-3" data-category="dev"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3 data-i18n="cat.dev">Full-Stack &amp; Web</h3></div><div class="skill-list"><span class="skill-item">Python 3.11</span><span class="skill-item">JavaScript (ES6+)</span><span class="skill-item">Next.js / React</span><span class="skill-item">Flask REST API</span><span class="skill-item">FastAPI</span><span class="skill-item">WebSockets</span><span class="skill-item">Chart.js</span><span class="skill-item">HTML5 / CSS</span><span class="skill-item">Node.js</span><span class="skill-item">C / C++</span><span class="skill-item">SQL &amp; SQLite</span><span class="skill-item">Responsive Design</span><span class="skill-item">REST APIs</span></div></div>
-      <div class="skill-category reveal reveal-delay-2" data-category="tools"><div class="skill-cat-header"><span class="cat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><h3 data-i18n="cat.tools">DevOps &amp; Tools</h3></div><div class="skill-list"><span class="skill-item">Docker</span><span class="skill-item">Git &amp; GitHub</span><span class="skill-item">Linux / Bash</span><span class="skill-item">Pytest &amp; CI</span><span class="skill-item">Postman</span><span class="skill-item">Vercel</span><span class="skill-item">VS Code</span><span class="skill-item">GNS3</span><span class="skill-item">Jupyter</span><span class="skill-item">npm / pip</span><span class="skill-item">SSH</span><span class="skill-item">Markdown</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.contact">contact</span></div>
+    <div class="section-tag-ribbon reveal"><span class="section-index-num">07</span><span class="section-index-line"></span><span class="section-index-label" data-i18n="tag.contact">INITIATE INQUIRY</span></div>
     <div class="section-heading-wrap reveal">
       <div class="section-eyebrow" data-i18n="contact.eyebrow">Get In Touch</div>
       <h2 class="section-big-title" data-i18n="contact.title">Have an Idea? Let's Connect.</h2>
@@ -1082,6 +1055,8 @@
     </div>
   </div>
 </section>
+
+
 
 <footer class="footer">
   <div class="footer-links">
