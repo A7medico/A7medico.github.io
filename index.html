@@ -16,12 +16,14 @@
 </head>
 <body>
 
-<!-- MATRIX RAIN -->
-<canvas id="matrix_canvas"></canvas>
+<!-- DYNAMIC BACKGROUND CANVAS & TEXTURE -->
+<canvas id="bg_canvas" aria-hidden="true"></canvas>
+<div class="grain-overlay" aria-hidden="true"></div>
 
-<!-- AMBIENT GLOW ORBS -->
+<!-- AMBIENT VOLUMETRIC AURORAS -->
 <div class="ambient-glow glow-1" aria-hidden="true"></div>
 <div class="ambient-glow glow-2" aria-hidden="true"></div>
+<div class="ambient-glow glow-3" aria-hidden="true"></div>
 
 <!-- LOADER -->
 <div class="loader" id="loader">
@@ -72,8 +74,7 @@
   </a>
   <div class="nav-links" id="nav_links">
     <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#strengths" data-i18n="nav.strengths">Strengths</a>
-    <a href="#services" data-i18n="nav.expertise">Expertise</a>
+    <a href="#services" data-i18n="nav.expertise">Capabilities</a>
     <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#journey" data-i18n="nav.journey">Journey</a>
@@ -384,201 +385,322 @@
   </div>
 </section>
 
-<!-- STRENGTHS BENTO -->
-<section id="strengths">
+<!-- CAPABILITIES & INTERACTIVE SYSTEMS MATRIX -->
+<section id="services" class="capabilities-matrix-section">
   <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.strengths">strengths</span></div>
+    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.services">capabilities_matrix</span></div>
     <div class="section-heading-wrap reveal">
-      <div class="section-eyebrow" data-i18n="strengths.eyebrow">Core Strengths</div>
-      <h2 class="section-big-title" data-i18n="strengths.title">Beyond Code — What Drives My Engineering</h2>
+      <div class="section-eyebrow" data-i18n="expertise.eyebrow">Engineering Matrix &amp; Live Simulation</div>
+      <h2 class="section-big-title" data-i18n="expertise.title">Four Domains of Technical Rigor — Tested Live</h2>
+      <p class="section-sub-desc" data-i18n="expertise.subtitle">Select an engineering domain on the left to inspect its live reactive testbed on the right. Experience real-time latency simulations, dynamic ROC threshold sweeps, and automated cyber defense execution.</p>
     </div>
-    <div class="bento-grid">
-      <div class="bento-card span-2 reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
-        <h3 data-i18n="bento.systems_title">Systems Thinking &amp; Architecture Design</h3>
-        <p data-i18n="bento.systems_desc">I don't just write code — I architect complete systems. From packet capture pipelines to real-time dashboards, every component is designed to work harmoniously at scale.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <div class="bento-stat">96.1%</div>
-        <h3 data-i18n="bento.precision_title">Precision-Driven ML</h3>
-        <p data-i18n="bento.precision_desc">Models that explain their reasoning through SHAP values and transparent decision boundaries.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3 data-i18n="bento.security_title">Security-First Mindset</h3>
-        <p data-i18n="bento.security_desc">From automated firewall enforcement to zero-trust verification and JWT authentication — security is always first-class.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></div>
-        <h3 data-i18n="bento.network_title">Deep Network Expertise</h3>
-        <p data-i18n="bento.network_desc">Multi-area OSPF, VLAN segmentation, ACLs, NAT/PAT, and Wireshark forensics across enterprise topologies.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <h3 data-i18n="bento.fullstack_title">End-to-End Builder</h3>
-        <p data-i18n="bento.fullstack_desc">From Python ML backends to React frontends, Docker to Vercel — I own the entire lifecycle.</p>
-      </div>
-      <div class="bento-card reveal">
-        <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 data-i18n="bento.collab_title">Collaborative &amp; Bilingual</h3>
-        <p data-i18n="bento.collab_desc">Fluent in English and Arabic, comfortable in cross-functional teams, passionate about clear documentation.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- EXPERTISE -->
-<section id="services">
-  <div class="section-inner">
-    <div class="cmd-header reveal"><span class="prompt">portfolio</span> / <span class="cmd-action" data-i18n="cmd.services">expertise</span></div>
-    <div class="section-heading-wrap reveal">
-      <div class="section-eyebrow" data-i18n="expertise.eyebrow">Specializations</div>
-      <h2 class="section-big-title" data-i18n="expertise.title">Four Pillars of Engineering Precision</h2>
-    </div>
-    <div class="services-grid">
-      <!-- 01: Full-Stack & Real-Time Systems -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><span class="service-num">01</span></div>
-        <div class="service-body">
-          <h3 data-i18n="exp.dev_title">Full-Stack &amp; Real-Time Systems</h3>
-          <p data-i18n="exp.dev_desc">Building responsive web apps and distributed microservices. WebSocket data feeds, analytics dashboards, and RESTful APIs.</p>
-          <ul class="service-checklist">
-            <li data-i18n="exp.dev_point1">✦ WebSocket live streaming and real-time telemetry charting</li>
-            <li data-i18n="exp.dev_point2">✦ Production apps with Next.js, React, Flask, and Node.js</li>
-            <li data-i18n="exp.dev_point3">✦ Docker deployment, CI/CD pipelines, and JWT security</li>
-          </ul>
-          <div class="service-tags"><span>Next.js</span><span>Flask</span><span>JavaScript</span><span>WebSockets</span><span>Chart.js</span><span>Docker</span><span>REST APIs</span><span>React</span></div>
-        </div>
-        <div class="service-visual-widget">
-          <div class="widget-top-bar">
-            <span class="widget-file-name">api_stream.ts</span>
-            <span class="widget-status-badge green">WS: 60 FPS</span>
+    <div class="capabilities-studio reveal">
+      <!-- Left side: 4 Engineering Channels -->
+      <div class="studio-channels" role="tablist" aria-label="Engineering Capabilities">
+        <!-- Channel 01 -->
+        <button class="studio-channel-btn active" data-channel="fullstack" role="tab" aria-selected="true" aria-controls="pane-fullstack">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">01</span>
+            <span class="channel-badge green" data-i18n="studio.badge_fullstack">REAL-TIME ENGINE</span>
           </div>
-          <div class="widget-code-preview">
-            <span class="c-keyword">const</span> res = <span class="c-keyword">await</span> stream.<span class="c-fn">push</span>({<br>
-            &nbsp;&nbsp;state: <span class="c-string">'HYDRATED'</span>,<br>
-            &nbsp;&nbsp;latency: <span class="c-num">0.8</span>, <span class="c-comment">// ms</span><br>
-            &nbsp;&nbsp;auth: <span class="c-type">JWT_VERIFIED</span><br>
-            });
+          <h3 class="channel-title" data-i18n="exp.dev_title">Full-Stack &amp; Real-Time Systems</h3>
+          <p class="channel-summary" data-i18n="exp.dev_desc">Reactive web architectures, low-latency WebSocket streaming, and hardened containerized APIs. From PostgreSQL schema indexing to 60fps frontends.</p>
+          <div class="channel-tags">
+            <span>Next.js</span><span>Flask</span><span>WebSockets</span><span>Docker</span><span>PostgreSQL</span><span>JWT Auth</span>
           </div>
-        </div>
+        </button>
+
+        <!-- Channel 02 -->
+        <button class="studio-channel-btn" data-channel="ml" role="tab" aria-selected="false" aria-controls="pane-ml">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">02</span>
+            <span class="channel-badge purple" data-i18n="studio.badge_ml">AUC: 96.1%</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.ml_title">Machine Learning &amp; AI Systems</h3>
+          <p class="channel-summary" data-i18n="exp.ml_desc">Production ensemble models (LightGBM, IsolationForest) with SHAP explainability, robust feature engineering, and high-throughput vector math.</p>
+          <div class="channel-tags">
+            <span>LightGBM</span><span>IsolationForest</span><span>SHAP</span><span>scikit-learn</span><span>Pandas</span><span>NumPy</span>
+          </div>
+        </button>
+
+        <!-- Channel 03 -->
+        <button class="studio-channel-btn" data-channel="cyber" role="tab" aria-selected="false" aria-controls="pane-cyber">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">03</span>
+            <span class="channel-badge cyan" data-i18n="studio.badge_cyber">AUTOMATED MITIGATION</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.sec_title">IoT &amp; Network Cyber Defense</h3>
+          <p class="channel-summary" data-i18n="exp.sec_desc">Autonomous intrusion defense. Real-time packet parsing via Scapy &amp; Suricata with sub-millisecond dynamic nftables firewall rule injection.</p>
+          <div class="channel-tags">
+            <span>Suricata</span><span>nftables</span><span>Scapy</span><span>Threat Intel</span><span>Zero Trust</span><span>Nmap</span>
+          </div>
+        </button>
+
+        <!-- Channel 04 -->
+        <button class="studio-channel-btn" data-channel="net" role="tab" aria-selected="false" aria-controls="pane-net">
+          <div class="channel-indicator"></div>
+          <div class="channel-head">
+            <span class="channel-num">04</span>
+            <span class="channel-badge amber" data-i18n="studio.badge_net">L2/L3 HARDENED</span>
+          </div>
+          <h3 class="channel-title" data-i18n="exp.net_title">Enterprise Network Architecture</h3>
+          <p class="channel-summary" data-i18n="exp.net_desc">Multi-Area OSPF, 802.1Q VLAN trunking, EtherChannel bonding, strict ACL perimeter policies, and deep Wireshark protocol diagnostics.</p>
+          <div class="channel-tags">
+            <span>OSPFv2/v3</span><span>802.1Q</span><span>VLAN Trunking</span><span>ACLs</span><span>Wireshark</span><span>STP/RSTP</span>
+          </div>
+        </button>
       </div>
 
-      <!-- 02: Machine Learning & AI Systems -->
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon-wrap"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><span class="service-num">02</span></div>
-        <div class="service-body">
-          <h3 data-i18n="exp.ml_title">Machine Learning &amp; AI Systems</h3>
-          <p data-i18n="exp.ml_desc">Designing, training, and deploying production-grade ML pipelines with ensemble models, feature engineering, and model explainability.</p>
-          <ul class="service-checklist">
-            <li data-i18n="exp.ml_point1">✦ High-accuracy ensemble architectures (LightGBM, XGBoost, IsolationForest)</li>
-            <li data-i18n="exp.ml_point2">✦ Explainable AI (XAI) using SHAP values for transparent decisions</li>
-            <li data-i18n="exp.ml_point3">✦ End-to-end preprocessing, ROC-AUC validation, hyperparameter tuning</li>
-          </ul>
-          <div class="service-tags"><span>LightGBM</span><span>scikit-learn</span><span>SHAP</span><span>Pandas</span><span>IsolationForest</span><span>NumPy</span><span>XGBoost</span><span>Matplotlib</span></div>
-        </div>
-        <div class="service-visual-widget">
-          <div class="widget-top-bar">
-            <span class="widget-file-name">model_eval.py</span>
-            <span class="widget-status-badge">AUC: 96.1%</span>
+      <!-- Right side: Live Engineering Workstation / Interactive Sandbox -->
+      <div class="studio-sandbox">
+        <!-- Workstation Frame Header -->
+        <div class="sandbox-header">
+          <div class="sandbox-window-controls">
+            <span class="window-dot red"></span>
+            <span class="window-dot yellow"></span>
+            <span class="window-dot green"></span>
           </div>
-          <svg class="roc-curve-svg" viewBox="0 0 240 85">
-            <defs>
-              <linearGradient id="rocGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4"/>
-                <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <line x1="20" y1="10" x2="20" y2="75" class="roc-axis"/>
-            <line x1="20" y1="75" x2="225" y2="75" class="roc-axis"/>
-            <line x1="20" y1="75" x2="220" y2="12" class="roc-diagonal"/>
-            <path d="M 20 75 Q 35 15 220 12 L 220 75 Z" class="roc-area"/>
-            <path d="M 20 75 Q 35 15 220 12" class="roc-line"/>
-            <circle cx="110" cy="22" r="4" class="roc-point"/>
-          </svg>
-          <div class="shap-mini-bars">
-            <div class="shap-mini-row"><span class="shap-lbl">Duration</span><div class="shap-bar-bg"><div class="shap-bar-fill" style="width: 94%;"></div></div><span class="shap-val">0.94</span></div>
-            <div class="shap-mini-row"><span class="shap-lbl">Pkt Len</span><div class="shap-bar-bg"><div class="shap-bar-fill" style="width: 82%;"></div></div><span class="shap-val">0.82</span></div>
-            <div class="shap-mini-row"><span class="shap-lbl">SYN Flags</span><div class="shap-bar-bg"><div class="shap-bar-fill" style="width: 66%;"></div></div><span class="shap-val">0.66</span></div>
+          <div class="sandbox-center-id">
+            <span class="sandbox-mode-pill">INTERACTIVE TESTBED</span>
+            <span id="sandbox_title" class="sandbox-active-file">realtime_stream.ts</span>
+          </div>
+          <div class="sandbox-header-status">
+            <span class="live-pulse-dot"></span>
+            <span id="sandbox_conn_status" class="sandbox-status-text">ONLINE · 60 FPS</span>
           </div>
         </div>
-      </div>
 
-      <!-- 03: IoT & Network Cyber Defense -->
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon-wrap"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="service-num">03</span></div>
-        <div class="service-body">
-          <h3 data-i18n="exp.sec_title">IoT &amp; Network Cyber Defense</h3>
-          <p data-i18n="exp.sec_desc">Architecting intrusion detection and automated mitigation systems. Securing IoT perimeters against zero-day threats, SYN floods, and botnets.</p>
-          <ul class="service-checklist">
-            <li data-i18n="exp.sec_point1">✦ Real-time packet capture, flow inspection, and anomaly detection</li>
-            <li data-i18n="exp.sec_point2">✦ Automated firewall response with dynamic nftables rule injection</li>
-            <li data-i18n="exp.sec_point3">✦ Suricata IDS integration, threat intel feeds, and log correlation</li>
-          </ul>
-          <div class="service-tags"><span>Suricata</span><span>nftables</span><span>Scapy</span><span>Threat Intel</span><span>Packet Analysis</span><span>Zero Trust</span><span>Nmap</span></div>
-        </div>
-        <div class="service-visual-widget">
-          <div class="widget-top-bar">
-            <span class="widget-file-name">firewall_engine.c</span>
-            <span class="widget-status-badge cyan">ZERO-TRUST</span>
+        <!-- Pane 01: Full-Stack & WebSocket Telemetry Stream -->
+        <div class="sandbox-pane active" id="pane-fullstack" data-pane="fullstack">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">PIPE LATENCY:</span>
+              <span id="live_ping_val" class="stat-accent">0.82 ms</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">AUTH:</span>
+              <span class="stat-accent green">JWT_VERIFIED</span>
+            </div>
+            <button id="btn_send_payload" class="sandbox-action-btn" title="Simulate sending a WebSocket event payload">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Dispatch Payload</span>
+            </button>
           </div>
-          <svg class="sec-radar-svg" viewBox="0 0 240 85">
-            <circle cx="120" cy="42" r="38" class="radar-ring"/>
-            <circle cx="120" cy="42" r="22" class="radar-ring"/>
-            <line x1="75" y1="42" x2="165" y2="42" class="radar-crosshair"/>
-            <line x1="120" y1="5" x2="120" y2="80" class="radar-crosshair"/>
-            <line x1="120" y1="42" x2="155" y2="25" class="radar-sweep"/>
-            <circle cx="145" cy="30" r="3" class="radar-blip"/>
-          </svg>
-          <div class="widget-code-preview">
-            <span class="c-keyword">[NFT]</span> DROP IP 192.168.1.105<br>
-            <span class="c-fn">[IDS]</span> SYN_FLOOD MITIGATED (0.4ms)
+          <div class="interactive-terminal-screen" id="fullstack_terminal">
+            <div class="term-line timestamp">[00:00:01.002] <span class="c-keyword">INIT</span> WebSocket Server listening on wss://cluster-01.telemetry:8443</div>
+            <div class="term-line">[00:00:01.120] <span class="c-fn">AUTHENTICATE</span> Bearer token verified · scope [telemetry:rw, stream:events]</div>
+            <div class="term-line success">[00:00:01.240] <span class="c-string">ESTABLISHED</span> Connection 172.16.0.1:443 (Client v4.12.0 - TLS 1.3)</div>
+            <div class="term-line">[00:00:01.405] <span class="c-keyword">STREAM_EVENT</span> Frame #10492 | Size: 1.4KB | Ingest Latency: 0.82ms</div>
+            <div class="term-line active-pulse">[00:00:01.650] <span class="c-type">STATE_SYNC</span> Next.js UI hydrated · Zero dropped frames (60.0 FPS)</div>
+          </div>
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">STREAM THROUGHPUT</span>
+              <span class="metric-num">12,400 msg/s</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">EVENT EMITTER</span>
+              <span class="metric-num">Zero-Allocation</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">UPTIME</span>
+              <span class="metric-num green">99.99%</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 04: Enterprise Network Architecture -->
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon-wrap"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></div><span class="service-num">04</span></div>
-        <div class="service-body">
-          <h3 data-i18n="exp.net_title">Enterprise Network Architecture</h3>
-          <p data-i18n="exp.net_desc">Deep expertise in architecting and hardening complex enterprise networks across Layer 2 and Layer 3 topologies.</p>
-          <ul class="service-checklist">
-            <li data-i18n="exp.net_point1">✦ Multi-area OSPFv2/v3, metric tuning, route convergence</li>
-            <li data-i18n="exp.net_point2">✦ VLAN segmentation, 802.1Q trunking, Inter-VLAN routing</li>
-            <li data-i18n="exp.net_point3">✦ IPv4/IPv6 VLSM, STP/RSTP/PortFast, EtherChannel bonding</li>
-            <li data-i18n="exp.net_point4">✦ ACLs, NAT/PAT, DHCP Snooping, Port Security</li>
-            <li data-i18n="exp.net_point5">✦ Wireshark forensics and diagnostic packet analysis</li>
-          </ul>
-          <div class="service-tags"><span>Routing &amp; Switching</span><span>OSPF</span><span>VLANs</span><span>VLSM</span><span>ACLs</span><span>STP</span><span>Wireshark</span><span>L2/L3 Hardening</span></div>
-        </div>
-        <div class="service-visual-widget">
-          <div class="widget-top-bar">
-            <span class="widget-file-name">topology_core.conf</span>
-            <span class="widget-status-badge green">0ms CONV</span>
+        <!-- Pane 02: ML ROC-AUC Curve & Dynamic Threshold Slider -->
+        <div class="sandbox-pane" id="pane-ml" data-pane="ml">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">MODEL:</span>
+              <span class="stat-accent">LightGBM + IsoForest</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">DATASET:</span>
+              <span class="stat-accent">2,100,000+ Flows</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">OVERALL AUC:</span>
+              <span class="stat-accent purple">96.1%</span>
+            </div>
           </div>
-          <svg class="net-topo-svg" viewBox="0 0 240 85">
-            <line x1="45" y1="42" x2="120" y2="20" class="topo-link"/>
-            <line x1="120" y1="20" x2="195" y2="42" class="topo-link"/>
-            <line x1="45" y1="42" x2="120" y2="65" class="topo-link"/>
-            <line x1="120" y1="65" x2="195" y2="42" class="topo-link"/>
-            <circle cx="82" cy="31" r="3" class="topo-packet"/>
-            <circle cx="158" cy="54" r="3" class="topo-packet" style="animation-delay: 1s;"/>
-            <!-- Core Nodes -->
-            <circle cx="120" cy="20" r="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
-            <circle cx="120" cy="65" r="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
-            <!-- Access Nodes -->
-            <circle cx="45" cy="42" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
-            <circle cx="195" cy="42" r="7" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
-            <text x="120" y="23" fill="#ffffff" font-size="7" text-anchor="middle" font-family="monospace">R1</text>
-            <text x="120" y="68" fill="#ffffff" font-size="7" text-anchor="middle" font-family="monospace">R2</text>
-            <text x="45" y="45" fill="#ffffff" font-size="7" text-anchor="middle" font-family="monospace">SW1</text>
-            <text x="195" y="45" fill="#ffffff" font-size="7" text-anchor="middle" font-family="monospace">SW2</text>
-          </svg>
-          <div class="widget-code-preview">
-            <span class="c-comment">// 802.1Q Trunks + Multi-Area OSPF</span><br>
-            <span class="c-string">L2/L3 Routing</span> · Cost: 10
+
+          <div class="pane-slider-bar">
+            <label for="roc_slider" class="slider-label">
+              <span>Decision Threshold:</span>
+              <strong id="threshold_val">0.50</strong>
+            </label>
+            <input type="range" id="roc_slider" class="interactive-range" min="0.05" max="0.95" step="0.01" value="0.50">
+          </div>
+
+          <div class="interactive-roc-wrap">
+            <svg class="roc-interactive-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="rocStudioGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#818cf8" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="40" y1="20" x2="380" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="55" x2="380" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="90" x2="380" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="125" x2="380" y2="125" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="125" y1="20" x2="125" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="210" y1="20" x2="210" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="295" y1="20" x2="295" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="40" y1="15" x2="40" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+              <line x1="40" y1="140" x2="385" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+              <line x1="40" y1="140" x2="380" y2="20" stroke="rgba(255,255,255,0.15)" stroke-dasharray="4 4" stroke-width="1"/>
+              <path d="M 40 140 Q 65 30, 380 20 L 380 140 Z" fill="url(#rocStudioGrad)"/>
+              <path d="M 40 140 Q 65 30, 380 20" fill="none" stroke="#818cf8" stroke-width="3" filter="drop-shadow(0 0 8px rgba(99,102,241,0.6))"/>
+              <circle id="roc_point_marker" cx="210" cy="25" r="7" fill="#6366f1" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px #a5b4fc)"/>
+              <text x="35" y="25" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
+              <text x="35" y="80" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.5</text>
+              <text x="35" y="142" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">0.0</text>
+              <text x="40" y="153" fill="#64748b" font-size="9" text-anchor="start" font-family="monospace">0.0 (FPR)</text>
+              <text x="380" y="153" fill="#64748b" font-size="9" text-anchor="end" font-family="monospace">1.0</text>
+            </svg>
+          </div>
+
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">TRUE POSITIVE RATE</span>
+              <span id="metric_tpr" class="metric-num green">96.8%</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">FALSE POSITIVE RATE</span>
+              <span id="metric_fpr" class="metric-num cyan">1.4%</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">SHAP TOP FEATURE</span>
+              <span class="metric-num purple">Flow_Duration (0.94)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 03: Cyber Defense & Threat Mitigation Simulator -->
+        <div class="sandbox-pane" id="pane-cyber" data-pane="cyber">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">DEFENSE ENGINE:</span>
+              <span class="stat-accent cyan">Suricata + nftables</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">STATUS:</span>
+              <span id="firewall_state_pill" class="stat-accent green">PERIMETER_SECURE</span>
+            </div>
+            <button id="btn_simulate_attack" class="sandbox-action-btn danger" title="Simulate a live SYN flood attack burst">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Simulate SYN Flood</span>
+            </button>
+          </div>
+
+          <div class="cyber-radar-terminal-split">
+            <div class="radar-box">
+              <svg class="interactive-radar-svg" viewBox="0 0 180 180">
+                <circle cx="90" cy="90" r="80" fill="none" stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+                <circle cx="90" cy="90" r="55" fill="none" stroke="rgba(14,165,233,0.22)" stroke-width="1"/>
+                <circle cx="90" cy="90" r="30" fill="none" stroke="rgba(14,165,233,0.26)" stroke-width="1"/>
+                <line x1="90" y1="10" x2="90" y2="170" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="10" y1="90" x2="170" y2="90" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="90" y1="90" x2="160" y2="35" class="radar-live-sweep"/>
+                <circle cx="130" cy="50" r="3.5" class="radar-target-blip active"/>
+                <circle cx="60" cy="115" r="3" class="radar-target-blip"/>
+                <circle cx="90" cy="90" r="4" fill="#38bdf8"/>
+              </svg>
+            </div>
+            <div class="interactive-terminal-screen cyber-term" id="cyber_terminal">
+              <div class="term-line timestamp">[14:02:18.110] <span class="c-keyword">[SURICATA]</span> Packet ingestion queue primed · 0 alerts</div>
+              <div class="term-line">[14:02:18.420] <span class="c-fn">[FLOW]</span> 192.168.1.45:49210 → 10.0.0.1:443 (TLS Handshake OK)</div>
+              <div class="term-line success">[14:02:19.012] <span class="c-string">[HEALTH]</span> Zero anomalous vectors in sliding 10s window</div>
+              <div class="term-line active-pulse">[14:02:20.100] <span class="c-type">[MONITOR]</span> Listening for TCP flag anomalies on interface eth0...</div>
+            </div>
+          </div>
+
+          <div class="sandbox-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-label">MITIGATION SPEED</span>
+              <span class="metric-num cyan">&lt; 0.4 ms</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">ACTIVE FIREWALL RULES</span>
+              <span id="active_rules_val" class="metric-num">14 Active</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">POLICY</span>
+              <span class="metric-num green">Default DROP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 04: Enterprise Network Topology Inspector -->
+        <div class="sandbox-pane" id="pane-net" data-pane="net">
+          <div class="sandbox-toolbar">
+            <div class="toolbar-stat">
+              <span class="stat-meta">TOPOLOGY:</span>
+              <span class="stat-accent amber">Multi-Area OSPFv2/v3</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">CONVERGENCE:</span>
+              <span class="stat-accent green">0 ms (Sub-second BFD)</span>
+            </div>
+            <div class="toolbar-stat">
+              <span class="stat-meta">INTERACTION:</span>
+              <span class="stat-accent">Click node to inspect</span>
+            </div>
+          </div>
+
+          <div class="interactive-topo-stage">
+            <svg class="topo-interactive-svg" viewBox="0 0 460 170">
+              <line x1="80" y1="85" x2="230" y2="40" class="topo-mesh-link"/>
+              <line x1="80" y1="85" x2="230" y2="130" class="topo-mesh-link"/>
+              <line x1="230" y1="40" x2="380" y2="85" class="topo-mesh-link"/>
+              <line x1="230" y1="130" x2="380" y2="85" class="topo-mesh-link"/>
+              <line x1="230" y1="40" x2="230" y2="130" class="topo-mesh-link backbone"/>
+
+              <circle cx="155" cy="62" r="3.5" class="topo-packet"/>
+              <circle cx="305" cy="108" r="3.5" class="topo-packet" style="animation-delay: 0.9s;"/>
+              <circle cx="230" cy="85" r="3.5" class="topo-packet" style="animation-delay: 1.4s;"/>
+
+              <g class="topo-node-g active" data-node="R1" transform="translate(230, 40)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="22" class="node-halo"/>
+                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
+                <text x="0" y="4" class="node-txt">R1</text>
+                <text x="0" y="-22" class="node-sub">Area 0 (ABR)</text>
+              </g>
+
+              <g class="topo-node-g" data-node="R2" transform="translate(230, 130)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="22" class="node-halo"/>
+                <circle cx="0" cy="0" r="16" class="node-core core-r"/>
+                <text x="0" y="4" class="node-txt">R2</text>
+                <text x="0" y="32" class="node-sub">Area 0 (Core)</text>
+              </g>
+
+              <g class="topo-node-g" data-node="SW1" transform="translate(80, 85)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="20" class="node-halo"/>
+                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
+                <text x="0" y="4" class="node-txt">SW1</text>
+                <text x="0" y="30" class="node-sub">VLAN 10/20 Trunk</text>
+              </g>
+
+              <g class="topo-node-g" data-node="SW2" transform="translate(380, 85)" role="button" tabindex="0">
+                <circle cx="0" cy="0" r="20" class="node-halo"/>
+                <circle cx="0" cy="0" r="14" class="node-core core-sw"/>
+                <text x="0" y="4" class="node-txt">SW2</text>
+                <text x="0" y="30" class="node-sub">VLAN 30/40 Trunk</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="interactive-terminal-screen net-inspector" id="topo_node_details">
+            <span class="c-keyword">[NODE: R1]</span> Cisco IOS-XE / OSPF Router-ID 10.255.255.1 · State: FULL/DR · Metric Cost: 10<br>
+            <span class="c-fn">INTERFACES:</span> GigabitEthernet0/0/0 (Area 0), Gi0/0/1 (Area 1) · MTU: 1500 · 802.1Q Active<br>
+            <span class="c-string">SECURITY:</span> ACL Ingress Filter: 10.0.0.0/8 PERMIT · Spoof Prevention Enabled
           </div>
         </div>
       </div>
@@ -595,61 +717,58 @@
       <h2 class="section-big-title" data-i18n="solutions.title">Why Work With Me · Enterprise Value Proposition</h2>
     </div>
     
-    <div class="solutions-grid">
-      <!-- Pillar 1 -->
-      <div class="solution-card reveal">
-        <div class="solution-badge"><span class="sol-dot"></span> <span data-i18n="sol.item1_badge">TURNKEY ARCHITECTURE</span></div>
-        <div class="solution-icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <!-- EXECUTIVE PROOF RIBBON -->
+    <div class="executive-proof-ribbon">
+      <div class="proof-pillar reveal">
+        <div class="proof-head">
+          <span class="proof-num">01</span>
+          <span class="proof-badge" data-i18n="sol.item1_badge">FULL-CYCLE OWNERSHIP</span>
         </div>
-        <h3 data-i18n="sol.item1_title">End-to-End Full-Stack Execution</h3>
-        <p data-i18n="sol.item1_desc">From data schemas and high-throughput Python/FastAPI microservices to pixel-perfect, accessible Next.js frontends with 60fps responsive animation. You get zero handoff friction and a cohesive, shippable product.</p>
-        <div class="solution-kpi">
-          <span class="kpi-number">100%</span>
-          <span class="kpi-label" data-i18n="sol.item1_kpi">Full-Cycle Ownership</span>
+        <div class="proof-kpi">
+          <span class="kpi-val">100%</span>
+          <span class="kpi-unit">ARCHITECTED</span>
         </div>
+        <h3 class="proof-title" data-i18n="sol.item1_title">End-to-End Systems Execution</h3>
+        <p class="proof-desc" data-i18n="sol.item1_desc">No handoff friction between design, frontend, backend microservices, and network security. From database schema indexing to pixel-perfect Next.js interfaces, every layer is built to run reliably at scale.</p>
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="solution-card reveal reveal-delay-1">
-        <div class="solution-badge"><span class="sol-dot"></span> <span data-i18n="sol.item2_badge">ALGORITHMIC SPEED</span></div>
-        <div class="solution-icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <div class="proof-pillar reveal reveal-delay-1">
+        <div class="proof-head">
+          <span class="proof-num">02</span>
+          <span class="proof-badge" data-i18n="sol.item2_badge">ALGORITHMIC SPEED</span>
         </div>
-        <h3 data-i18n="sol.item2_title">Sub-Millisecond Inference &amp; Streaming</h3>
-        <p data-i18n="sol.item2_desc">Trained on millions of samples, optimized for real-time WebSocket pipelines and low-latency inference (&lt;1.2ms). Algorithms engineered for instant response without bloat or server bottlenecks.</p>
-        <div class="solution-kpi">
-          <span class="kpi-number">&lt; 1.2ms</span>
-          <span class="kpi-label" data-i18n="sol.item2_kpi">Inference Latency</span>
+        <div class="proof-kpi">
+          <span class="kpi-val">&lt; 1.2</span>
+          <span class="kpi-unit">MS LATENCY</span>
         </div>
+        <h3 class="proof-title" data-i18n="sol.item2_title">Sub-Millisecond Inference &amp; Streaming</h3>
+        <p class="proof-desc" data-i18n="sol.item2_desc">Trained across 2.1M+ traffic flows, optimized for real-time WebSocket pipelines and low-latency inference. High-throughput algorithmic code engineered without memory leaks or framework bloat.</p>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="solution-card reveal reveal-delay-2">
-        <div class="solution-badge"><span class="sol-dot"></span> <span data-i18n="sol.item3_badge">CYBER DEFENSE</span></div>
-        <div class="solution-icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="proof-pillar reveal reveal-delay-2">
+        <div class="proof-head">
+          <span class="proof-num">03</span>
+          <span class="proof-badge" data-i18n="sol.item3_badge">CYBER DEFENSE</span>
         </div>
-        <h3 data-i18n="sol.item3_title">Zero-Trust &amp; Hardened Infrastructure</h3>
-        <p data-i18n="sol.item3_desc">Built with defense-in-depth principles: automated firewall enforcement (nftables), Suricata IDS flow correlation, rigorous input sanitization, and strict L2/L3 network isolation against attacks.</p>
-        <div class="solution-kpi">
-          <span class="kpi-number">96.1%</span>
-          <span class="kpi-label" data-i18n="sol.item3_kpi">Attack Detection AUC</span>
+        <div class="proof-kpi">
+          <span class="kpi-val">96.1%</span>
+          <span class="kpi-unit">ROC-AUC</span>
         </div>
+        <h3 class="proof-title" data-i18n="sol.item3_title">Zero-Trust &amp; Hardened Infrastructure</h3>
+        <p class="proof-desc" data-i18n="sol.item3_desc">Built with defense-in-depth principles: automated firewall enforcement via nftables, Suricata IDS flow correlation, rigorous input sanitization, and strict L2/L3 enterprise network isolation.</p>
       </div>
 
-      <!-- Pillar 4 -->
-      <div class="solution-card reveal reveal-delay-3">
-        <div class="solution-badge"><span class="sol-dot"></span> <span data-i18n="sol.item4_badge">CLIENT COLLABORATION</span></div>
-        <div class="solution-icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="proof-pillar reveal reveal-delay-3">
+        <div class="proof-head">
+          <span class="proof-num">04</span>
+          <span class="proof-badge" data-i18n="sol.item4_badge">GLOBAL DELIVERY</span>
         </div>
-        <h3 data-i18n="sol.item4_title">Bilingual Delivery &amp; Transparent Comms</h3>
-        <p data-i18n="sol.item4_desc">Seamless bilingual communication in English and Arabic. Fast iterations, transparent architecture diagrams, thorough documentation, and rapid turnaround for international clients.</p>
-        <div class="solution-kpi">
-          <span class="kpi-number">&lt; 24h</span>
-          <span class="kpi-label" data-i18n="sol.item4_kpi">Response &amp; Iteration</span>
+        <div class="proof-kpi">
+          <span class="kpi-val">&lt; 24h</span>
+          <span class="kpi-unit">TURNAROUND</span>
         </div>
+        <h3 class="proof-title" data-i18n="sol.item4_title">Bilingual Delivery &amp; Transparent Comms</h3>
+        <p class="proof-desc" data-i18n="sol.item4_desc">Seamless native communication in English and Arabic. Fast iterations, clean Git commits, architectural documentation, and production readiness for international clients.</p>
       </div>
     </div>
 
@@ -967,8 +1086,7 @@
 <footer class="footer">
   <div class="footer-links">
     <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#strengths" data-i18n="nav.strengths">Strengths</a>
-    <a href="#services" data-i18n="nav.expertise">Expertise</a>
+    <a href="#services" data-i18n="nav.expertise">Capabilities</a>
     <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#journey" data-i18n="nav.journey">Journey</a>
