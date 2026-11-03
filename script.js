@@ -9,6 +9,7 @@ const translations = {
     "nav.about": "About",
     "nav.strengths": "Strengths",
     "nav.expertise": "Expertise",
+    "nav.solutions": "Solutions",
     "nav.projects": "Projects",
     "nav.journey": "Journey",
     "nav.stack": "Stack",
@@ -18,14 +19,15 @@ const translations = {
     "hero.boot3": "",
     "hero.boot4": "",
     "hero.greeting": '<span class="badge-prefix">Portfolio ·</span> Ahmad Ismail',
-    "hero.available": "Open to Opportunities",
+    "hero.available": "Available for Contracts & Roles",
     "hero.name": "Ahmad Ismail",
-    "hero.desc": "Engineering intelligent systems where <strong>Machine Learning</strong>, <strong>IoT Threat Detection</strong>, and <strong>Enterprise Networking</strong> converge into resilient, production-ready software.",
+    "hero.desc": "Engineering resilient digital systems where <strong>Full-Stack Software</strong>, <strong>Machine Learning</strong>, and <strong>Enterprise Cybersecurity</strong> converge into mission-critical products.",
     "chip.ml": "Machine Learning",
     "chip.sec": "IoT Intrusion Defense",
     "chip.net": "Network Infrastructure",
     "chip.dev": "Full-Stack Systems",
     "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> Explore Projects',
+    "btn.hire": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3-3m0 0l-3 3m3-3v8"/></svg> Hire / Inquire',
     "btn.cv": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CV',
     "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Get in Touch',
     "cmd.about": "about",
@@ -81,6 +83,30 @@ const translations = {
     "exp.net_point3": "✦ IPv4/IPv6 VLSM, STP/RSTP/PortFast, EtherChannel",
     "exp.net_point4": "✦ ACLs, NAT/PAT, DHCP Snooping, Port Security",
     "exp.net_point5": "✦ Wireshark forensics and diagnostic packet analysis",
+    "cmd.solutions": "solutions",
+    "solutions.eyebrow": "Engineered for High-Stakes Impact",
+    "solutions.title": "Why Work With Me · Enterprise Value Proposition",
+    "sol.item1_badge": "TURNKEY ARCHITECTURE",
+    "sol.item1_title": "End-to-End Full-Stack Execution",
+    "sol.item1_desc": "From data schemas and high-throughput Python/FastAPI microservices to pixel-perfect, accessible Next.js frontends with 60fps responsive animation. You get zero handoff friction and a cohesive, shippable product.",
+    "sol.item1_kpi": "Full-Cycle Ownership",
+    "sol.item2_badge": "ALGORITHMIC SPEED",
+    "sol.item2_title": "Sub-Millisecond Inference & Streaming",
+    "sol.item2_desc": "Trained on millions of samples, optimized for real-time WebSocket pipelines and low-latency inference (&lt;1.2ms). Algorithms engineered for instant response without bloat or server bottlenecks.",
+    "sol.item2_kpi": "Inference Latency",
+    "sol.item3_badge": "CYBER DEFENSE",
+    "sol.item3_title": "Zero-Trust & Hardened Infrastructure",
+    "sol.item3_desc": "Built with defense-in-depth principles: automated firewall enforcement (nftables), Suricata IDS flow correlation, rigorous input sanitization, and strict L2/L3 network isolation against attacks.",
+    "sol.item3_kpi": "Attack Detection AUC",
+    "sol.item4_badge": "CLIENT COLLABORATION",
+    "sol.item4_title": "Bilingual Delivery & Transparent Comms",
+    "sol.item4_desc": "Seamless bilingual communication in English and Arabic. Fast iterations, transparent architecture diagrams, thorough documentation, and rapid turnaround for international clients.",
+    "sol.item4_kpi": "Response & Iteration",
+    "sol.cta_badge": "HIRING & CONTRACTS",
+    "sol.cta_title": "Have an ambitious project or a role to fill?",
+    "sol.cta_desc": "Whether you need an end-to-end full-stack SaaS platform, an intelligent ML pipeline, or hardened network defense, I bring senior engineering rigor to your mission.",
+    "btn.hire_discuss": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Discuss Your Project',
+    "btn.review_code": '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85 0 1.7.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> Review GitHub Code',
     "cmd.projects": "projects",
     "projects.eyebrow": "Featured Work",
     "projects.title": "Featured Systems & Live Deployments",
@@ -162,6 +188,7 @@ const translations = {
     "nav.about": "نبذة عني",
     "nav.strengths": "نقاط القوة",
     "nav.expertise": "الخبرات",
+    "nav.solutions": "الحلول",
     "nav.projects": "المشاريع",
     "nav.journey": "المسار",
     "nav.stack": "التقنيات",
@@ -171,14 +198,15 @@ const translations = {
     "hero.boot3": "",
     "hero.boot4": "",
     "hero.greeting": '<span class="badge-prefix">الملف الهندسي ·</span> أحمد إسماعيل',
-    "hero.available": "متاح للفرص المتميزة",
+    "hero.available": "متاح للتعاقد والفرص الهندسية",
     "hero.name": "أحمد إسماعيل",
-    "hero.desc": "هندسة أنظمة ذكية تجمع بين <strong>تعلم الآلة</strong>، و<strong>أمن إنترنت الأشياء</strong>، و<strong>شبكات المؤسسات</strong> في برمجيات متينة وجاهزة للإنتاج.",
+    "hero.desc": "هندسة أنظمة رقمية متينة تجمع بين <strong>البرمجيات المتكاملة</strong>، و<strong>تعلم الآلة</strong>، و<strong>الأمن السيبراني</strong> في منتجات برمجية جاهزة للإنتاج والمهام الحرجة.",
     "chip.ml": "تعلم الآلة",
     "chip.sec": "أمن IoT",
     "chip.net": "البنية التحتية",
     "chip.dev": "أنظمة متكاملة",
     "btn.projects": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> استعراض المشاريع',
+    "btn.hire": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3-3m0 0l-3 3m3-3v8"/></svg> توظيف / استفسار',
     "btn.cv": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> تحميل السيرة',
     "btn.contact": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> تواصل معي',
     "cmd.about": "نبذة",
@@ -234,6 +262,30 @@ const translations = {
     "exp.net_point3": "✦ VLSM, STP/RSTP, EtherChannel",
     "exp.net_point4": "✦ ACLs, NAT/PAT, أمان المنافذ",
     "exp.net_point5": "✦ تحليل Wireshark الجنائي",
+    "cmd.solutions": "الحلول",
+    "solutions.eyebrow": "هندسة تصنع الفارق",
+    "solutions.title": "لماذا توظفني · القيمة الهندسية للمؤسسات",
+    "sol.item1_badge": "معمارية متكاملة",
+    "sol.item1_title": "تنفيذ برمجيات متكاملة شاملة",
+    "sol.item1_desc": "من قواعد البيانات والخدمات السحابية السريعة بـ Python وFastAPI إلى واجهات Next.js تفاعلية بسرعة 60 إطاراً في الثانية بدون أي تعقيد في التسليم.",
+    "sol.item1_kpi": "تحكم شامل بالمنتج",
+    "sol.item2_badge": "سرعة خوارزمية",
+    "sol.item2_title": "استدلال خوارزمي وبث فائق السرعة",
+    "sol.item2_desc": "نماذج مدربة على ملايين العينات، مهيأة لبث WebSockets اللحظي واستدلال فائق السرعة أقل من 1.2ms لتفادي أي اختناق في الخوادم.",
+    "sol.item2_kpi": "زمن استدلال النموذج",
+    "sol.item3_badge": "دفاع سيبراني",
+    "sol.item3_title": "بنية تحتية بمبدأ Zero-Trust",
+    "sol.item3_desc": "مبنية وفق مبادئ الدفاع العميق: حقن آلي لقواعد جدار الحماية (nftables)، مراقبة Suricata، وتأمين منافذ L2/L3 ضد التهديدات.",
+    "sol.item3_kpi": "دقة رصد الهجمات",
+    "sol.item4_badge": "تواصل سلس وشامل",
+    "sol.item4_title": "تنفيذ ثنائي اللغة وتواصل شفاف",
+    "sol.item4_desc": "تواصل سلس باللغتين العربية والإنجليزية. سرعة في التنفيذ، وتوثيق تقني دقيق، وتقارير دورية واضحة للعملاء وفرق العمل الدولية.",
+    "sol.item4_kpi": "زمن الاستجابة والتنفيذ",
+    "sol.cta_badge": "التوظيف والتعاقد",
+    "sol.cta_title": "هل لديك مشروع طموح أو منصب هندسي شاغر؟",
+    "sol.cta_desc": "سواء كنت بحاجة إلى منصة SaaS متكاملة، أو خط معالجة ذكاء اصطناعي، أو حماية لشبكتك، سأمنح مشروعك الجودة الهندسية التي يستحقها.",
+    "btn.hire_discuss": '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ناقش مشروعك معي',
+    "btn.review_code": '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85 0 1.7.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> راجع الكود على GitHub',
     "cmd.projects": "المشاريع",
     "projects.eyebrow": "الأنظمة المنشورة",
     "projects.title": "أبرز الأنظمة والمشاريع",
@@ -314,9 +366,38 @@ const translations = {
 };
 
 const ROLES = {
-  en: ['Computer Engineer', 'ML & AI Developer', 'IoT Security Researcher', 'Network Architect', 'Full-Stack Engineer'],
-  ar: ['مهندس حاسوب', 'مطور تعلم الآلة', 'باحث أمن IoT', 'معماري شبكات', 'مهندس برمجيات']
+  en: [
+    'Full-Stack Systems Architect',
+    'Machine Learning Engineer',
+    'Cyber Defense Specialist',
+    'Computer Engineer',
+    'Enterprise Network Builder'
+  ],
+  ar: [
+    'معماري برمجيات متكاملة',
+    'مهندس تعلم آلة وذكاء اصطناعي',
+    'أخصائي أمن سيبراني ودفاع',
+    'مهندس حاسوب',
+    'معماري شبكات المؤسسات'
+  ]
 };
+
+// ===== HERO ARCHITECTURE DECK TABS =====
+(function initHeroDeckTabs() {
+  const tabs = document.querySelectorAll('.deck-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const view = tab.getAttribute('data-deck-view');
+      tabs.forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.deck-view-content').forEach(v => v.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById('deck_view_' + view);
+      if (target) {
+        target.classList.add('active');
+      }
+    });
+  });
+})();
 
 let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
@@ -855,7 +936,7 @@ document.querySelectorAll('.section-big-title').forEach(title => {
 
 // ===== INTERACTIVE CARD SPOTLIGHT TRACKING =====
 (function initCardSpotlight() {
-  const cards = document.querySelectorAll('.bento-card, .service-card, .project-card');
+  const cards = document.querySelectorAll('.bento-card, .service-card, .project-card, .solution-card, .hero-deck-card');
   cards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
